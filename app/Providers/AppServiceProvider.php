@@ -4,7 +4,11 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-USE App\LoaiMonAn;
+USE App\DangDoAn;
+
+use App\Cart;
+
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,15 +19,26 @@ class AppServiceProvider extends ServiceProvider
      */
      public function boot()
         {
-    //     view() -> composer('header',function($view){
-    //         $dang_monan = ldangmonan::all();
-    //         $view->with('dang_monan','$dang_monan');
+            view()->composer('header',function($view){
+            $dang_monan = dangdoan::all();
 
-    //     });
+                
 
 
-    
-    //         loaimonan
+
+                $view->with('dang_monan',$dang_monan);
+             });
+
+                view()->composer('header', function($view){
+
+                    if(Session('cart')){
+                    $oldCart = Session::get('cart');
+                    $cart = new Cart($oldCart);
+                    $view->with(['cart'=>Session::get('cart'),'monan_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+
+                    }
+
+                });
 
          }
 

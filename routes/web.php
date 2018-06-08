@@ -17,17 +17,17 @@ Route::get('/', function () {
 
 Route::get('index',[
 
-	'as'=>'trang chu',
+	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'
 ]);
 
 Route::get('dang-doan',[
 
 	'as'=>'dangdoan',
-	'uses'=>'PageController@getDangDoAn'
+	'uses'=>'PageController@getDangMonAn'
 ]);
 
-Route::get('chi-tiet-mon-an',[
+Route::get('chi-tiet-mon-an/{id}',[
 
 	'as'=>'chitietmonan',
 	'uses'=>'PageController@getChiTietMonAn'
@@ -43,5 +43,11 @@ Route::get('gioi-thieu',[
 
 	'as'=>'gioithieu',
 	'uses'=>'PageController@getGioiThieu'
+]);
+
+Route::get('them-gio-hang/{id}',[
+	'as' => 'themgiohang',
+	'uses' => 'PageController@getThemGioHang'
+
 ]);
 
