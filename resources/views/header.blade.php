@@ -6,11 +6,11 @@
         }
     </style>
     <!-- ============================================== TOP MENU ============================================== -->
-    <div class="top-bar animate-dropdown">
+        <div class="top-bar animate-dropdown">
         <div class="container">
             <div class="header-top-inner">
                 <div class="cnt-account">
-                    {{-- <ul class="list-unstyled">
+                    <ul class="list-unstyled">
                         @if(Auth::check())
                             <li>
                                 <a href="">Chào bạn {{Auth::user()->fullname}}</a>
@@ -28,7 +28,7 @@
                                     <i class="icon fa fa-sign-in"></i>Đăng nhập</a>
                             </li>
                         @endif  
-                    </ul> --}}
+                    </ul>
                 </div>
                 <!-- /.cnt-account -->
                 <div class="clearfix"></div>

@@ -11,11 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('page/trangchu');
-});
-
-Route::get('index',[
+Route::get('/',[
 
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'
@@ -49,5 +45,26 @@ Route::get('them-gio-hang/{id}',[
 	'as' => 'themgiohang',
 	'uses' => 'PageController@getThemGioHang'
 
+]);
+
+Route::get('register',[
+    'uses'=>'AdminController@getRegister',
+    'as'=>'dang_ki'
+]);
+Route::post('register',[
+    'uses'=>'AdminController@postRegister',
+    'as'=>'dang_ki'
+]);
+Route::get('login',[
+    'uses'=>'AdminController@getLogin',
+    'as'=>'dang_nhap'
+]);
+Route::post('login',[
+    'uses'=>'AdminController@postLogin',
+    'as'=>'dang_nhap'
+]);
+Route::get('logout',[
+    'uses'=>'AdminController@getLogout',
+    'as'=>'dangxuat'
 ]);
 

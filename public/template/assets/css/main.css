@@ -73,11 +73,11 @@ a:focus {
 img[src="assets/images/blank.gif"] {
   background: url("../images/ajax.gif") no-repeat scroll center center #ffffff;
 }
-@font-face {
+/* @font-face {
   font-family: 'FjallaOneRegular';
   src: url('../fonts/fjalla/fjallaone-regular.eot');
   src: url('../fonts/fjalla/fjallaone-regular.eot') format('embedded-opentype'), url('../fonts/fjalla/fjallaone-regular.woff2') format('woff2'), url('../fonts/fjalla/fjallaone-regular.woff') format('woff'), url('../fonts/fjalla/fjallaone-regular.ttf') format('truetype'), url('../fonts/fjalla/fjallaone-regular.svg#FjallaOneRegular') format('svg');
-}
+} */
 @font-face {
   font-family: 'BebasNeueBold';
   src: url('../fonts/bebas/bebasneuebold.eot');
