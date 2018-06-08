@@ -290,13 +290,13 @@
                                                         <div class="description"></div>
 
                                                         <div class="product-price">
-                                                            @if($all->promotion_price==0)
+                                                            @if($all->giauudai==0)
                                                                 <span class="price">
-                                                                        {{number_format($all->gia)}} 
+                                                                        {{$all->gia}} 
                                                                 </span>
                                                             @else
                                                                 <span class="price">
-                                                                        {{number_format($all->gia)}} 
+                                                                        {{$all->gia}} 
                                                                 </span>
                                                                 <span class="price-before-discount">{{$all->giauudai}}</span>
                                                             @endif
