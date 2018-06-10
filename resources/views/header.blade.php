@@ -7,7 +7,7 @@
     </style>
     <!-- ============================================== TOP MENU ============================================== -->
         <div class="top-bar animate-dropdown">
-        <div class="container">
+            <div class="container">
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
@@ -34,13 +34,13 @@
                 <div class="clearfix"></div>
             </div>
             <!-- /.header-top-inner -->
-        </div>
+            </div>
         <!-- /.container -->
-    </div>
+        </div>
     <!-- /.header-top -->
     <!-- ============================================== TOP MENU : END ============================================== -->
-    <div class="main-header">
-        <div class="container">
+        <div class="main-header">
+             <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!-- ============================================================= LOGO ============================================================= -->
@@ -66,7 +66,7 @@
                     <!-- /.contact-row -->
                     <!-- ============================================================= SEARCH AREA ============================================================= -->
                     <div class="search-area">
-                        <form method="get" action="#">
+                        <form method="get" action="{{route('timkiem')}}"">
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
@@ -75,7 +75,7 @@
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li role="presentation">
-                                                <a role="menuitem" tabindex="-1">Theo tên món ăn</a>
+                                                <a role="menuitem" tabindex="-1">Theo tên món ăn </a>
                                             </li>
                                             <li role="presentation">
                                                 <a role="menuitem" tabindex="-1">Theo giá</a>
@@ -84,9 +84,9 @@
                                     </li>
                                 </ul>
 
-                                <input class="search-field" placeholder="Tìm ở đây..." name="key"/>
+                                <input class="search-field" placeholder="Tìm ở đây..." name="key" />
 
-                                <a class="search-button" href="#"></a>
+                                <a class="search-button" href="{{route('timkiem')}}"></a>
 
                             </div>
                         </form>
@@ -103,7 +103,7 @@
                         <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
                             <div class="items-cart-inner">
                                 <div class="total-price-basket">
-                                    <span class="lbl">Giỏ Hàng</span> 
+                                    <span class="lbl">Giỏ Hàng </span> 
                                 </div>
                                 <div class="basket">
                                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -137,7 +137,7 @@
                                                     <div class="price">{{$food['qty']}}<div>{{$food['item']['gia']}}</div></div>
                                                 </div>
                                                 <div class="col-xs-1 action">
-                                                    <a href="#">
+                                                    <a href="{{route('xoagiohang',$food['item']['id'])}}">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>
@@ -171,14 +171,14 @@
             </div>
             <!-- /.row -->
 
-        </div>
+             </div>
         <!-- /.container -->
 
-    </div>
+        </div>
     <!-- /.main-header -->
 
     <!-- ============================================== NAVBAR ============================================== -->
-    <div class="header-nav animate-dropdown">
+        <div class="header-nav animate-dropdown">
         <div class="container">
             <div class="yamm navbar navbar-default" role="navigation">
                 <div class="navbar-header">
@@ -229,9 +229,11 @@
         </div>
         <!-- /.container-class -->
 
-    </div>
+        </div>
     <!-- /.header-nav -->
     <!-- ============================================== NAVBAR : END ============================================== -->
+
+
 
 </header>
 

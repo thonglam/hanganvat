@@ -47,6 +47,24 @@ Route::get('them-gio-hang/{id}',[
 
 ]);
 
+Route::get('xoa-gio-hang/{id}',[
+	'as' => 'xoagiohang',
+	'uses' => 'PageController@getXoaGioHang'
+
+]);
+
+Route::get('tim-kiem',[
+	'as' => 'timkiem',
+	'uses' => 'PageController@getTimKiem'
+
+]);
+
+
+
+
+
+
+
 Route::get('register',[
     'uses'=>'AdminController@getRegister',
     'as'=>'dang_ki'

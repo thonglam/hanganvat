@@ -54,4 +54,30 @@ class PageController extends Controller
         return redirect()->back();
 
     }
+
+    public function getXoaGioHang($id){
+
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+
+        if(count($cart->items)>0){
+            Session::put('cart',$cart);
+        }
+
+        else{
+            Session::forget('cart');
+        }
+        
+        return redirect()->back();
+    }
+
+    public function getTimKiem(Request $req){
+
+        $timkiem_monan = monan::where('ten_monan','like','%'.$req->key.'%')
+                                ->orwhere('gia',$req->key)
+                                ->get();
+        return view('pages.timkiem',compact('timkiem_monan'));
+
+    }
 }
