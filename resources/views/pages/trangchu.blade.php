@@ -236,7 +236,7 @@
 
                                             <ul role="menu" class="dropdown-menu">
                                                 <li role="presentation">
-                                                    <a href="#">Thêm bảng chữ cái</a>
+                                                    <a href="#">Theo bảng chữ cái</a>
                                                 </li>
                                                 <li role="presentation">
                                                     <a href="#">Giá cao nhất</a>

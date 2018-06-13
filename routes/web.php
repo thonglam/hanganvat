@@ -59,12 +59,6 @@ Route::get('tim-kiem',[
 
 ]);
 
-
-
-
-
-
-
 Route::get('register',[
     'uses'=>'AdminController@getRegister',
     'as'=>'dang_ki'
@@ -85,4 +79,37 @@ Route::get('logout',[
     'uses'=>'AdminController@getLogout',
     'as'=>'dangxuat'
 ]);
-
+Route::group(['prefix'=>'admin', 'middleware'=> 'adminCheck'], function(){
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('trangchu');
+    
+    Route::get('home',[ 
+        'uses'=>'AdminController@getHomePage',
+        'as' => 'home'
+    ]);
+    Route::group(['middleware'=>'isAdmin'],function(){
+        Route::get('edit/{id}-{alias}',[
+            'uses'=>'AdminController@getEditFood',
+            'as' => 'get_edit'
+        ]);
+        Route::post('edit/{id}',[
+            'uses'=>'AdminController@postEditFood',
+            'as' => 'edit'
+        ]);
+    
+        Route::get('delete/{id}-{alias}',[
+            'uses'=>'AdminController@getDeleteFood',
+            'as' => 'delete'
+        ]);
+    
+        Route::get('add-food',[
+            'uses'=>'AdminController@getAddFood',
+            'as' => 'add_food'
+        ]);
+        Route::post('add-food',[
+            'uses'=>'AdminController@postAddFood',
+            'as' => 'add_food'
+        ]);
+    });
+});
