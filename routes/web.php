@@ -47,3 +47,24 @@ Route::get('contact',[
     'as' =>'contact',
     'uses'=>'PageController@getContact'
 ]);
+
+Route::get('register',[
+    'uses'=>'AdminController@getRegister',
+    'as'=>'dang_ki'
+]);
+Route::post('register',[
+    'uses'=>'AdminController@postRegister',
+    'as'=>'dang_ki'
+]);
+Route::get('login',[
+    'uses'=>'AdminController@getLogin',
+    'as'=>'dang_nhap'
+]);
+Route::post('login',[
+    'uses'=>'AdminController@postLogin',
+    'as'=>'dang_nhap'
+]);
+Route::get('logout',[
+    'uses'=>'AdminController@getLogout',
+    'as'=>'dangxuat'
+]);

@@ -16,7 +16,10 @@
                                 <a href="">Chào bạn {{Auth::user()->fullname}}</a>
                             </li>
                             <li>
-                                <a href="{{route('Logout')}}">
+                                <a href="">Đến trang quản lý</a>
+                            </li>
+                            <li>
+                                <a href="{{route('dangxuat')}}">
                                     <i class="icon fa fa-user"></i>Đăng Xuất</a>
                             </li>
                         @else   
