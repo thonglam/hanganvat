@@ -45,7 +45,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
                     <!-- ============================================================= LOGO ============================================================= -->
                     <div class="logo">
-                        <a href="{{route('trang-chu')}}">
+                        <a href="{{route('trang_chu')}}">
                             <img src="{{URL::asset('template/assets/images/logo.png')}}" alt="">
                         </a>
                     </div>
@@ -66,7 +66,7 @@
                     <!-- /.contact-row -->
                     <!-- ============================================================= SEARCH AREA ============================================================= -->
                     <div class="search-area">
-                        <form method="get" action="{{route('timkiem')}}"">
+                        <form method="get" action="{{route('search')}}"">
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
@@ -86,7 +86,7 @@
 
                                 <input class="search-field" placeholder="Tìm ở đây..." name="key" />
 
-                                <a class="search-button" href="{{route('timkiem')}}"></a>
+                                <a class="search-button" href="{{route('search')}}"></a>
 
                             </div>
                         </form>
@@ -124,17 +124,17 @@
                                             <div class="row">
                                                 <div class="col-xs-4">
                                                     <div class="image">
-                                                        <a href="{{route('chitietmonan',$food['item']['id'])}}">
-                                                            <img src="template/assets/images/{{$food['item']['hinh']}}" alt="">
+                                                        <a href="{{route('detail',$food['item']['id'])}}">
+                                                            <img src="template/assets/images/{{$food['item']['name']}}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-7">
 
                                                     <h3 class="name">
-                                                        <a href="index.php?page-detail">{{$food['item']['ten_monan']}}</a>
+                                                        <a href="index.php?page-detail">{{$food['item']['name']}}</a>
                                                     </h3>
-                                                    <div class="price">{{$food['qty']}}<div>{{$food['item']['gia']}}</div></div>
+                                                    <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div>
                                                 </div>
                                                 <div class="col-xs-1 action">
                                                     <a href="{{route('xoagiohang',$food['item']['id'])}}">
@@ -194,24 +194,24 @@
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw">
-                                    <a href="{{route('trang-chu')}}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                    <a href="{{route('trang_chu')}}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                                 </li>
                                 <li class="dropdown yamm">
                                     <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Danh Sách Sản Phẩm</a>
                                     <ul class="dropdown-menu">
                                         @foreach($dang_monan as $dang)
                                         <li>
-                                            <a href="{{route('dangdoan',$dang->id)}}">{{$dang->ten_monan}}</a>
+                                            <a href="{{route('typefood',$dang->id)}}">{{$dang->name}}</a>
                                         </li>
                                         
                                         @endforeach
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{{route('gioithieu')}}">Info</a>
+                                    <a href="{{route('info')}}"> Giới thiệu </a>
                                 </li>
                                 <li class="dropdown">   
-                                    <a href="{{route('lienhe')}}">Contact</a>
+                                    <a href="{{route('contact')}}">Liên hệ</a>
                                 </li>
                             </ul>
                             <!-- /.navbar-nav -->

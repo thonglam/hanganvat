@@ -236,7 +236,7 @@
 
                                             <ul role="menu" class="dropdown-menu">
                                                 <li role="presentation">
-                                                    <a href="#">Theo bảng chữ cái</a>
+                                                    <a href="#">Thêm bảng chữ cái</a>
                                                 </li>
                                                 <li role="presentation">
                                                     <a href="#">Giá cao nhất</a>
@@ -262,15 +262,15 @@
                         <div class="tab-pane active " id="grid-container">
                             <div class="category-product  inner-top-vs">
                                 <div class="row">
-                                    @foreach($new_monan as $all)
+                                    @foreach($allFood as $all)
                                         <div class="col-sm-6 col-md-4 wow fadeInUp">
                                             <div class="products">
 
                                                 <div class="product">
                                                     <div class="product-image">
                                                         <div class="image">
-                                                            <a href="{{route('chitietmonan',$all->id)}}">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->hinh}}" alt="" width="250px" height="200px"> 
+                                                            <a href="{{route('detail',$all->id)}}">
+                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->
@@ -284,21 +284,21 @@
 
                                                     <div class="product-info text-left">
                                                         <h3 class="name">
-                                                        <a href="{{route('chitietmonan',$all->id)}}">{{$all->ten_monan}}</a>
+                                                        <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
                                                         </h3>
                                                         <div class="rating rateit-small"></div>
                                                         <div class="description"></div>
 
                                                         <div class="product-price">
-                                                            @if($all->giauudai==0)
+                                                            @if($all->promotion_price==0)
                                                                 <span class="price">
-                                                                        {{$all->gia}} 
+                                                                        {{number_format($all->price)}} 
                                                                 </span>
                                                             @else
                                                                 <span class="price">
-                                                                        {{$all->gia}} 
+                                                                        {{number_format($all->price)}} 
                                                                 </span>
-                                                                <span class="price-before-discount">{{$all->giauudai}}</span>
+                                                                <span class="price-before-discount">{{$all->promotion_price}}</span>
                                                             @endif
                                                         </div>
                                                         <!-- /.product-price -->
@@ -340,7 +340,7 @@
                                     @endforeach
                                 </div>
                                 <div class="row">
-                                    {{$new_monan->links()}}
+                                    {{$allFood->links()}}
                                 </div>
                                 <!-- /.row -->
                             </div>
@@ -350,7 +350,7 @@
 
                         <div class="tab-pane " id="list-container">
                             <div class="category-product  inner-top-vs">
-                                @foreach($new_monan as $all)
+                                @foreach($allFood as $all)
                                     <div class="category-product-inner wow fadeInUp">
                                         <div class="products">
                                             <div class="product-list product">
@@ -358,7 +358,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->hinh}}" alt="">
+                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
@@ -367,23 +367,23 @@
                                                     <div class="col col-sm-8 col-lg-8">
                                                         <div class="product-info">
                                                             <h3 class="name">
-                                                             <a href="{{route('chitietmonan',$all->id)}}">{{$all->ten_monan}}</a>
+                                                             <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
                                                             </h3>
                                                             <div class="rating rateit-small"></div>
                                                             <div class="product-price">
                                                                     @if($all->promotion_price==0)
                                                                     <span class="price">
-                                                                            {{$all->gia}} 
+                                                                            {{$all->price}} 
                                                                     </span>
                                                                 @else
                                                                     <span class="price">
-                                                                            {{$all->gia}} 
+                                                                            {{$all->price}} 
                                                                     </span>
-                                                                    <span class="price-before-discount">{{$all->giauudai}}</span>
+                                                                    <span class="price-before-discount">{{$all->promotion_price}}</span>
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->
-                                                            <div class="description m-t-10">{{$all->mota}}</div>
+                                                            <div class="description m-t-10">{{$all->detail}}</div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
@@ -428,7 +428,7 @@
                                     </div>
                                 @endforeach
                                 <div class="row">
-                                    {{$new_monan->links()}}
+                                    {{$allFood->links()}}
                                 </div>
                                 <!-- /.category-product-inner -->
                             </div>

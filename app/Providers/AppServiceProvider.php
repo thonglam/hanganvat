@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-USE App\DangDoAn;
+USE App\FoodType;
 
 use App\Cart;
 
@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      public function boot()
         {
             view()->composer('header',function($view){
-            $dang_monan = dangdoan::all();
+            $dang_monan = FoodType::all();
 
                 
 

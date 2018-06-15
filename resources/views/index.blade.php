@@ -11,7 +11,6 @@
 	    <meta name="robots" content="all">
 
 	    <title>@yield('title')</title>
-	    <base href="{{asset('')}}">
 		
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="{{URL::asset('template/assets/css/bootstrap.min.css')}}">

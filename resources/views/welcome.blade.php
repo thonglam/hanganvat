@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -66,11 +66,10 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Auth::check())
+            @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('trangchu') }}">Home</a>
-                        <a href="{{ route('dangxuat') }}">Log out</a>
+                        <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -80,11 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    @if(Auth::check())
-                    {{Auth::user()->fullname}}
-                    @else
-                        Not logged in 
-                    @endif
+                    Laravel
                 </div>
 
                 <div class="links">
