@@ -13,21 +13,26 @@
                     <ul class="list-unstyled">
                         @if(Auth::check())
                             <li>
-                                <a href="">Chào bạn {{Auth::user()->fullname}}</a>
+                                <a href="">Chào bạn {{Auth::user()->name}}</a>
                             </li>
                             <li>
                                 <a href="">Đến trang quản lý</a>
                             </li>
-                            <li>
-                                <a href="{{route('dangxuat')}}">
-                                    <i class="icon fa fa-user"></i>Đăng Xuất</a>
+                            <li><a class="dropdown-item" href="{{route('logout')}}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="fa fa-sign-out fa-lg"></i> Đăng xuất
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
+
                         @else   
                             <li>
-                                <a href="{{route('dang_ki')}}">Đăng kí</a>
+                                <a href="{{route('register')}}">Đăng kí</a>
                             </li>
                             <li>
-                                <a href="{{route('dang_nhap')}}">
+                                <a href="{{route('login')}}">
                                     <i class="icon fa fa-sign-in"></i>Đăng nhập</a>
                             </li>
                         @endif  
