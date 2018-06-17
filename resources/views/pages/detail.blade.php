@@ -3,12 +3,10 @@
 <div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title">Món ăn </h6>
+				<h6 class="inner-title"> <a href="{{route('trang_chu')}}"> Trang chủ</a> / <span>Thông tin chi tiết món ăn</span></h6>
 			</div>
 			<div class="pull-right">
-				<div class="beta-breadcrumb font-large">
-					<a href="{{route('trang_chu')}}"> Trang chủ</a> / <span>Thông tin chi tiết món ăn</span>
-				</div>
+				
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -25,7 +23,7 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="single-item-body">
-								<p class="single-item-title"><h2 style="color: red"> {{$food->name}} </h2></p>
+								<p class="single-item-title"><h2 style="color: black"> {{$food->name}} </h2></p>
 								
 							</div>
 
@@ -33,13 +31,14 @@
 							<div class="space20">&nbsp;</div>
 
 							<div class="single-item-desc">
-								<p> Chè béo và ngon </p>
+								<p> </p>
 							</div>
 
 							<p class="single-item-price">
+								
 												@if($food->promotion_price==0)
 
-                                                    <span class="flash-sale">{{$food->price}}đ</span>
+                                                   <span class="flash-sale "><h2 style="color: red"> {{$food->price}}đ </h2></span> 
                                                 @else
                                                     <span class="flash-del">{{$food->price}}đ </span>
                                                     <span class="flash-sale">{{$food->promotion_price}}đ</span>
@@ -51,22 +50,23 @@
 							<p>Chọn lựa </p>
 							<div class="single-item-options">
 								<select class="wc-select" name="size">
-									<option>Size</option>
-									<option value="XS">XS</option>
-									<option value="S">S</option>
-									<option value="M">M</option>
-									<option value="L">L</option>
-									<option value="XL">XL</option>
+									<option>Kích thước</option>
+									<option value="nho">Nhỏ</option>
+									<option value="vua"> Vừa</option>
+									<option value="lon">Lớn</option>
+									
 								</select>
 								
-								<select class="wc-select" name="color">
-									<option>Số lượng</option>
+								{{-- <select class="wc-select" name="color"> --}}
+									{{-- <option>Số lượng</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>
+									<option value="5">5</option> --}}
+
+									Số lượng: <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5">
+								{{-- </select> --}}
 								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
@@ -97,7 +97,7 @@
 								<div class="col-sm-4">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="product.html"><img src="source/image/product/{{$matt->image}}" alt=""></a>
+										<a href="{{route('detail',$matt->id)}}"><img src="template/assets/images/hinh_mon_an/{{$matt->image}}" alt=""></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$matt->name}}</p>
@@ -114,8 +114,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="product.html"> </a>
+										<a class="beta-btn primary" href="{{route('detail',$matt->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -123,7 +123,9 @@
 							@endforeach
 						</div>
 
-						<div class="row"> 
+
+						<div class="row">{{$sp_tuongtu->links()}}</div>
+						
 					</div> <!-- .beta-products-list -->
 				</div>
 				<div class="col-sm-3 aside">

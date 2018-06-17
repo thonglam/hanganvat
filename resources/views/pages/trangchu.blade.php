@@ -307,24 +307,40 @@
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
-                                                            <ul class="list-unstyled">
-                                                                <li class="add-cart-button btn-group">
-                                                                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                                                                        <i class="fa fa-shopping-cart"></i>
-                                                                    </button>
-                                                                    <a href="{{route('themgiohang',$all->id)}}">Add to cart</a>
-                                                                </li>
-                                                                <li class="lnk wishlist">
+                                                            <ul class="list-unstyled=">
+                                                                {{-- <li class="add-cart-button btn-group"> --}}
+                                                                    {{-- <button class="btn btn-primary icon"  data-toggle="dropdown" type="button"> --}}
+                                                                       
+                                                                    
+                                                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+
+                                                               
+
+                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                     <i class="fa fa-chevron-right"></i></a>
+
+                                                                 
+
+                                                                     <div class="clearfix"></div>
+
+                                                                 
+
+                                                                  {{--   </button> --}}
+                                                                    {{-- <a href="{{route('themgiohang',$all->id)}}">Add to cart</a> --}}
+
+                                                                    {{-- <a class="add-cart-button btn-group" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
+                                                                {{-- </li> --}}
+                                                                {{-- <li class="lnk wishlist">
                                                                     <a class="add-to-cart" href="detail.html" title="Wishlist">
                                                                         <i class="icon fa fa-heart"></i>
                                                                     </a>
-                                                                </li>
+                                                                </li> --}}
 
-                                                                <li class="lnk">
+                                                                {{-- <li class="lnk">
                                                                     <a class="add-to-cart" href="detail.html" title="Compare">
                                                                         <i class="fa fa-retweet"></i>
                                                                     </a>
-                                                                </li>
+                                                                </li> --}}
                                                             </ul>
                                                         </div>
                                                         <!-- /.action -->
@@ -388,10 +404,17 @@
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
                                                                         <li class="add-cart-button btn-group">
-                                                                            <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
+                                                                            {{-- <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                                                                                 <i class="fa fa-shopping-cart"></i>
                                                                             </button>
-                                                                            <a href="{{route('themgiohang',$all->id)}}"></a>Add to cart
+                                                                            <a href="{{route('themgiohang',$all->id)}}"> Add to cart</a> --}}
+
+                                                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+
+                                                               
+
+                                                                             <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                             <i class="fa fa-chevron-right"></i></a>
 
                                                                         </li>
 

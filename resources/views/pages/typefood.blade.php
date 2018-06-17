@@ -17,76 +17,48 @@
                                     <i class="icon fa fa-desktop fa-fw"></i>Computer</a>
                                 <ul class="dropdown-menu mega-menu">
                                     <li class="yamm-content">
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-3">
-                                                <ul class="links list-unstyled">
-                                                    <li>
-                                                        <a href="category.html">Lenovo</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Microsoft</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Fuhlen</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Longsleeves</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- /.col -->
-                                            <div class="col-sm-12 col-md-3">
-                                                <ul class="links list-unstyled">
-                                                    <li>
-                                                        <a href="category.html">Microsoft</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Apple</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Tees & Tanks</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Graphic Tees</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- /.col -->
-                                            <div class="col-sm-12 col-md-3">
-                                                <ul class="links list-unstyled">
-                                                    <li>
-                                                        <a href="category.html">Polos</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Sweaters</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Shirts</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Hoodies</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- /.col -->
-                                            <div class="col-sm-12 col-md-3">
-                                                <ul class="links list-unstyled">
-                                                    <li>
-                                                        <a href="category.html">Microsoft</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Apple</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Tees & Tanks</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="category.html">Graphic Tees</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- /.col -->
-                                        </div>
+
+
+
+
+                           <div class="row">
+
+                                            @foreach($sp_theoloai as $sp)
+                                                <div class="col-sm-4">
+                                                <div class="single-item">
+                                                    <div class="single-item-header">
+                                                        <a href="product.html"><img src="template/assets/images/hinh_mon_an/{{$sp->image}}" alt=""></a>
+                                                    </div>
+                                                    <div class="single-item-body">
+                                                        <p class="single-item-title">{{$sp->name}}</p>
+                                                        <p class="single-item-price">
+
+                                                            @if($sp->promotion_price==0)
+
+                                                                    <span class="flash-sale">{{$sp->price}}đ</span>
+                                                                @else
+                                                                    <span class="flash-del">{{$sp->price}}đ </span>
+                                                                    <span class="flash-sale">{{$sp->promotion_price}}đ</span>
+
+                                                                @endif
+                                                        </p>
+                                                    </div>
+                                                    <div class="single-item-caption">
+                                                        <a class="add-to-cart pull-left" href="product.html"> </a>
+                                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            @endforeach
+                        </div>
+
+
+
+
+
+
+
                                         <!-- /.row -->
                                     </li>
                                     <!-- /.yamm-content -->

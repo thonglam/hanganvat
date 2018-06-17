@@ -52,15 +52,17 @@ class PageController extends Controller
     }
     function getDetailFood($id){
         $food = foods::where('id',$id)->first();
+
+        $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(5);
         // dd($food);
-        $sp_tuongtu =foodType::with('foods')->get();
-        foreach($sp_tuongtu as $type){
-             $type->id;
-            $type->name;
-            foreach($type->foods as $food){
-               $food->name;
-            }
-        }
+        // $sp_tuongtu =foodType::with('foods')->get();
+        // foreach($sp_tuongtu as $type){
+        //      $type->id;
+        //     $type->name;
+        //     foreach($type->foods as $food){
+        //        $food->name;
+        //     }
+        // }
         // $sp_tuongtu = Foods::where('id_type',$id)->get();
         // dd($sp_tuongtu);   
 
