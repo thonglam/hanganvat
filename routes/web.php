@@ -18,28 +18,54 @@ Route::get('',[
     'as' => 'trang_chu',
     'uses'=>'PageController@getIndex'
 ]);
-Route::get('search',[
-    'as'=>'search',
-    'uses'=>'PageController@getSearch'
+Route::get('search1',[
+    'as'=>'search1',
+    'uses'=>'PageController@getSearch1'
 ]);
+
+Route::get('search',[
+    'as' =>'search',
+    'uses' => 'PageController@getSearch'
+
+]);
+
+
+Route::get('foodtype/{type}',[
+    'as' => 'foodtype',
+    'uses' =>'PageController@getFoodType'
+
+]);
+
+// Route::get('loai-san-pham/{$type}',[
+//     'as' => 'loaisanpham',
+
+//     'uses' => 'PageController@getLoaisp'
+// ]);
+
+
+
 Route::get('chi-tiet-san-pham/{id}',[
     'as'=>'detail',
     'uses'=>'PageController@getDetailFood'
 ]);
-Route::get('loai-san-pham/{$type}',[
-    'as'=>'typefood',
-    'uses'=>'PageController@getTypeFood'
-]); 
+
+// Route::get('loai-san-pham/{$type}',[
+//     'as'=>'typefood',
+//     'uses'=>'PageController@getTypeFood'
+// ]); 
 Route::get('add-to-cart/{id}',[
     'as'=>'themgiohang',
     'uses'=>'PageController@getShoppingCart'
 ]);
+
+
+
 Route::get('del-cart/{id}',[
     'as'=>'xoagiohang',
     'uses'=>'PageController@getDelItemCart'
 ]);
 Route::get('dat-hang',[
-    'as'=>'dathang',
+    'as'=>'checkout',
     'uses'=>'PageController@getCheckout'
 ]);
 Route::get('info',[
@@ -50,6 +76,14 @@ Route::get('contact',[
     'as' =>'contact',
     'uses'=>'PageController@getContact'
 ]);
+
+Route::post('dat-hang',[
+    'as' => 'dathang',
+    'uses'=>'PageController@postCheckout'
+
+]);
+
+
 
  // Route::controller([
  //    'auth'=> 'Auth\AuthController',

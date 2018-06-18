@@ -7,6 +7,8 @@ use App\Foods;
 use DB;
 use App\FoodType;
 use App\Cart;
+use App\Bill;
+use App\BillDetail;
 use Session;
 
 class PageController extends Controller
@@ -39,17 +41,39 @@ class PageController extends Controller
         return view('pages.trangchu',compact('new_food','allFood'));
     }
     
+    function getSearch1(Request $req){
+        $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
+        return view('pages.search1',compact('food'));
+    }
+
     function getSearch(Request $req){
         $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
         return view('pages.search',compact('food'));
     }
-    public function getTypeFood($type){
+
+
+    public function getFoodType($type){
+
         $sp_theoloai = foods::where('id_type',$type)->get();
-        $sp_khac = foods::where('id_type','<>',$type)->paginate(3);
-        $loai = foodsType::all();
-        $loap_sp = FoodType::where('id',$type)->first();
-        return view('pages.typefood',compact('sp_theoloai','sp_khac','loai','loap_sp'));
+
+        return view('pages.foodtype',compact('sp_theoloai'));
     }
+
+    // public function getLoaisp($type){
+
+    //      $sp_theoloai = foods::where('id_type',$type)->get();
+    //     return view('pages.loai_sanpham',compact('sp_theoloai'));
+    // }
+
+
+
+    // public function getTypeFood($type){
+    //     $sp_theoloai = foods::where('id_type',$type)->get();
+    //     $sp_khac = foods::where('id_type','<>',$type)->paginate(3);
+    //     $loai = foodsType::all();
+    //     $loap_sp = FoodType::where('id',$type)->first();
+    //     return view('pages.typefood',compact('sp_theoloai','sp_khac','loai','loap_sp'));
+    // }
     function getDetailFood($id){
         $food = foods::where('id',$id)->first();
 
@@ -73,6 +97,9 @@ class PageController extends Controller
     }
     function getShoppingCart(Request $req,$id){
         $product = foods::find($id);
+
+
+
         $oldCart = Session('cart') ? Session::get('cart') :null;
         $cart = new Cart($oldCart);
         $cart->add($product, $id);
@@ -81,6 +108,8 @@ class PageController extends Controller
         //return view('pages.shoppingcart',compact('ds'));
         // return view('pages.shoppingcart');
     }
+
+     
     
     public function getDelItemCart($id){
         $oldCart = Session::has('cart')?Session::get('cart'):null;
@@ -95,13 +124,63 @@ class PageController extends Controller
         return redirect()->back();
     }
 
-    public function getCheckout(){
-        return view('pages.shoppingcart');
+    // public function getCheckout(){
+    //     return view('pages.shoppingcart');
+    // }
+
+      function getCheckout(){
+        return view('pages.checkout');
     }
+
+
     function getInfo(){
         return view('pages.info');
     }
     function getContact(){
         return view('pages.contact');
+    }
+
+    public function postCheckout(Request $req){
+        $cart = Session::get('cart');
+       
+
+        $customer_bill = new Bill;
+
+        $customer_bill->name = $req->name;
+
+        $customer_bill->address= $req->address;
+
+        $customer_bill->phone = $req->phone;
+
+        $customer_bill->date_order = date('Y-m-d');
+
+        $customer_bill->toal = $cart->totalPrice;
+
+        $customer_bill->payment_method = $req->payment_method;
+
+        $customer_bill->save();
+
+
+        foreach($cart->items as $key => $value ){
+
+            $bill_detail = new BillDetail;
+
+            $bill_detail->id_bill = $customer_bill->id;
+
+            $bill_detail->id_food  = $key;
+
+            $bill_detail->quantity = $value['qty'];
+
+
+            $bill_detail->price = ($value['price']/$value['qty']);
+
+            $bill_detail->save();
+
+        }   
+
+        Session::forget('cart');
+        return redirect()->back()->with('thongbao','Đặt hàng thành công');
+
+
     }
 }

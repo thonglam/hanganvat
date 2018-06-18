@@ -78,7 +78,7 @@
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="category.html">Cách tìm:
+                                        <a class="dropdown-toggle" data-toggle="dropdown"  href="category.html">Cách tìm:
                                             <b class="caret"></b>
                                         </a>
                                         <ul class="dropdown-menu" role="menu">
@@ -92,9 +92,12 @@
                                     </li>
                                 </ul>
 
-                                <input class="search-field" placeholder="Tìm ở đây..." name="key" />
+                                <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-                                <a class="search-button" href="{{route('search')}}"></a>
+                                <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a>
+
+                                {{-- <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
+                                
 
                             </div>
                         </form>
@@ -209,7 +212,7 @@
                                     <ul class="dropdown-menu">
                                         @foreach($dang_monan as $dang)
                                         <li>
-                                            <a href="{{route('typefood',$dang->id)}}">{{$dang->name}}</a>
+                                            <a href="{{route('foodtype',$dang->id)}}">{{$dang->name}}</a>
                                         </li>
                                         
                                         @endforeach

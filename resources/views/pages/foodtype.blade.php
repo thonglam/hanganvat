@@ -1,6 +1,5 @@
 @extends('index')
 @section('content')
-
 <div class="body-content outer-top-xs">
     <div class='container'>
         <div class='row outer-bottom-sm'>
@@ -263,15 +262,15 @@
                         <div class="tab-pane active " id="grid-container">
                             <div class="category-product  inner-top-vs">
                                 <div class="row">
-                                    @foreach( $food as $all)
+                                    @foreach($sp_theoloai as $sp)
                                         <div class="col-sm-6 col-md-4 wow fadeInUp">
                                             <div class="products">
 
                                                 <div class="product">
                                                     <div class="product-image">
                                                         <div class="image">
-                                                            <a href="{{route('detail',$all->id)}}">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="" width="250px" height="200px"> 
+                                                            <a href="{{route('detail',$sp->id)}}">
+                                                                <img src="template/assets/images/hinh_mon_an/{{$sp->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->
@@ -285,21 +284,21 @@
 
                                                     <div class="product-info text-left">
                                                         <h3 class="name">
-                                                        <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
+                                                        <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
                                                         </h3>
                                                         <div class="rating rateit-small"></div>
                                                         <div class="description"></div>
 
                                                         <div class="product-price">
-                                                            @if($all->promotion_price==0)
+                                                            @if($sp->promotion_price==0)
                                                                 <span class="price">
-                                                                        {{number_format($all->price)}} 
+                                                                        {{number_format($sp->price)}} 
                                                                 </span>
                                                             @else
                                                                 <span class="price">
-                                                                        {{number_format($all->price)}} 
+                                                                        {{number_format($sp->price)}} 
                                                                 </span>
-                                                                <span class="price-before-discount">{{$all->promotion_price}}</span>
+                                                                <span class="price-before-discount">{{$sp->promotion_price}}</span>
                                                             @endif
                                                         </div>
                                                         <!-- /.product-price -->
@@ -313,11 +312,11 @@
                                                                     {{-- <button class="btn btn-primary icon"  data-toggle="dropdown" type="button"> --}}
                                                                        
                                                                     
-                                                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a>
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
                                                                      <i class="fa fa-chevron-right"></i></a>
 
                                                                  
@@ -356,7 +355,7 @@
                                         <!-- /.item -->
                                     @endforeach
                                 </div>
-
+                                
                                 <!-- /.row -->
                             </div>
                             <!-- /.category-product -->
@@ -365,7 +364,7 @@
 
                         <div class="tab-pane " id="list-container">
                             <div class="category-product  inner-top-vs">
-                                @foreach( $food as $all)
+                                @foreach($sp_theoloai as $sp)
                                     <div class="category-product-inner wow fadeInUp">
                                         <div class="products">
                                             <div class="product-list product">
@@ -373,7 +372,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="">
+                                                                <img src="template/assets/images/hinh_mon_an/{{$sp->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
@@ -382,23 +381,23 @@
                                                     <div class="col col-sm-8 col-lg-8">
                                                         <div class="product-info">
                                                             <h3 class="name">
-                                                             <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
+                                                             <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
                                                             </h3>
                                                             <div class="rating rateit-small"></div>
                                                             <div class="product-price">
-                                                                    @if($all->promotion_price==0)
+                                                                    @if($sp->promotion_price==0)
                                                                     <span class="price">
-                                                                            {{$all->price}} 
+                                                                            {{$sp->price}} 
                                                                     </span>
                                                                 @else
                                                                     <span class="price">
-                                                                            {{$all->price}} 
+                                                                            {{$sp->price}} 
                                                                     </span>
-                                                                    <span class="price-before-discount">{{$all->promotion_price}}</span>
+                                                                    <span class="price-before-discount">{{$sp->promotion_price}}</span>
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->
-                                                            <div class="description m-t-10">{{$all->detail}}</div>
+                                                            <div class="description m-t-10">{{$sp->detail}}</div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
                                                                     <ul class="list-unstyled">
@@ -408,11 +407,11 @@
                                                                             </button>
                                                                             <a href="{{route('themgiohang',$all->id)}}"> Add to cart</a> --}}
 
-                                                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a>
 
                                                                
 
-                                                                             <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                             <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
                                                                              <i class="fa fa-chevron-right"></i></a>
 
                                                                         </li>
@@ -468,5 +467,5 @@
     <!-- /.container -->
 
 </div>
-
 @endsection
+@section('title','Loại Sản Phẩm')
