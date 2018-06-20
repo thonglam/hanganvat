@@ -1,4 +1,7 @@
-@extends('layout2') @section('title', $food->name) @section('content')
+@section('title', $food->name) 
+@extends('index_dbadmin')
+@section('content_admin')
+<div class="content-wrapper">
 <div class="panel panel-body">
     <section class="content">
         <div class="panel panel-default">
@@ -8,7 +11,8 @@
                 </b>
             </div>
             <div class="panel-body">
-                <form method="post" class="form-horizontal" action="{{route('edit',['id'=>$food->id])}}" enctype="multipart/form-data">
+                <form method="post" class="form-horizontal" action="{{route('editfood',$food->id)}}" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Tên sản phẩm:</label>
                         <div class="col-sm-10">
@@ -20,7 +24,7 @@
                         <label class="control-label col-sm-2" for="email">Tên loại:</label>
                         <div class="col-sm-10">
                             <select name="id_type" class="form-control">
-                                @foreach($types as $type)
+                                @foreach($type as $type)
                                 <option value="{{$type->id}}" @if($type->id == $food->id_type) selected @endif>{{$type->name}}</option>
                                 @endforeach
                             </select>
@@ -88,6 +92,10 @@
                                 <label>
                                     <input type="checkbox" name="today" value="1" @if($food->today==1) checked @endif > Hôm nay?
                                 </label>
+                                &emsp;
+                                   <label>
+                                    <input type="checkbox" name="new" value="1" @if($food->new==1) checked @endif > Hàng mới
+                                </label> 
                             </div>
                         </div>
                     </div>
@@ -96,10 +104,10 @@
                             <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </div>
-                    {{@csrf_field()}}
                 </form>
             </div>
         </div>
     </section>
+</div>
 </div>
 @endsection
