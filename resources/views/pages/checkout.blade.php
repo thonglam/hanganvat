@@ -62,7 +62,7 @@
 								<div class="panel-body">
 									<div>
 									@if(Session::has('cart'))
-									@foreach($product as $cart)
+									@foreach($monan_cart as $cart)
 									<!--  one item	 -->
 										<div class="media">
 											<img width="25%" src="template/assets/images/hinh_mon_an/{{$cart['item'][

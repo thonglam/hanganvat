@@ -19,7 +19,10 @@
 
 					<div class="row">
 						<div class="col-sm-4">
-							<img src="template/assets/images/hinh_mon_an/{{$food->image}}" alt="">
+							<img src="../template/assets/images/hinh_loai_mon_an/{{$food->image}}" width="250px" height="200px">
+
+							
+
 						</div>
 						<div class="col-sm-8">
 							<div class="single-item-body">
@@ -97,7 +100,7 @@
 								<div class="col-sm-4">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="{{route('detail',$matt->id)}}"><img src="template/assets/images/hinh_mon_an/{{$matt->image}}" alt=""></a>
+										<a href="{{route('detail',$matt->id)}}"><img src="../template/assets/images/hinh_mon_an/{{$matt->image}}" width="250px" height="200px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$matt->name}}</p>

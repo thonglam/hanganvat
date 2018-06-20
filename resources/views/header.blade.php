@@ -94,9 +94,9 @@
 
                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-                                <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a>
+                                {{-- <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a> --}}
 
-                                {{-- <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
+                                <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                                 
 
                             </div>
@@ -205,7 +205,8 @@
                         <div class="nav-outer">
                             <ul class="nav navbar-nav">
                                 <li class="active dropdown yamm-fw">
-                                    <a href="{{route('trang_chu')}}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                    {{-- <a href="#" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Trang chủ</a> --}}
+                                    <a href="{{route('trang_chu')}}"> Trang chủ </a>
                                 </li>
                                 <li class="dropdown yamm">
                                     <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Danh Sách Sản Phẩm</a>
