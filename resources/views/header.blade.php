@@ -65,16 +65,16 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
                     <div class="contact-row">
                         <div class="phone inline">
-                            <i class="icon fa fa-phone"></i> (400) 888 888 868
+                            <i class="icon fa fa-phone"></i> (404) 888 888 868
                         </div>
                         <div class="contact inline">
-                            <i class="icon fa fa-envelope"></i> saler@unicase.com
+                            <i class="icon fa fa-envelope"></i> ThienThong@gmail.com
                         </div>
                     </div>
                     <!-- /.contact-row -->
                     <!-- ============================================================= SEARCH AREA ============================================================= -->
                     <div class="search-area">
-                        <form method="get" action="{{route('search')}}"">
+                        <form method="get" action="{{route('search')}}">
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
@@ -94,10 +94,9 @@
 
                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-                                <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a>
+                                <!-- <a class="search-button"  action="{{route('search')}}"> </a> -->
 
-                                {{-- <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
-                                
+                                <button class="search-button" type="submit" id="searchsubmit"></button>
 
                             </div>
                         </form>
