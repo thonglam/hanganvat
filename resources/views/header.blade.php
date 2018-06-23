@@ -94,16 +94,7 @@
 
                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-<<<<<<< HEAD
-                                {{-- <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a> --}}
-
-                                <button class="fa fa-search" type="submit" id="searchsubmit"></button>
-                                
-=======
-                                <!-- <a class="search-button"  action="{{route('search')}}"> </a> -->
-
                                 <button class="search-button" type="submit" id="searchsubmit"></button>
->>>>>>> ee49adc4722780cc7e501144b0c1b49288549185
 
                             </div>
                         </form>
