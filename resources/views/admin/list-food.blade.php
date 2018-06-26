@@ -11,11 +11,12 @@
       <th scope="col">Giá</th>
       <th scope="col">Giá khuyến mãi</th>
       <th scope="col">Đơn vị tính</th>
+      <th scope="col">Khuyến mãi thêm</th>
       <th scope="col">Hành động</th>
     </tr>
   </thead>
-  @foreach($foods as $food)
   <tbody>
+  @foreach($foods as $food)
     <tr>
       <th scope="row">{{$stt++}}</th>
       <td>{{$food->name}}</td>
@@ -23,13 +24,15 @@
       <td>{{$food->price}}</td>
       <td>{{$food->promotion_price}}</td>
       <td>{{$food->unit}}</td>
+      <td>{{$food->promotion}}</td>
       <td>
         <a href="{{route('edit_food',$food->id)}}">Sửa</a>
+        &emsp;&emsp;
         <a href="{{route('listfood',$food->id)}}">Xóa</a>
       </td>
     </tr>
-  </tbody>
   @endforeach
+  </tbody>
 </table>
 </div>
 @endsection

@@ -89,7 +89,7 @@
       "infoEmpty": "Không có bản ghi nào!!!",
       "infoFiltered": "(Đã lọc từ MAX total bản ghi)"
     },
-    "pageLength": 25
+    "pageLength": 10
   });
 </script>
 </body>
