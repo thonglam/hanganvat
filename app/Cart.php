@@ -16,19 +16,34 @@ class Cart
 		}
 	}
 
-	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->unit_price, 'item' => $item];
+	public function add($item, $id, $quanity){
+		$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
+		if($this->items){
+			if(array_key_exists($id, $this->items)){
+				$giohang = $this->items[$id];
+			}
+		}
+		$giohang['qty'] = $giohang['qty'] + $quanity;
+		$giohang['price'] = $item->price * $giohang['qty'];
+		$this->items[$id] = $giohang;
+		$this->totalQty = $this->totalQty + $quanity;
+		$this->totalPrice += $item->price;
+	}
+
+	public function addone($item, $id){
+		$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$giohang = $this->items[$id];
 			}
 		}
 		$giohang['qty']++;
-		$giohang['price'] = $item->unit_price * $giohang['qty'];
+		$giohang['price'] = $item->price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty++;
-		$this->totalPrice += $item->unit_price;
+		$this->totalPrice += $item->price;
 	}
+
 	//xóa 1
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;

@@ -67,10 +67,13 @@
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option> --}}
-
+								<form action="{{route('themgiohang',$food->id)}}" method="GET"> 
 									Số lượng: <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5">
 								{{-- </select> --}}
-								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+
+								<a class="add-to-cart" href="{{route('themgiohang',$food->id)}}"><i class="fa fa-shopping-cart"></i></a>
+								<button type="submit">Đặt hàng</button>
+								</form>
 								<div class="clearfix"></div>
 							</div>
 						</div>

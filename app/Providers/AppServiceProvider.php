@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
      public function boot()
         {
-            view()->composer('header',function($view){
+            view()->composer(['header','pages.checkout'],function($view){
             $dang_monan = FoodType::all();
 
                 

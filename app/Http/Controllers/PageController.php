@@ -9,6 +9,7 @@ use App\FoodType;
 use App\Cart;
 use App\Bill;
 use App\BillDetail;
+use App\News;
 use Session;
 
 class PageController extends Controller
@@ -103,7 +104,23 @@ class PageController extends Controller
 
         $oldCart = Session('cart') ? Session::get('cart') :null;
         $cart = new Cart($oldCart);
-        $cart->add($product, $id);
+        $quantity = $req->quantity;
+        //dd($req->quantity);
+        $cart->add($product, $id , $quantity);
+        $req->session()->put('cart',$cart);
+        return redirect()->back();
+        //return view('pages.shoppingcart',compact('ds'));
+        // return view('pages.shoppingcart');
+    }
+
+    function getShoppingCartOne(Request $req,$id){
+        $product = foods::find($id);
+
+
+
+        $oldCart = Session('cart') ? Session::get('cart') :null;
+        $cart = new Cart($oldCart);
+        $cart->addone($product, $id);
         $req->session()->put('cart',$cart);
         return redirect()->back();
         //return view('pages.shoppingcart',compact('ds'));
@@ -125,18 +142,25 @@ class PageController extends Controller
         return redirect()->back();
     }
 
-    // public function getCheckout(){
-    //     return view('pages.shoppingcart');
-    // }
-
-      function getCheckout(){
-        return view('pages.checkout');
+    public function getCheckout(){
+        if(Session('cart')){
+                $oldCart = Session::get('cart');
+                $cart = new Cart($oldCart);
+        return view('pages.checkout',['monan_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
     }
+}
+
+    //   function getCheckout(){
+
+    //     return view('pages.checkout');
+    // }
 
 
     function getInfo(){
         return view('pages.info');
     }
+
+
     function getContact(){
         return view('pages.contact');
     }
@@ -155,7 +179,7 @@ class PageController extends Controller
 
         $customer_bill->date_order = date('Y-m-d');
 
-        $customer_bill->toal = $cart->totalPrice;
+        $customer_bill->total = $cart->totalPrice;
 
         $customer_bill->payment_method = $req->payment_method;
 
@@ -180,8 +204,15 @@ class PageController extends Controller
         }   
 
         Session::forget('cart');
-        return redirect()->back()->with('thongbao','Đặt hàng thành công');
-
+        return redirect()->back()->with('alert', 'Deleted!');
 
     }
+
+     public function getNews($id)
+     {
+        $news = news::where('id')->get();
+
+        return view('pages.news',compact('news'));
+     }
+ 
 }

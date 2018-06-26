@@ -47,6 +47,11 @@ Route::get('add-to-cart/{id}',[
     'uses'=>'PageController@getShoppingCart'
 ]);
 
+Route::get('add-to-cart-one/{id}',[
+    'as'=>'themgiohangone',
+    'uses'=>'PageController@getShoppingCartOne'
+]);
+
 
 
 Route::get('del-cart/{id}',[
@@ -73,6 +78,11 @@ Route::post('dat-hang',[
     'as' => 'dathang',
     'uses'=>'PageController@postCheckout'
 
+]);
+
+Route::get('news/{id}',[
+    'as' => 'news',
+    'uses' => 'PageController@getNews'
 ]);
 
 

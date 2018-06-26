@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BillDetail extends Model
 {
     protected $table = "bill_detail";
+    public $timestamps = false;
 
     public function food(){
     	return $this->belongsTo('App\Food','id_food','id');

@@ -94,17 +94,15 @@
 
                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-<<<<<<< HEAD
                                 {{-- <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a> --}}
 
-                                <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+                        {{--         <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
                                 
-=======
-                                <!-- <a class="search-button"  action="{{route('search')}}"> </a> -->
+                               <button class="search-button" type="submit" id="searchsubmit"></button>
 
-                                <button class="search-button" type="submit" id="searchsubmit"></button>
->>>>>>> ee49adc4722780cc7e501144b0c1b49288549185
+                                {{-- <a class="search-button"  action="{{route('search')}}"> </a> --}}
 
+                            
                             </div>
                         </form>
                     </div>
@@ -142,7 +140,7 @@
                                                 <div class="col-xs-4">
                                                     <div class="image">
                                                         <a href="{{route('detail',$food['item']['id'])}}">
-                                                            <img src="template/assets/images/{{$food['item']['name']}}" alt="">
+                                                            <img src="template/assets/images/hinh_mon_an/{{$food['item']['image']}}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -151,7 +149,10 @@
                                                     <h3 class="name">
                                                         <a href="index.php?page-detail">{{$food['item']['name']}}</a>
                                                     </h3>
-                                                    <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div>
+                                                    {{-- <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div> --}}
+
+                                                    <span class="cart-item-amount">{{$food['qty']}}*<span>{{$food['item']['price']}}</span></span>
+
                                                 </div>
                                                 <div class="col-xs-1 action">
                                                     <a href="{{route('xoagiohang',$food['item']['id'])}}">
@@ -167,12 +168,14 @@
 
                                     <div class="clearfix cart-total">
                                         <div class="pull-right">
-                                            <span class="text">Sub Total :</span>
-                                            <span class='price'>@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif đồng</span>
+                                            <span class="text">Tổng tiền:</span>
+                                           {{--  <span class='price'>@if(Session::has('cart')){{number_format($totalPrice)}} @else 0 @endif đồng</span> --}}
+
+                                           <span class="cart-total-value">{{Session('cart')->totalPrice}}</span>
                                         </div>
                                         <div class="clearfix"></div>    
 
-                                    <a href="#" class="btn btn-upper btn-primary btn-block m-t-20">Đặt Hàng</a>
+                                    <a href="{{route('dathang')}}" class="btn btn-upper btn-primary btn-block m-t-20">Đặt Hàng</a>
                                     </div>
                                     <!-- /.cart-total-->
                                 @endif
