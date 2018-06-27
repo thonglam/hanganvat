@@ -87,9 +87,11 @@ Route::get('news/{id}',[
 
 
 // ====================BackEnd=====================
+
+
 // -------------------Admin------------------
 Route::get('/admin', function(){
-    return view('index_dbadmin');
+    return view('admin.masteradmin');
 });
 Route::get('/user', function(){
     return view('index_dbuser');
@@ -121,30 +123,18 @@ Route::get('list-food/{id}',[
     'as' =>'listfood',
     'uses'=>'AdminController@getDeleteFood'
 ]);
-
-// ----------------Shipper-----------------
 Route::get('list-bill',[
-    'as' =>'list_bill',
-    'uses' =>'AdminController@getlistbill'
+    'as' =>'list-bill',
+    'uses'=>'AdminController@getListbill'
 ]);
 
-Route::get('listship-bill',[
-    'uses'=>'ShipperController@getListBill',
-    'as' => 'listship-bill'
+
+//----------------User------------------
+Route::get('change-pass/{id}',[
+    'as' =>'changepass',
+    'uses'=>'UserController@getchangepass'
 ]);
-Route::get('active-bill',[
-    'as' =>'active-bill',
-    'uses'=>'ShipperController@getActiveBill'
-]);
-Route::get('update-shipper',[
-    'as' =>'update-shipper',
-    'uses'=>'ShipperController@getUpdateShipper'
-]);
-Route::get('listuser-bill',[
-    'uses'=>'UserController@getListBill',
-    'as' => 'listuser-bill'
-]);
-Route::get('update-user',[
-    'as' =>'update-user',
-    'uses'=>'ShipperController@getUpdateShipper'
+Route::post('change-pass/{id}',[
+    'as' =>'change-pass',
+    'uses'=>'UserController@postchangepass'
 ]);

@@ -5,17 +5,19 @@ use App\food;
 use Validator;
 use Hash;
 use Auth;
+use App\User;
 use App\Foods;
 use App\FoodType;
 use App\PageUrl;
 use App\Functions;
 use App\Bill;
+use App\BillDetail;
 class AdminController extends Controller
 {
     function getEditFood($id){ 
         $type = FoodType::all();
         $food = Foods::where(['id'=>$id])->first();
-        return view('admin.edit-food', compact('food','type'));
+        return view('admin.admin.edit-food', compact('food','type'));
     }
     function postEditFood(Request $req){
         $id = $req->id;
@@ -27,7 +29,6 @@ class AdminController extends Controller
                 ['id','<>',$id],
                 ['name','=',$name]
             ])->first();
-            //dd($foodCheck);
             if(!empty($foodCheck)){
                 return redirect()->route('home')->with([
                     'error'=>'Tên món ăn tồn tại'
@@ -67,7 +68,7 @@ class AdminController extends Controller
     }
     function getAddFood(){
         $types = FoodType::all();
-        return view('admin.add-food', compact('types'));
+        return view('admin.admin.add-food', compact('types'));
     }
     function postAddFood(Request $req){
         $food = new Foods();
@@ -96,11 +97,12 @@ class AdminController extends Controller
     function getListFood(){
         $stt =1;
         $foods = Foods::with('foodType')->get();
-        return view('admin.list-food',compact('foods','stt'));
+        return view('admin.admin.list-food',compact('foods','stt'));
     }
-    function getlistbill(){
+    function getListbill(){
         $stt =1;
-        $bill = Bill::all();
-        return view('admin.list-bill',compact('bill','stt'));
+        $all = BillDetail::join('bills','bills.id','=','bill_detail.id_bill')->get();
+        // dd($all);
+        return view('admin.admin.list-bill',compact('all','stt'));
     }
 }

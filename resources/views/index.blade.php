@@ -78,7 +78,7 @@
 
 	<!-- For demo purposes – can be removed on production -->
 	
-	<script src="{{URL::asset('switchstylesheet/switchstylesheet.js')}}"></script>
+	<script src="{{URL::asset('template/switchstylesheet/switchstylesheet.js')}}"></script>
 	
 	<script>
 		$(document).ready(function(){ 
