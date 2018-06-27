@@ -94,7 +94,7 @@
 
                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
 
-<<<<<<< HEAD
+
                                 {{-- <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a> --}}
 
                         {{--         <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
@@ -102,9 +102,9 @@
                                <button class="search-button" type="submit" id="searchsubmit"></button>
 
                                 {{-- <a class="search-button"  action="{{route('search')}}"> </a> --}}
-=======
-                                <button class="search-button" type="submit" id="searchsubmit"></button>
->>>>>>> ba02a357415fde2f674a871120657db6dbf9ea27
+
+                                
+
 
                             
                             </div>
@@ -144,14 +144,14 @@
                                                 <div class="col-xs-4">
                                                     <div class="image">
                                                         <a href="{{route('detail',$food['item']['id'])}}">
-                                                            <img src="template/assets/images/hinh_mon_an/{{$food['item']['image']}}" alt="">
+                                                            <img src="../template/assets/images/hinh_mon_an/{{$food['item']['image']}}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-7">
 
                                                     <h3 class="name">
-                                                        <a href="index.php?page-detail">{{$food['item']['name']}}</a>
+                                                        <a href="{{route('detail',$food['item']['id'])}}">{{$food['item']['name']}}</a>
                                                     </h3>
                                                     {{-- <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div> --}}
 

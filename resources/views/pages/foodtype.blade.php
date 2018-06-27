@@ -270,7 +270,7 @@
                                                     <div class="product-image">
                                                         <div class="image">
                                                             <a href="{{route('detail',$sp->id)}}">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$sp->image}}" alt="" width="250px" height="200px"> 
+                                                                <img src="../upload/{{$sp->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->

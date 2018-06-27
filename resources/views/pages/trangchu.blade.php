@@ -167,7 +167,7 @@
                                 </div>
                                 <!-- /.item -->
 
-                                <div class="item" style="background-image: url('template/assets/images/advertisement/1.jpg');">
+                                <div class="item" style="background-image: url('../template/assets/images/advertisement/1.jpg');">
 
                                 </div>
                                 <!-- /.item -->
@@ -271,7 +271,7 @@
                                                     <div class="product-image">
                                                         <div class="image">
                                                             <a href="{{route('detail',$all->id)}}">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="" width="250px" height="200px"> 
+                                                                <img src="upload/{{$all->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->

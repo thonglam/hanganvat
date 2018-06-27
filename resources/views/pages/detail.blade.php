@@ -19,7 +19,7 @@
 
 					<div class="row">
 						<div class="col-sm-4">
-							<img src="../template/assets/images/hinh_loai_mon_an/{{$food->image}}" width="250px" height="200px">
+							<img src="../upload/{{$food->image}}" width="250px" height="200px">
 
 							
 
@@ -48,7 +48,7 @@
 
                                                 @endif
 							</p>
-							<div class="space20">&nbsp;</div>
+							{{-- <div class="space20">&nbsp;</div> --}}
 
 							<p>Chọn lựa </p>
 							<div class="single-item-options">
@@ -59,6 +59,8 @@
 									<option value="lon">Lớn</option>
 									
 								</select>
+
+								<div class="space20">&nbsp;</div> 
 								
 								{{-- <select class="wc-select" name="color"> --}}
 									{{-- <option>Số lượng</option>
@@ -68,11 +70,16 @@
 									<option value="4">4</option>
 									<option value="5">5</option> --}}
 								<form action="{{route('themgiohang',$food->id)}}" method="GET"> 
-									Số lượng: <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5">
-								{{-- </select> --}}
+									Số lượng: <div class="space20">&nbsp;</div>  <p> <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5"> 
 
+								{{-- </select> --}}
+								<button type="submit">
 								<a class="add-to-cart" href="{{route('themgiohang',$food->id)}}"><i class="fa fa-shopping-cart"></i></a>
-								<button type="submit">Đặt hàng</button>
+								Thêm vào giỏ hàng
+								</button> </p>
+
+								
+        					
 								</form>
 								<div class="clearfix"></div>
 							</div>
@@ -94,7 +101,8 @@
 						</div>
 					</div>
 					<div class="space50">&nbsp;</div>
-					<div class="beta-products-list">
+
+					{{-- <div class="beta-products-list">
 						<h4>Món ăn tương tự</h4>
 
 						<div class="row">
@@ -132,45 +140,30 @@
 
 						<div class="row">{{$sp_tuongtu->links()}}</div>
 						
-					</div> <!-- .beta-products-list -->
+					</div> <!-- .beta-products-list --> --}}
 				</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
-						<h3 class="widget-title">Best Sellers</h3>
+						<h3 class="widget-title">Món ăn tương tự</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+								@foreach($sp_tuongtu as $matt)
+									<div class="media beta-sales-item">
+									<a class="pull-left" href="{{route('detail',$matt->id)}}"><img src="../upload/{{$matt->image}}" width="250px" height="200px ></a>
 									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
+										{{$matt->name}}
+										{{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
 									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
 									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
+								@endforeach
+								<div class="row">{{$sp_tuongtu->links()}}</div>
 							</div>
+							
 						</div>
+						<
 					</div> <!-- best sellers widget -->
-					<div class="widget">
+
+					{{-- <div class="widget">
 						<h3 class="widget-title">New Products</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
@@ -204,7 +197,7 @@
 								</div>
 							</div>
 						</div>
-					</div> <!-- best sellers widget -->
+					</div> <!-- best sellers widget --> --}}
 				</div>
 			</div>
 		</div> <!-- #content -->

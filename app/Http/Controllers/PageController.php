@@ -78,7 +78,7 @@ class PageController extends Controller
     function getDetailFood($id){
         $food = foods::where('id',$id)->first();
 
-        $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(5);
+        $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(3);
         
         // dd($food);
         // $sp_tuongtu =foodType::with('foods')->get();
