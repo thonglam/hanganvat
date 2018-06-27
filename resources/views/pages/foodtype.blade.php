@@ -7,6 +7,7 @@
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
                     <h3 class="section-title">Menu món ăn</h3>
+                  
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
                         <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
@@ -166,7 +167,7 @@
                                 </div>
                                 <!-- /.item -->
 
-                                <div class="item" style="background-image: url('template/assets/images/advertisement/1.jpg');">
+                                <div class="item" style="background-image: url('../template/assets/images/advertisement/1.jpg');">
 
                                 </div>
                                 <!-- /.item -->
@@ -228,7 +229,7 @@
                                 <div class="lbl-cnt">
                                     <span class="lbl">Sort by</span>
                                     <div class="fld inline">
-                                        <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
+                                        <div class="dropdown dropdown-smsp dropdown-med dropdown-white inline">
                                             <button data-toggle="dropdown" type="button" class="btn dropdown-toggle">
                                                 Mới nhất
                                                 <span class="caret"></span>
@@ -286,7 +287,7 @@
                                                         <h3 class="name">
                                                         <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
                                                         </h3>
-                                                        <div class="rating rateit-small"></div>
+                                                        <div class="rating rateit-smsp"></div>
                                                         <div class="description"></div>
 
                                                         <div class="product-price">
@@ -307,12 +308,26 @@
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
-                                                            <ul class="list-unstyled=">
-                                                                {{-- <li class="add-cart-button btn-group"> --}}
-                                                                    {{-- <button class="btn btn-primary icon"  data-toggle="dropdown" type="button"> --}}
+                                                            
+
+                                                            {{-- <button type="button" class="btn btn-default btn-sm" >
+          <span class="glyphicon glyphicon-shopping-cart" style="color: #3498db;"></span> Thêm vào giỏ hàng
+
+        </button> --}}
+
+                                                                        <li class="add-cart-button btn-group">
+                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
+                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
+
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+
+                                                                            {{-- </button> --}}
+                                                                            {{-- <a href="{{route('themgiohang',$sp->id)}}"></a> --}}
+
+                                                                        </li>
                                                                        
                                                                     
-                                                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
 
                                                                
 
@@ -326,9 +341,9 @@
                                                                  
 
                                                                   {{--   </button> --}}
-                                                                    {{-- <a href="{{route('themgiohang',$all->id)}}">Add to cart</a> --}}
+                                                                    {{-- <a href="{{route('themgiohang',$sp->id)}}">Add to cart</a> --}}
 
-                                                                    {{-- <a class="add-cart-button btn-group" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
+                                                                    {{-- <a class="add-cart-button btn-group" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
                                                                 {{-- </li> --}}
                                                                 {{-- <li class="lnk wishlist">
                                                                     <a class="add-to-cart" href="detail.html" title="Wishlist">
@@ -341,7 +356,7 @@
                                                                         <i class="fa fa-retweet"></i>
                                                                     </a>
                                                                 </li> --}}
-                                                            </ul>
+                                                            
                                                         </div>
                                                         <!-- /.action -->
                                                     </div>
@@ -354,8 +369,10 @@
                                         </div>
                                         <!-- /.item -->
                                     @endforeach
+
+                                    
                                 </div>
-                                
+                               
                                 <!-- /.row -->
                             </div>
                             <!-- /.category-product -->
@@ -372,7 +389,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$sp->image}}" alt="">
+                                                                <img src="../upload/{{$sp->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
@@ -381,9 +398,9 @@
                                                     <div class="col col-sm-8 col-lg-8">
                                                         <div class="product-info">
                                                             <h3 class="name">
-                                                             <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
+                                                             <a href="{{route('detail',$sp->id)}}" >{{$sp->name}}</a>
                                                             </h3>
-                                                            <div class="rating rateit-small"></div>
+                                                            <div class="rating rateit-smsp"></div>
                                                             <div class="product-price">
                                                                     @if($sp->promotion_price==0)
                                                                     <span class="price">
@@ -400,34 +417,32 @@
                                                             <div class="description m-t-10">{{$sp->detail}}</div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
-                                                                    <ul class="list-unstyled">
+                                                                    
                                                                         <li class="add-cart-button btn-group">
-                                                                            {{-- <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-                                                                                <i class="fa fa-shopping-cart"></i>
-                                                                            </button>
-                                                                            <a href="{{route('themgiohang',$all->id)}}"> Add to cart</a> --}}
+                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
+                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+
+                                                                            {{-- </button> --}}
+                                                                            {{-- <a href="{{route('themgiohang',$sp->id)}}"></a> --}}
+
+                                                                        </li>
+                                                                       
+                                                                    
+                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
 
                                                                
 
-                                                                             <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
-                                                                             <i class="fa fa-chevron-right"></i></a>
+                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
+                                                                     <i class="fa fa-chevron-right"></i></a>
 
-                                                                        </li>
+                                                                 
 
-                                                                        <li class="lnk wishlist">
-                                                                            <a class="add-to-cart" href="detail.html" title="Wishlist">
-                                                                                <i class="icon fa fa-heart"></i>
-                                                                            </a>
-                                                                        </li>
+                                                                     <div class="clearfix"></div>
 
-                                                                        <li class="lnk">
-                                                                            <a class="add-to-cart" href="detail.html" title="Compare">
-                                                                                <i class="fa fa-retweet"></i>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
+                                                                       
+                                                                  
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>
@@ -467,5 +482,6 @@
     <!-- /.container -->
 
 </div>
+<!-- /.body-content -->
 @endsection
-@section('title','Loại Sản Phẩm')
+@section('title','Trang Chủ')

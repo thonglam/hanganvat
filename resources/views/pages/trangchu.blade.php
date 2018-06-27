@@ -389,7 +389,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="">
+                                                                <img src="upload/{{$all->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
