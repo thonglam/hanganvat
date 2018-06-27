@@ -10,7 +10,7 @@
                   
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
-                        <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                       {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header m-t-20">
                                 <h4 class="widget-title">Danh sách món ăn</h4>
                             </div>
@@ -97,27 +97,23 @@
                                 <!-- /.accordion -->
                             </div>
                             <!-- /.sidebar-widget-body -->
-                        </div>
+                        </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Giá ============================================== -->
-                        <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                       <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                             <div class="widget-header">
                                 <h4 class="widget-title">Giá</h4>
                             </div>
                             <div class="sidebar-widget-body m-t-10">
                                 <ul class="list">
+
+                                    @foreach($loai as $all)
                                     <li>
-                                        <a href="#">Nhỏ hơn 100k</a>
+                                        <a href="{{route('foodtype',$all->id)}}">{{$all->name}}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Từ 100k - đến 350k</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Từ 350k - đến 500k</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lớn hơn 500k</a>
-                                    </li>
+
+                                    @endforeach
+                                    
                                 </ul>
                                 <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
                             </div>
@@ -125,7 +121,7 @@
                         </div>
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Kích thước món ăn ============================================== -->
-                        <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                       {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header">
                                 <h4 class="widget-title">Kích thước</h4>
                             </div>
@@ -143,7 +139,7 @@
                                 </ul>
                             </div>
                             <!-- /.sidebar-widget-body -->
-                        </div>
+                        </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== COLOR============================================== -->
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">

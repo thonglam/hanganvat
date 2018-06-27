@@ -39,7 +39,11 @@ class PageController extends Controller
         //$allFood = Foods::all()->paginate(1);
         // dd($allFood);
         $allFood = DB::table('foods')->paginate(12);
-        return view('pages.trangchu',compact('new_food','allFood'));
+
+        $loai = FoodType::all();
+        return view('pages.trangchu',compact('new_food','allFood','loai'));
+
+
     }
     
     function getSearch1(Request $req){
@@ -57,7 +61,11 @@ class PageController extends Controller
 
         $sp_theoloai = foods::where('id_type',$type)->get();
 
-        return view('pages.foodtype',compact('sp_theoloai'));
+        // $sp_khac = foods::where('id_type','<>',$type)->paginate(3);
+
+        $loai = FoodType::all();
+
+        return view('pages.foodtype',compact('sp_theoloai','loai'));
     }
 
     // public function getLoaisp($type){
@@ -79,6 +87,9 @@ class PageController extends Controller
         $food = foods::where('id',$id)->first();
 
         $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(3);
+
+       
+
         
         // dd($food);
         // $sp_tuongtu =foodType::with('foods')->get();
@@ -92,7 +103,7 @@ class PageController extends Controller
         // $sp_tuongtu = Foods::where('id_type',$id)->get();
         // dd($sp_tuongtu);   
 
-        return view('pages.detail',compact('food','sp_tuongtu'));
+        return view('pages.detail',compact('food','sp_tuongtu','sp_khac'));
 
         
         
