@@ -66,13 +66,7 @@
                             <label class="control-label col-sm-2" for="email">Mô tả đầy đủ:</label>
                             <div class="col-sm-10">
                                 <textarea id="detail" class="form-control" name="detail" rows="5"></textarea>
-
-                                <script>
-                                    CKEDITOR.replace('detail')
-                                </script>
                             </div>
-
-
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">

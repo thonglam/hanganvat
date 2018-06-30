@@ -10,7 +10,7 @@ class BillDetail extends Model
     public $timestamps = false;
 
     public function food(){
-    	return $this->belongsTo('App\Food','id_food','id');
+    	return $this->belongsTo('App\Foods','id_food','id');
     }
 
     public function bill(){

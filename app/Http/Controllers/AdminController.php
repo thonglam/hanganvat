@@ -45,7 +45,6 @@ class AdminController extends Controller
             $food->today = $req->today==1 ? 1 : 0;
             $food->new = $req->new==1 ? 1 : 0;
             if($req->hasFile('image')){
-                //upload
                 $file_name = $req->file('image')->getClientOriginalName();
                 $req->file('image')->move('upload',$file_name);
 
@@ -101,8 +100,32 @@ class AdminController extends Controller
     }
     function getListbill(){
         $stt =1;
-        $all = BillDetail::join('bills','bills.id','=','bill_detail.id_bill')->get();
-        // dd($all);
+        $all = Bill::all();
         return view('admin.admin.list-bill',compact('all','stt'));
+    }
+    function getdetailbill($id){
+        $stt =1;
+        $bills = Bill::find($id);
+        return view('admin.admin.bill-detail',compact('bills','stt'));
+    }
+    function getuser(){
+        $stt = 1;
+        $users = User::all();
+        return view('admin.admin.list-user', compact('users','stt'));
+    }
+    function getchangrole($id)
+    {
+        $user = User::find($id);
+        return view('admin.admin.edit-user',compact('user'));
+    }
+    function postchangrole(Request $req,$id)
+    {
+        $id = $req->id;
+        $user = User::find($id);
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->role = $req->role;
+        $user->update();
+        return redirect()->route('list-user');
     }
 }

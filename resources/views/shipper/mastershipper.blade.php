@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Người dùng</title>
+    <title>Giao hàng</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{URL::asset('public/admincss/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Người dùng</a>
+                <a class="navbar-brand" href="index.html">Giao hàng</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -66,16 +66,19 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Hóa đơn<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{route('List-bill')}}">Hóa đơn đã đặt</a>
+                                    <a href="{{route('list-Bill')}}">Hóa đơn có thể nhận</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('list_Bill')}}">Hóa đơn có thể trả</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Người giao hàng<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">Thông tin người dùng</a>
+                                    <a href="">Thông tin người giao hàng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -93,7 +96,7 @@
                 <div class="row">
                  
                     <!-- Content -->
-                    @yield('content_user')
+                    @yield('content_shipper')
                     <!-- End Content -->
 
                 </div>

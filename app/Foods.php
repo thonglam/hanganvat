@@ -14,6 +14,6 @@ class Foods extends Model
     }
 
     public function billdetail(){
-    	return $this->hasMany('App\BillDetaile','id_food','id');
+    	return $this->hasMany('App\BillDetail','id_food','id');
     }
 }

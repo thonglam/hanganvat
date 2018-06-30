@@ -24,7 +24,7 @@
      <tr>
       <th scope="row">{{$stt++}}</th>
       <td>{{$bill->name}}</td>
-      <td>{{$bill->date_oder}}</td>
+      <td>{{$bill->date_order}}</td>
       <td>{{$bill->total}}</td>
 
       @if($bill->status == 0)
@@ -35,19 +35,15 @@
 
       <td>Đang giao hàng</td>
 
-      @elseif($bill->status == 2)
+      @else($bill->status == 2)
 
       <td>Đã giao hàng</td>
-
-      @else
-
-      <td>Đã hủy đơn hàng</td>
 
       @endif
 
       <td>Shipper</td>
       <td>
-        <a href="#">Chi tiết hóa đơn</a>
+        <a href="{{ route('detail-bill',$bill->id) }}">Chi tiết hóa đơn</a>
       </td>
     </tr>
     @endforeach

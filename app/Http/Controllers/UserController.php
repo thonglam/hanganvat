@@ -1,16 +1,17 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Bill;
-use App\User;
+use Validator;
 use Hash;
+use Auth;
+use App\User;
+use App\Foods;
+use App\FoodType;
+use App\Functions;
+use App\Bill;
+use App\BillDetail;
 class UserController extends Controller
 {
-	function getListBill(){
-		$stt =1;
-		$foods = Bill::getall()->paginate(10);
-		return view('user.listuser-bill',compact('stt'));
-	}
 	function getchangepass($id)
 	{
 		$user = User::find($id);
@@ -29,4 +30,14 @@ class UserController extends Controller
 		$user->update();
 		return redirect('/');
 	}
+	function getListbill(){
+        $stt =1;
+        $all = Bill::all();
+        return view('user.user.list-bill',compact('all','stt'));
+    }
+    function getdetailacount($id)
+    {
+    	$user = user::find($id);
+    	return view('user.user.detail-acount',compact('user'));
+    }
 }

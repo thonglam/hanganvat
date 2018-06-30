@@ -7,22 +7,22 @@
     <title>Quản Lý</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ url('public/admincss/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('public/admincss/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="{{ url('public/admincss/bower_components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{ url('public/admincss/dist/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('public/admincss/dist/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ url('public/admincss/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{URL::asset('public/admincss/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- DataTables CSS -->
-    <link href="{{ url('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="{{ url('public/admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('public/admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -87,7 +87,7 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Danh sách người dùng</a>
+                                    <a href="list-user">Danh sách người dùng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -119,20 +119,20 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="{{ url('public/admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ url('public/admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{ url('public/admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="{{ url('public/admincss/dist/js/sb-admin-2.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/dist/js/sb-admin-2.js') }}"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="{{ url('public/admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

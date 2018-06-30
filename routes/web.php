@@ -51,9 +51,6 @@ Route::get('add-to-cart-one/{id}',[
     'as'=>'themgiohangone',
     'uses'=>'PageController@getShoppingCartOne'
 ]);
-
-
-
 Route::get('del-cart/{id}',[
     'as'=>'xoagiohang',
     'uses'=>'PageController@getDelItemCart'
@@ -77,9 +74,7 @@ Route::get('contact',[
 Route::post('dat-hang',[
     'as' => 'dathang',
     'uses'=>'PageController@postCheckout'
-
 ]);
-
 Route::get('news/{id}',[
     'as' => 'news',
     'uses' => 'PageController@getNews'
@@ -94,10 +89,10 @@ Route::get('/admin', function(){
     return view('admin.masteradmin');
 });
 Route::get('/user', function(){
-    return view('index_dbuser');
+    return view('user.masteruser');
 });
 Route::get('/shipper', function(){
-    return view('index_dbshipper');
+    return view('shipper.mastershipper');
 });
 Route::get('add-food',[
     'uses'=>'AdminController@getAddFood',
@@ -127,6 +122,22 @@ Route::get('list-bill',[
     'as' =>'list-bill',
     'uses'=>'AdminController@getListbill'
 ]);
+Route::get('detail-bill/{id}',[
+    'as' =>'detail-bill',
+    'uses'=>'AdminController@getdetailbill'
+]);
+Route::get('list-user',[
+    'as' =>'list-user',
+    'uses'=>'AdminController@getuser'
+]);
+Route::get('change-role/{id}',[
+    'as' =>'change_role',
+    'uses'=>'AdminController@getchangrole'
+]);
+Route::post('change-role/{id}',[
+    'as' =>'changerole',
+    'uses'=>'AdminController@postchangrole'
+]);
 
 
 //----------------User------------------
@@ -137,4 +148,22 @@ Route::get('change-pass/{id}',[
 Route::post('change-pass/{id}',[
     'as' =>'change-pass',
     'uses'=>'UserController@postchangepass'
+]);
+Route::get('user/detail-acount/{id}',[
+    'as' =>'detailacount',
+    'uses'=>'UserController@getdetailacount'
+]);
+Route::get('List-bill',[
+    'as' =>'List-bill',
+    'uses'=>'UserController@getListbill'
+]);
+
+//----------------Shipper------------------
+Route::get('list-Bill',[
+    'as' =>'list-Bill',
+    'uses'=>'ShipperController@getListBill'
+]);
+Route::get('list_Bill',[
+    'as' =>'list_Bill',
+    'uses'=>'ShipperController@getListBillreceived'
 ]);

@@ -82,7 +82,6 @@
                                 <label>
                                     <input type="file" name="image">
                                 </label>
-                                <img src="source/img/hinh_mon_an/{{$food->image}}" height="100px">
                             </div>
                         </div>
                     </div>

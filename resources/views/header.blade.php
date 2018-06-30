@@ -15,9 +15,19 @@
                             <li>
                                 <a href="">Chào bạn {{Auth::user()->name}}</a>
                             </li>
+                            @if(Auth::user()->role == 2)
                             <li>
-                                <a href="">Đến trang quản lý</a>
+                                <a href="{{route('list-bill')}}">Đến trang quản lý</a>
                             </li>
+                            @elseif(Auth::user()->role == 1)
+                            <li>
+                                <a href="{{route('list-Bill')}}">Đến trang quản lý</a>
+                            </li>
+                            @else
+                            <li>
+                                <a href="{{-- {{route('/user')}} --}}">Đến trang quản lý</a>
+                            </li>
+                            @endif
                             <li><a class="dropdown-item" href="{{route('logout')}}"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fa fa-sign-out fa-lg"></i> Đăng xuất

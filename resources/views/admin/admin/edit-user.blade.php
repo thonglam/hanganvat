@@ -1,6 +1,6 @@
-@section('title', 'Thay đổi thông tin')
-@extends('user.masteruser')
-@section('content_user')
+@section('title', 'Đổi quyền người dùng') 
+@extends('admin.masteradmin')
+@section('content_admin')
 <div class="content-wrapper">
     <div class="panel panel-body">
         <section class="content">
@@ -11,13 +11,12 @@
                     </b>
                 </div>
                 <div class="panel-body">
-                    <form method="post" class="form-horizontal" action="{{route('change-pass',$user->id)}}" enctype="multipart/form-data">
+                    <form method="post" class="form-horizontal" action="{{route('changerole',$user->id)}}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email">Tên người dùng:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Nhập tên người dùng mới" name="name" value="{{$user->name
-                            }}">
+                                <input type="text" class="form-control"  name="name" value="{{$user->name}}" readonly="readonly">
                         </div>
                     </div>
                     <div class="form-group">
@@ -27,15 +26,12 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Mật khẩu mới:</label>
+                        <label class="control-label col-sm-2" for="email">Quyền:</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" placeholder="Mật khẩu mới" name="password" value="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Nhâp lại mật khẩu mới:</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" placeholder="Nhâp lại mật khẩu mới" name="password_confirmation" value="">
+                            <select name="role" class="form-control">
+                                <option value="0">Người dùng</option>
+                                <option value="1">Người giao hàng</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group">
