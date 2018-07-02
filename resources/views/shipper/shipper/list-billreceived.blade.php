@@ -3,7 +3,7 @@
 @section('content_shipper')
 <div class="col-lg-12">
   <h1 class="page-header">Danh sách
-    <small>Hóa đơn chưa có thể trả</small>
+    <small>Hóa đơn có thể trả</small>
   </h1>
 </div>
 <div class="content-wrapper">
@@ -28,7 +28,12 @@
         <td>{{ $bill->phone }}</td>
         <td>{{ $bill->date_order }}</td>
         <td>{{ $bill->total }}</td>
-        <td><button>Hoàn thành hóa đơn</button></td>
+        <td>
+          <form action="{{ route('ListBillre',$bill->id) }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button>Trả hóa đơn</button>
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>

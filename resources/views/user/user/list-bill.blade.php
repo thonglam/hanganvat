@@ -3,7 +3,7 @@
 @section('content_user')
 <div class="col-lg-12">
   <h1 class="page-header">Danh sách
-    <small>Hóa đơn</small>
+    <small>Hóa đơn đã đặt</small>
   </h1>
 </div>
 <div class="content-wrapper">
@@ -43,7 +43,7 @@
 
       <td>Shipper</td>
       <td>
-        <a href="{{ route('detail-bill',$bill->id) }}">Chi tiết hóa đơn</a>
+        <a href="{{ route('detailbill',$bill->id) }}">Chi tiết hóa đơn</a>
       </td>
     </tr>
     @endforeach

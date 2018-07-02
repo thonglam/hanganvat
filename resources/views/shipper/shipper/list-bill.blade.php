@@ -28,7 +28,13 @@
         <td>{{ $bill->phone }}</td>
         <td>{{ $bill->date_order }}</td>
         <td>{{ $bill->total }}</td>
-        <td><button>Nhận hóa đơn</button></td>
+        <td>
+          <form action="{{ route('listBill',$bill->id) }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="name" value="{{Auth::user()->name}}">
+            <button>Nhận hóa đơn</button>
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>

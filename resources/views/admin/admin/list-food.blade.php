@@ -15,9 +15,9 @@
         <th scope="col">Hình ảnh</th>
         <th scope="col">Giá</th>
         <th scope="col">Giá khuyến mãi</th>
-        <th scope="col">Đơn vị tính</th>
         <th scope="col">Khuyến mãi thêm</th>
-        <th scope="col">Hành động</th>
+        <th scope="col">Sửa</th>
+        <th scope="col">Xóa</th>
       </tr>
     </thead>
     <tbody>
@@ -28,12 +28,9 @@
         <td><img src="template/assets/images/hinh_mon_an/{{$food->image}}" alt="" style="width: 50px; height: auto;"></td>
         <td>{{$food->price}}</td>
         <td>{{$food->promotion_price}}</td>
-        <td>{{$food->unit}}</td>
         <td>{{$food->promotion}}</td>
-        <td>
-          <a href="{{route('edit_food',$food->id)}}">Sửa</a>
-          &emsp;&emsp;
-          <a href="{{route('listfood',$food->id)}}">Xóa</a>
+        <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('edit_food',$food->id)}}">Sửa</a></td>
+        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href="{{route('listfood',$food->id)}}">Xóa</a></td>
         </td>
       </tr>
       @endforeach

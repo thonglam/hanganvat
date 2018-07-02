@@ -35,7 +35,7 @@
       @if($user->role == 2)
       <td></td>
       @else
-      <td><a href="{{route('change_role',$user->id)}}">Cấp quyền khác</a></td>
+      <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('change_role',$user->id)}}">Cấp quyền khác</a></td>
       @endif
     </tr>
     @endforeach

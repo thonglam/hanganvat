@@ -41,4 +41,9 @@ class UserController extends Controller
     	$user = user::find($id);
     	return view('user.user.detail-acount',compact('user'));
     }
+     function getdetailbill($id){
+        $stt =1;
+        $bills = Bill::find($id);
+        return view('user.user.bill-detail',compact('bills','stt'));
+    }
 }

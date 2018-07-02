@@ -157,6 +157,10 @@ Route::get('List-bill/{email}',[
     'as' =>'List-bill',
     'uses'=>'UserController@getListbill'
 ]);
+Route::get('detail-bill/{id}',[
+    'as' =>'detailbill',
+    'uses'=>'UserController@getdetailbill'
+]);
 
 //----------------Shipper------------------
 Route::get('list-Bill',[
@@ -166,4 +170,16 @@ Route::get('list-Bill',[
 Route::get('list_Bill',[
     'as' =>'list_Bill',
     'uses'=>'ShipperController@getListBillreceived'
+]);
+Route::post('list-Bill/{id}',[
+    'as' =>'listBill',
+    'uses' =>'ShipperController@postListBill'
+]);
+Route::post('list-Billre/{id}',[
+    'as' =>'ListBillre',
+    'uses' =>'ShipperController@postListBillRe'
+]);
+Route::get('detail-acount/{id}',[
+    'as' =>'detail-acount',
+    'uses'=>'ShipperController@getdetailacount'
 ]);

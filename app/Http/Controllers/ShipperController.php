@@ -22,4 +22,24 @@ class ShipperController extends Controller
         $bills = Bill::where('status',1)->get();
         return view('shipper.shipper.list-billreceived',compact('bills','stt'));
     }
+    function postListBill(Request $request,$id)
+    {
+        $Bill = Bill::find($id);
+        $Bill ->shipper = $request ->name;
+        $Bill ->status = 1;
+        $Bill->update();
+        return redirect()->route('list-Bill');
+    }
+    function postListBillRe($id)
+    {
+        $Bill = Bill::find($id);
+        $Bill ->status = 2;
+        $Bill->update();
+        return redirect()->route('list_Bill');
+    }
+    function getdetailacount($id)
+    {
+        $user = user::find($id);
+        return view('shipper.shipper.detail-acount',compact('user'));
+    }
 }
