@@ -50,6 +50,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
+                        <li></li>
                         <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
@@ -66,16 +67,16 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Hóa đơn<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{{route('List-bill')}}">Hóa đơn đã đặt</a>
+                                    <a href="{{ route('List-bill',Auth::user()->email) }}">Hóa đơn đã đặt</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Thông tin người dùng<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="">Thông tin người dùng</a>
+                                    <a href="">Danh sách người dùng</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -91,7 +92,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                 
+
                     <!-- Content -->
                     @yield('content_user')
                     <!-- End Content -->
@@ -124,11 +125,11 @@
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
                 responsive: true
+            });
         });
-    });
     </script>
 </body>
 

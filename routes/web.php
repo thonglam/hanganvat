@@ -149,11 +149,11 @@ Route::post('change-pass/{id}',[
     'as' =>'change-pass',
     'uses'=>'UserController@postchangepass'
 ]);
-Route::get('user/detail-acount/{id}',[
+Route::get('detail-acount/{id}',[
     'as' =>'detailacount',
     'uses'=>'UserController@getdetailacount'
 ]);
-Route::get('List-bill',[
+Route::get('List-bill/{email}',[
     'as' =>'List-bill',
     'uses'=>'UserController@getListbill'
 ]);

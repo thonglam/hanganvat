@@ -25,7 +25,7 @@
                             </li>
                             @else
                             <li>
-                                <a href="{{-- {{route('/user')}} --}}">Đến trang quản lý</a>
+                                <a href="{{route('List-bill',Auth::user()->email)}}">Đến trang quản lý</a>
                             </li>
                             @endif
                             <li><a class="dropdown-item" href="{{route('logout')}}"
