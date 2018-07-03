@@ -46,14 +46,7 @@
 						</div> --}}
 
 
-						<div class="form-group">
-							<label for="email" class="col-md-4 control-label">Email</label>
-
-							<div class="col-md-6">
-								<input id="email" type="email" name="email" class="form-control" name="name" value="" required placeholder="example@gmail.com">
-
-							</div>
-						</div>
+						
 
 
 						<div class="form-group">
@@ -74,14 +67,6 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label for="shipper" class="col-md-4 control-label"> shipper</label>
-
-							<div class="col-md-6">
-								<input id="shipper" name="shipper" type="text" class="form-control"  value="" required autofocus>
-
-							</div>
-						</div>
 
 
 

@@ -210,13 +210,13 @@ class PageController extends Controller
 
         $customer_bill->name = $req->name;
 
-        $customer_bill->email = $req->email;
+        
 
         $customer_bill->address= $req->address;
 
         $customer_bill->phone = $req->phone;
 
-        $customer_bill->shipper = $req->shipper;
+       
 
         $customer_bill->date_order = date('Y-m-d');
 
