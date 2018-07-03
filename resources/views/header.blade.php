@@ -88,17 +88,10 @@
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"  href="category.html">Cách tìm:
+                                        <a class="dropdown-toggle" data-toggle="dropdown"  href="category.html">Tìm kiếm:
                                             <b class="caret"></b>
                                         </a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li role="presentation">
-                                                <a role="menuitem" tabindex="-1">Theo tên món ăn </a>
-                                            </li>
-                                            <li role="presentation">
-                                                <a role="menuitem" tabindex="-1">Theo giá</a>
-                                            </li>
-                                        </ul>
+                                        
                                     </li>
                                 </ul>
 
@@ -152,20 +145,20 @@
                                         <div class="cart-item product-summary">
                                             <div class="row">
                                                 <div class="col-xs-4">
-                                                    <div class="image">
+                                                    <div class="image" >
                                                         <a href="{{route('detail',$food['item']['id'])}}">
-                                                            <img src="../template/assets/images/hinh_mon_an/{{$food['item']['image']}}" alt="">
+                                                            <img src="upload/{{$food['item']['image']}}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-7">
 
-                                                    <h3 class="name">
-                                                        <a href="{{route('detail',$food['item']['id'])}}">{{$food['item']['name']}}</a>
+                                                    <h3 class="name" >
+                                                        <a  href="{{route('detail',$food['item']['id'])}}" >{{$food['item']['name']}}</a>
                                                     </h3>
                                                     {{-- <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div> --}}
 
-                                                    <span class="cart-item-amount">{{$food['qty']}}*<span>{{$food['item']['price']}}</span></span>
+                                                    <span class="cart-item-amount">{{$food['qty']}}*<span >{{$food['item']['price']}}</span></span>
 
                                                 </div>
                                                 <div class="col-xs-1 action">
@@ -242,15 +235,28 @@
                                         @endforeach
                                     </ul>
                                 </li>
+
+                                <li class="dropdown">
+                                    <a href="{{route('priceship')}}"> Bảng giá ship </a>
+                                </li>
+
                                 <li class="dropdown">
                                     <a href="{{route('info')}}"> Giới thiệu </a>
                                 </li>
                                 <li class="dropdown">   
                                     <a href="{{route('contact')}}">Liên hệ</a>
                                 </li>
+
+                                
                             </ul>
+
+                            {{-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 menu-right">
+                             <span class="hotline"><p><font ont-family: aricolor="#CC0000"> <img class="transparent" alt="http://hstatic.net/813/1000035813/10/2016/2-23/goi_an_dem_sai_gon.png" src="http://hstatic.net/813/1000035813/10/2016/2-23/goi_an_dem_sai_gon.png" width="22" height="21"></font><b style="outline: none; list-style-type: none; box-sizing: border-box; font-weight: bold; color: #CC0000; fal, '\'Helvetica Neue\'', Helvetica, sans-serif, sans-serif; font-size: 12pt; font-style: normal; font-variant: normal; letter-spacing: normal; line-height: 38px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: nowrap; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255)"> (028) 62 853 853  (18:45 - 1:30 sáng)</b></p></span>
+                             </div> --}}
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>
+
+
                         </div>
                         <!-- /.nav-outer -->
                     </div>

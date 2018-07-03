@@ -14,7 +14,7 @@ use Session;
 
 class PageController extends Controller
 {
-    
+
 
     public function getXoaGioHang($id){
 
@@ -33,7 +33,7 @@ class PageController extends Controller
         return redirect()->back();
     }
 
-   
+
     public function getIndex(){
         $new_food = Foods::where('today',1)->get();
         //$allFood = Foods::all()->paginate(1);
@@ -68,6 +68,17 @@ class PageController extends Controller
         return view('pages.foodtype',compact('sp_theoloai','loai'));
     }
 
+    public function getFoodDetail($detail){
+
+        $sp_theodetail = foods::where('fooddetail',$detail)->get();
+
+        // $sp_khac = foods::where('id_type','<>',$type)->paginate(3);
+
+        $loai = FoodType::all();
+
+        return view('pages.fooddetail',compact('sp_theodetail','loai'));
+    }
+
     // public function getLoaisp($type){
 
     //      $sp_theoloai = foods::where('id_type',$type)->get();
@@ -88,7 +99,7 @@ class PageController extends Controller
 
         $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(3);
 
-       
+
 
         
         // dd($food);
@@ -138,7 +149,7 @@ class PageController extends Controller
         // return view('pages.shoppingcart');
     }
 
-     
+
     
     public function getDelItemCart($id){
         $oldCart = Session::has('cart')?Session::get('cart'):null;
@@ -155,11 +166,12 @@ class PageController extends Controller
 
     public function getCheckout(){
         if(Session('cart')){
-                $oldCart = Session::get('cart');
-                $cart = new Cart($oldCart);
-        return view('pages.checkout',['monan_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+            $oldCart = Session::get('cart');
+            $cart = new Cart($oldCart);
+        // dump($cart); die;
+            return view('pages.checkout',['monan_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+        }
     }
-}
 
     //   function getCheckout(){
 
@@ -176,9 +188,23 @@ class PageController extends Controller
         return view('pages.contact');
     }
 
+    function getPriceShip(){
+        return view('pages.priceship');
+    }
+
+    function getPayMent(){
+        return view('pages.payment');
+    }
+
+     function getAreaShip(){
+        return view('pages.areaship');
+    }
+
+
+
     public function postCheckout(Request $req){
         $cart = Session::get('cart');
-       
+
 
         $customer_bill = new Bill;
 
@@ -215,15 +241,16 @@ class PageController extends Controller
         }   
 
         Session::forget('cart');
-        return redirect()->back()->with('alert', 'Deleted!');
+        return redirect()->back()->with('thongbao', 'Qúy khách đã đặt món ăn thành công');
 
+         
     }
 
-     public function getNews($id)
-     {
-        $news = news::where('id')->get();
+    public function getNews()
+    {
+        $news = news::all();
 
         return view('pages.news',compact('news'));
-     }
- 
+    }
+
 }

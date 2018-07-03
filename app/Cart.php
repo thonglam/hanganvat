@@ -27,7 +27,7 @@ class Cart
 		$giohang['price'] = $item->price * $giohang['qty'];
 		$this->items[$id] = $giohang;
 		$this->totalQty = $this->totalQty + $quanity;
-		$this->totalPrice += $item->price ;
+		$this->totalPrice += $item->price* $quanity ;
 		
 	}
 

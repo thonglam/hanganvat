@@ -7,8 +7,11 @@
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
                     <h3 class="section-title">Menu món ăn</h3>
-                  
                     <div class="sidebar-filter">
+
+
+                        
+                         <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
                         <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header m-t-20">
@@ -200,6 +203,191 @@
                         <!-- ============================================== COLOR: END ============================================== -->
 
                     </div>
+                        <!-- ============================================== Danh sách món ăn ============================================== -->
+                        {{-- <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                            <div class="widget-header m-t-20">
+                                <h4 class="widget-title">Danh sách món ăn</h4>
+                            </div>
+                            <div class="sidebar-widget-body m-t-10">
+                                <div class="accordion">
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                Món ăn khô
+                                            </a>
+                                        </div>
+                                        <!-- /.accordion-heading -->
+                                        <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Gà</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Hải sản</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Thịt bò</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.accordion-inner -->
+                                        </div>
+                                        <!-- /.accordion-body -->
+                                    </div>
+                                    <!-- /.accordion-group -->
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a href="#collapseFive" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                Món ăn nước
+                                            </a>
+                                        </div>
+                                        <!-- /.accordion-heading -->
+                                        <div class="accordion-body collapse" id="collapseFive" style="height: 0px;">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Mì</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Bánh canh</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Súp</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.accordion-inner -->
+                                        </div>
+                                        <!-- /.accordion-body -->
+                                    </div>
+                                    <!-- /.accordion-group -->
+
+                                    <div class="accordion-group">
+                                        <div class="accordion-heading">
+                                            <a href="#collapseSix" data-toggle="collapse" class="accordion-toggle collapsed">
+                                                Nước giải khát
+                                            </a>
+                                        </div>
+                                        <!-- /.accordion-heading -->
+                                        <div class="accordion-body collapse" id="collapseSix" style="height: 0px;">
+                                            <div class="accordion-inner">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Nước ngọt</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Nước khoáng</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /.accordion-inner -->
+                                        </div>
+                                        <!-- /.accordion-body -->
+                                    </div>
+                                    <!-- /.accordion-group -->
+
+                                </div>
+                                <!-- /.accordion -->
+                            </div>
+                            <!-- /.sidebar-widget-body -->
+                        </div> --}}
+                        <!-- /.sidebar-widget -->
+                        <!-- ============================================== Giá ============================================== -->
+                       {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                            <div class="widget-header">
+                                <h4 class="widget-title">Giá</h4>
+                            </div>
+                            <div class="sidebar-widget-body m-t-10">
+                                <ul class="list">
+
+                                    @foreach($loai as $l)
+                                    <li>
+                                        <a href="{{route('foodtype',$l->id)}}">{{$l->name}}</a>
+                                    </li>
+
+                                    @endforeach
+                                    
+                                </ul>
+                                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
+                            </div>
+                            <!-- /.sidebar-widget-body -->
+                        </div> --}}
+                        <!-- /.sidebar-widget -->
+                        <!-- ============================================== Kích thước món ăn ============================================== -->
+                       {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                            <div class="widget-header">
+                                <h4 class="widget-title">Kích thước</h4>
+                            </div>
+                            <div class="sidebar-widget-body m-t-10">
+                                <ul class="list">
+                                    <li>
+                                        <a href="#">Lớn</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Trung bình</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nhỏ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.sidebar-widget-body -->
+                        </div> --}}
+                        <!-- /.sidebar-widget -->
+                        <!-- ============================================== COLOR============================================== -->
+                       {{--  <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
+                            <div id="advertisement" class="advertisement">
+                                <div class="item bg-color">
+                                    <div class="container-fluid">
+                                        <div class="caption vertical-top text-left">
+                                            <div class="big-text">
+                                                Save
+                                                <span class="big">50%</span>
+                                            </div>
+
+
+                                            <div class="excerpt">
+                                                on selected items
+                                            </div>
+                                        </div>
+                                        <!-- /.caption -->
+                                    </div>
+                                    <!-- /.container-fluid -->
+                                </div>
+                                <!-- /.item -->
+
+                                <div class="item" style="background-image: url('template/assets/images/advertisement/1.jpg');">
+
+                                </div>
+                                <!-- /.item -->
+
+                                <div class="item bg-color">
+                                    <div class="container-fluid">
+                                        <div class="caption vertical-top text-left">
+                                            <div class="big-text">
+                                                Save
+                                                <span class="big">50%</span>
+                                            </div>
+
+
+                                            <div class="excerpt fadeInDown-2">
+                                                on selected items
+                                            </div>
+                                        </div>
+                                        <!-- /.caption -->
+                                    </div>
+                                    <!-- /.container-fluid -->
+                                </div>
+                                <!-- /.item -->
+
+                            </div>
+                            <!-- /.owl-carousel -->
+                        </div> --}}
+
+                        <!-- ============================================== COLOR: END ============================================== -->
+
+                    </div>
                     <!-- /.sidebar-filter -->
                 </div>
                 <!-- /.sidebar-module-container -->
@@ -265,15 +453,15 @@
                         <div class="tab-pane active " id="grid-container">
                             <div class="category-product  inner-top-vs">
                                 <div class="row">
-                                    @foreach($allFood as $all)
+                                    @foreach($sp_theodetail as $sp)
                                         <div class="col-sm-6 col-md-4 wow fadeInUp">
                                             <div class="products">
 
                                                 <div class="product">
                                                     <div class="product-image">
                                                         <div class="image">
-                                                            <a href="{{route('detail',$all->id)}}">
-                                                                <img src="upload/{{$all->image}}" alt="" width="250px" height="200px"> 
+                                                            <a href="{{route('detail',$sp->id)}}">
+                                                                <img src="../upload/{{$sp->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->
@@ -287,43 +475,39 @@
 
                                                     <div class="product-info text-left">
                                                         <h3 class="name">
-                                                        <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
+                                                        <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
                                                         </h3>
                                                         <div class="rating rateit-small"></div>
                                                         <div class="description"></div>
 
                                                         <div class="product-price">
-                                                            @if($all->promotion_price==0)
+                                                            @if($sp->promotion_price==0)
                                                                 <span class="price">
-                                                                        {{number_format($all->price)}} 
+                                                                        {{number_format($sp->price)}} 
                                                                 </span>
                                                             @else
                                                                 <span class="price">
-                                                                        {{number_format($all->price)}} 
+                                                                        {{number_format($sp->price)}} 
                                                                 </span>
-                                                                <span class="price-before-discount">{{$all->promotion_price}}</span>
+                                                                <span class="price-before-discount">{{$sp->promotion_price}}</span>
                                                             @endif
                                                         </div>
                                                         <!-- /.product-price -->
-
-                                                        
 
                                                     </div>
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
                                                             
-
-                                                            {{-- <button type="button" class="btn btn-default btn-sm" >
-          <span class="glyphicon glyphicon-shopping-cart" style="color: #3498db;"></span> Thêm vào giỏ hàng
-
-        </button> --}}
-
+                                                                {{-- <li class="add-cart-button btn-group"> --}}
+                                                                    {{-- <button class="btn btn-primary icon"  data-toggle="dropdown" type="button"> --}}
+                                                                       
+                                                                    
                                                                         <li class="add-cart-button btn-group">
                                                                            {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
                                                                                 {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
 
                                                                             {{-- </button> --}}
                                                                             {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
@@ -335,7 +519,7 @@
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
                                                                      <i class="fa fa-chevron-right"></i></a>
 
                                                                  
@@ -360,7 +544,7 @@
                                                                         <i class="fa fa-retweet"></i>
                                                                     </a>
                                                                 </li> --}}
-                                                            </ul>
+                                                            
                                                         </div>
                                                         <!-- /.action -->
                                                     </div>
@@ -374,9 +558,7 @@
                                         <!-- /.item -->
                                     @endforeach
                                 </div>
-                                <div class="row">
-                                    {{$allFood->links()}}
-                                </div>
+                                
                                 <!-- /.row -->
                             </div>
                             <!-- /.category-product -->
@@ -385,7 +567,7 @@
 
                         <div class="tab-pane " id="list-container">
                             <div class="category-product  inner-top-vs">
-                                @foreach($allFood as $all)
+                                @foreach($sp_theodetail as $sp)
                                     <div class="category-product-inner wow fadeInUp">
                                         <div class="products">
                                             <div class="product-list product">
@@ -393,7 +575,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="upload/{{$all->image}}" alt="">
+                                                                <img src="../upload/{{$sp->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
@@ -402,30 +584,30 @@
                                                     <div class="col col-sm-8 col-lg-8">
                                                         <div class="product-info">
                                                             <h3 class="name">
-                                                             <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
+                                                             <a href="{{route('detail',$sp->id)}}">{{$sp->name}}</a>
                                                             </h3>
                                                             <div class="rating rateit-small"></div>
                                                             <div class="product-price">
-                                                                    @if($all->promotion_price==0)
+                                                                    @if($sp->promotion_price==0)
                                                                     <span class="price">
-                                                                            {{number_format($all->price)}} 
+                                                                            {{number_format($sp->price)}} 
                                                                     </span>
                                                                 @else
                                                                     <span class="price">
-                                                                            {{number_format($all->price)}} 
+                                                                            {{number_format($sp->price)}} 
                                                                     </span>
                                                                     
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->
-                                                            <div class="description m-t-10">{{$all->detail}}</div>
+                                                            <div class="description m-t-10">{{$sp->detail}}</div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
-                                                                    <li class="add-cart-button btn-group">
+                                                                   <li class="add-cart-button btn-group">
                                                                            {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
                                                                                 {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
 
                                                                             {{-- </button> --}}
                                                                             {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
@@ -437,12 +619,8 @@
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
                                                                      <i class="fa fa-chevron-right"></i></a>
-
-                                                                 
-
-                                                                     <div class="clearfix"></div>
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>
@@ -463,9 +641,7 @@
                                         <!-- /.products -->
                                     </div>
                                 @endforeach
-                                <div class="row">
-                                    {{$allFood->links()}}
-                                </div>
+                                
                                 <!-- /.category-product-inner -->
                             </div>
                             <!-- /.category-product -->
@@ -484,6 +660,5 @@
     <!-- /.container -->
 
 </div>
-<!-- /.body-content -->
 @endsection
-@section('title','Trang Chủ')
+@section('title','Loại Sản Phẩm')

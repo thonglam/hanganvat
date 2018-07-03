@@ -443,38 +443,51 @@
                        
                             
                                 <div class="title-r"  >  
-                                       <span style="font-size: 50px; color: red;"> Giới thiệu về cửa hàng  </span>
+                                       <span style="font-size: 50px; color: red;"> Bảng giá ship món ăn tại cửa hàng </span>
+
+                                      <h2>(Bảng giá áp dụng trong nội thành Tp.Hồ Chí Minh)</h2> </br>
                                 </div>
 
                                 <br> 
 
-                            <br>  <span style="font-size: 16px;">   Để mang đến cho quý khách hàng những giây phút thư giãn, thưởng thức những món ăn vặt  được thoải mái, thuận tiện và tuyệt vời nhất. </span> </br> 
+                                <p><strong>• Q.3, Q.10:</strong>&nbsp;Miễn phí<br></p>
 
-                           <br>  <span style="font-size: 16px;"> Chúng tôi thành lập cửa hàng này là mô hình bán đồ Ăn vặt Online và phục vụ ăn tại cửa hàng, (Phục vụ cả hai hình thức là vừa bán hàng theo kiểu truyền thống là ăn tại chỗ và giao đến tận nơi cho khách hàng có nhu cầu khi đặt hàng qua số điện thoại đường dây nóng của chúng tôi). </span> </br> 
+                                <div><strong style="font-size: 14px;">• Q.1:</strong > 10.000 VNĐ</div>
 
-                           <br>  <span style="font-size: 16px;"> Quý khách cũng có hể chat, nhắn tin qua http://facebook.com/thonglam1176 , hoặc cũng có thể gọi trực tiếp vào cửa hàng website để đặt hàng. </span> </br> 
+                                <div><strong style="font-size: 14px;">• Q.4, 5, 11, T.Bình, P.Nhuận, B.Thạnh:&nbsp;</strong>15.000 VNĐ</div>
 
-                            <br>  <span style="font-size: 16px;"> Với những nhà cung cấp có kinh nghiệm nấu ăn trong các nhà hàng lâu năm, cùng với những con người trẻ trung và năng động, đã tạo nên một thực đơn phong phú chất lượng với nhiều món ăn vặt ngon và hấp dẫn tất cả những tín đồ ăn vặt, cũng như tất cả mọi người không kể lứa tuổi và giới tính. </span> </br> 
-                                
-                                     
-                            <br> <span style="font-size: 16px;"> Quà Vặt Việt với Slogan "Ăn Vặt Phong Cách Việt" đã thể hiện rõ nét những món ăn vặt truyền thống của người Việt Nam từ xa xưa kết hợp với hiện đại, theo kịp xu hướng mới để đáp ứng nhu cầu của các thực khách ngày nay! Đến với cửa hàng các bạn sẽ được phục vụ tận tình chu đáo từ khâu đóng gói, đến các vật dụng nhỏ nhất như cái tăm, giấy ăn...Các bạn sẽ cảm thấy thật sự hài lòng với dịch vụ của chúng tôi. </span> </br> 
-                                
-                            <br>  <span style="font-size: 16px;"> Quý khách đặt hàng vui lòng liên hệ theo địa chỉ sau:</span> </br> 
-                                     
-                                <br> ************************************************************************</br> 
-                                <br> <b> <span style="font-size: 14px;"> 80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh </span> </b></br> 
-                                     
-                               <br> <b> <span style="font-size: 14px;"> Email: thonglam1176@gmail.com.vn | info@thonglam.vn</span> </b></br>  
-                                     
-                               <br> <b> <span style="font-size: 14px;">  Website: {{-- http://www.quavatviet.com | www.quavatviet.vn</br>  --}}</span></b></br> 
-                                     
-                              <br> <b> <span style="font-size: 14px;">   Facebook: {{-- www.facebook.com/quavatviet</br>  --}}</span> </b></br> 
-                                     
-                               <br> <b> <span style="font-size: 14px;">   Điện thoại: 01254547437  /  083 83 83 011 </span> </b></br>                                      
-                               <br> <b> <span style="font-size: 14px;">  Rất hân hạnh được phục vụ quý khách!</span> </b></br> 
+                                <div><strong style="font-size: 14px;">• Q.6, T.Phú :</strong>&nbsp;20.000 VNĐ<br><strong style="font-size: 14px;">• Q.8, Gò Vấp :</strong>&nbsp;25.000 VNĐ (nhận giao đơn hàng trên 200.000đ)<br><br><strong style="font-size: 14px;">Miễn phí giao hàng</strong> đối với đơn hàng trên <strong style="font-size: 14px;">200.000 VNĐ </strong>(trừ khu vực Q.8 và Gò Vấp).<strong style="font-size: 14px;"><br><br></strong>Thời gian giao hàng từ <strong style="font-size: 14px;">25 - 40 phút</strong> (tùy khu vực xa gần).<br>
 
-                                </br>
-              
+                                    <br>
+                                    <br>
+
+                                    <div><img " src="upload/nem.png" style="display: block; margin-left: auto; margin-right: auto;" data-mce-src="upload/nem.png" height="200px;" width="350px;" data-mce-style="display: block; margin-left: auto; margin-right: auto;"></div>
+
+                                    <br>
+
+                                    Đồ ăn tại cửa hàng được đảm bảo trong các hộp kín và giấy bạc, và luôn lúc nào cũng sẽ luôn tươi rói, an toàn cho từng bũa ăn bạn dùng
+
+                                     <br>
+
+                                     <br>
+
+                                    <div style="text-align: center;" data-mce-style="text-align: center;"><img src="upload/mai.jpg" data-mce-src="upload/mai.jpg" height="200px;" width="350px;"><br></div>
+
+                                    <p><br>Quý khách hàng có thể xem {{-- <a href="http://www.foodhero.vn/pages/menu-giao-do-an-dem-foodhero" title="menu đồ ăn đêm" data-mce-href="http://www.foodhero.vn/pages/menu-giao-do-an-dem-foodhero"> --}}menu đồ ăn {{-- </a>&nbsp; --}}bằng hình ảnh, hoặc đặt món ăn trực tiếp trên website. Cửa hàng sẽ giao trong thời gian sớm nhất.<br><br></p>
+
+
+
+                                  <br><div style="text-align: center;" data-mce-style="text-align: center;"><span style="color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;" data-mce-style="color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;">• Đặt món:</span><span data-mce-style="color: #bf0606;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px; color: rgb(191, 6, 6);"><strong style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;">&nbsp;(0283) 83 83 011 </strong></span><span style="color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;" data-mce-style="color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;">&nbsp;- Hotline:&nbsp;</span><span data-mce-style="color: #bf0606;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px; color: rgb(191, 6, 6);"><strong style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;">01254547437</strong></span></div> </br>
+
+                                  <p><br></p>
+
+                                  <div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;">Hân hạnh được phục vụ quý khách!</div>
+
+                                  <div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: #333333; font-family: 'Arial, \'Helvetica Neue\', Helvetica, sans-serif', sans-serif; font-size: 14px; line-height: 20px;"><br style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;"><div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;"><span data-mce-style="color: #000080;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: rgb(0, 0, 128);"><strong style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;">Cửa hàng ăn vặt</strong></span></div><div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;"><span data-mce-style="color: #a30505;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: rgb(163, 5, 5);">Địa chỉ:</span>&nbsp;80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh</div><div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;"><span data-mce-style="color: #a30505;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: rgb(163, 5, 5);">Website:</span>&nbsp;<a href="http://www.foodhero.vn/" data-mce-href="http://www.foodhero.vn" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;"></a>&nbsp;-&nbsp;<span data-mce-style="color: #a30505;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: rgb(163, 5, 5);">Email:</span>&nbsp;<a href="mailto:foodhero.vn@gmail.com" data-mce-href="mailto:foodhero.vn@gmail.com" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;">thonglam1176@gmail.com</a></div><div style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box;"><span data-mce-style="color: #a30505;" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; color: rgb(163, 5, 5);">Fanpage:</span>&nbsp;<a href="http://www.facebook.com/FoodheroVietnam" data-mce-href="http://www.facebook.com/FoodheroVietnam" style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;" data-mce-style="padding: 0px; margin: 0px; outline: none; list-style: none; box-sizing: border-box; white-space: nowrap; color: #403d3b; text-decoration: none !important; background-color: transparent;">www.facebook.com/</a></div></div>
+
+
+
+                            
 
 
                             
@@ -499,4 +512,4 @@
 
 
 @endsection
-@section('title','Giới thiệu về cửa hàng ')
+@section('title','Bảng giá ship món ăn')

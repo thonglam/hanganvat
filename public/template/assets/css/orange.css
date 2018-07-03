@@ -21,7 +21,7 @@ a {
 .top-bar .cnt-block ul li a .caret {
   color: #f39c12;
 }
-.top-bar .cnt-block ul li .dropdown-menu li a:hover,
+.top-bar .cnt-block ul li .dropdown-menu li a:hover ,
 .top-bar .cnt-block ul li .dropdown-menu li a:focus {
   color: #f39c12;
 }

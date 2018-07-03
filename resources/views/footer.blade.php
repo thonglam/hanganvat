@@ -19,23 +19,23 @@
 						<!-- /.footer-logo -->
 
 						<div class="module-body m-t-20">
-							<p class="about-us"> Nam libero tempore, cum soluta nobis est ses eligendi optio cumque cum soluta nobis est ses eligendi optio cumque.</p>
+							<p class="about-us"> Phục vụ ân cần, nhanh chóng và tiện lơi.</p>
 
 							<div class="social-icons">
 
-								<a href="http://facebook.com/transvelo" class='active'>
+								<a href="https://www.facebook.com/chithong.lam.9" class='active'>
 									<i class="icon fa fa-facebook"></i>
 								</a>
-								<a href="#">
+								<a href="https://twitter.com/Thng96331744">
 									<i class="icon fa fa-twitter"></i>
 								</a>
-								<a href="#">
+								<a >
 									<i class="icon fa fa-linkedin"></i>
 								</a>
-								<a href="#">
+								<a >
 									<i class="icon fa fa-rss"></i>
 								</a>
-								<a href="#">
+								<a >
 									<i class="icon fa fa-pinterest"></i>
 								</a>
 
@@ -54,31 +54,28 @@
 					<!-- ============================================================= CONTACT TIMING============================================================= -->
 					<div class="contact-timing">
 						<div class="module-heading">
-							<h4 class="module-title">opening time</h4>
+							<h4 class="module-title">FOODDAY</h4>
 						</div>
 						<!-- /.module-heading -->
+					
 
 						<div class="module-body outer-top-xs">
 							<div class="table-responsive">
 								<table class="table">
 									<tbody>
 										<tr>
-											<td>Monday-Friday:</td>
-											<td class="pull-right">08.00 To 18.00</td>
+											<td><a href="{{route('info')}}">Giới thiệu</a></td>
+											
 										</tr>
 										<tr>
-											<td>Saturday:</td>
-											<td class="pull-right">09.00 To 20.00</td>
-										</tr>
-										<tr>
-											<td>Sunday:</td>
-											<td class="pull-right">10.00 To 20.00</td>
+											<td><a href="{{route('contact')}}">Liên hệ</a></td>
+											
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<!-- /.table-responsive -->
-							<p class='contact-number'>Hot Line:(400)888 868 848</p>
+							<p class='contact-number'>Hot Line:(0283) 83 83 011</p>
 						</div>
 						<!-- /.module-body -->
 					</div>
@@ -86,7 +83,7 @@
 					<!-- ============================================================= CONTACT TIMING : END ============================================================= -->
 				</div>
 				<!-- /.col -->
-
+{{-- 
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<!-- ============================================================= LATEST TWEET============================================================= -->
 					<div class="latest-tweet">
@@ -131,17 +128,61 @@
 							</div>
 						</div>
 						<!-- /.module-body -->
+
+
+
 					</div>
 					<!-- /.contact-timing -->
 					<!-- ============================================================= LATEST TWEET : END ============================================================= -->
-				</div>
+				</div> --}}
 				<!-- /.col -->
+
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<!-- ============================================================= CONTACT TIMING============================================================= -->
+					<div class="contact-timing">
+						<div class="module-heading">
+							<h4 class="module-title">Trợ giúp</h4>
+						</div>
+						<!-- /.module-heading -->
+					
+
+						<div class="module-body outer-top-xs">
+							<div class="table-responsive">
+								<table class="table">
+									<tbody>
+										<tr>
+											<td><a href="{{route('payment')}}">Hình thức thanh toán</a></td>
+											
+										</tr>
+										<tr>
+											<td><a href="{{route('priceship')}}">Bảng giá giao hàng</a></td>
+											
+										</tr>
+										<tr>
+											<td><a href="{{route('areaship')}}">Khu vực giao hàng</a></td>
+											
+										</tr>
+										<tr>
+											<td><a href="{{route('info')}}">Hương dẫn đặt món</a></td>
+											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.table-responsive -->
+							
+						</div>
+						<!-- /.module-body -->
+					</div>
+					<!-- /.contact-timing -->
+					<!-- ============================================================= CONTACT TIMING : END ============================================================= -->
+				</div>
 
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<!-- ============================================================= INFORMATION============================================================= -->
 					<div class="contact-information">
 						<div class="module-heading">
-							<h4 class="module-title">information</h4>
+							<h4 class="module-title">Thông tin liên hệ</h4>
 						</div>
 						<!-- /.module-heading -->
 
@@ -155,7 +196,7 @@
 										</span>
 									</div>
 									<div class="media-body">
-										<p>868 Any Stress,Burala Casi,Picasa USA.</p>
+										<p>80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh</p>
 									</div>
 								</li>
 
@@ -167,8 +208,8 @@
 										</span>
 									</div>
 									<div class="media-body">
-										<p>(400) 0888 888 888
-											<br>(400) 888 888 888</p>
+										<p> 01254547437
+											<br>(0283) 83 83 011</p>
 									</div>
 								</li>
 
@@ -181,12 +222,10 @@
 									</div>
 									<div class="media-body">
 										<span>
-											<a href="#">Contact @Unicase.com</a>
+											<a href="https://mail.google.com/mail/u/0/#inbox">thonglam1176@gmail.com</a>
 										</span>
 										<br>
-										<span>
-											<a href="#">Sale @Unicase.com</a>
-										</span>
+										
 									</div>
 								</li>
 
@@ -209,28 +248,17 @@
 		<div class="container">
 			<div class="col-xs-12 col-sm-6 no-padding">
 				<div class="copyright">
-					Copyright © 2014
-					<a href="home.html">Unicase Shop.</a>
-					- All rights Reserved
+					<span style="font-size: 20px;">80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh Copyright © 2018 </span>
+					<span style="font-size: 20px;"><a href="{{route('trang_chu')}}">FOODAY</a></span>
+				
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-6 no-padding">
 				<div class="clearfix payment-methods">
 					<ul>
+						
 						<li>
-							<img src="template/assets/images/payments/1.png" alt="">
-						</li>
-						<li>
-							<img src="template/assets/images/payments/2.png" alt="">
-						</li>
-						<li>
-							<img src="template/assets/images/payments/3.png" alt="">
-						</li>
-						<li>
-							<img src="template/assets/images/payments/4.png" alt="">
-						</li>
-						<li>
-							<img src="template/assets/images/payments/5.png" alt="">
+							<img src="upload/abc.png" alt="">
 						</li>
 					</ul>
 				</div>

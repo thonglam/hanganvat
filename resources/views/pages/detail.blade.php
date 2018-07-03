@@ -3,8 +3,9 @@
 <div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
-				<h6 class="inner-title"> <a href="{{route('trang_chu')}}"> Trang chủ</a> / <span>Thông tin chi tiết món ăn</span></h6>
+				<h3 class="inner-title"> <a href="{{route('trang_chu')}}"> Trang chủ</a> / <span>Thông tin chi tiết món ăn</span></h3>
 			</div>
+			
 			<div class="pull-right">
 				
 			</div>
@@ -18,8 +19,11 @@
 				<div class="col-sm-9">
 
 					<div class="row">
+						<br>
+			<br>
+			<br>
 						<div class="col-sm-4">
-							<img src="../upload/{{$food->image}}" width="250px" height="200px">
+							<img src="../upload/{{$food->image}}" width="320px" height="200px">
 
 							
 
@@ -27,7 +31,6 @@
 						<div class="col-sm-8">
 							<div class="single-item-body">
 								<p class="single-item-title"><h2 style="color: black"> {{$food->name}} </h2></p>
-								
 							</div>
 
 							<div class="clearfix"></div>
@@ -41,12 +44,13 @@
 								
 												@if($food->promotion_price==0)
 
-                                                   <span class="flash-sale "><h2 style="color: red"> {{$food->price}}đ </h2></span> 
+                                                   <span class="flash-sale "><h2 style="color: red"> {{number_format($food->price)}}đ </h2></span> 
                                                 @else
-                                                    <span class="flash-del">{{$food->price}}đ </span>
-                                                    <span class="flash-sale">{{$food->promotion_price}}đ</span>
-
+                                                    <span class="flash-del">{{number_format($food->price)}}đ </span>
+                                                   
                                                 @endif
+
+
 							</p>
 							{{-- <div class="space20">&nbsp;</div> --}}
 
@@ -149,7 +153,7 @@
 							<div class="beta-sales beta-lists">
 								@foreach($sp_tuongtu as $matt)
 									<div class="media beta-sales-item">
-									<a class="pull-left" href="{{route('detail',$matt->id)}}"><img src="../upload/{{$matt->image}}" width="250px" height="200px ></a>
+									<a class="pull-left" href="{{route('detail',$matt->id)}}"><img src="../upload/{{$matt->image}}" width="250px" height="150px ></a>
 									<div class="media-body">
 										{{$matt->name}}
 										{{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}

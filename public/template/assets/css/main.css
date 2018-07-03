@@ -4092,19 +4092,26 @@ a {
 @media (max-width: 767px) {
   .top-bar .header-top-inner {
     text-align: center;
-  }
+    color: red;
+   }
   .top-bar .header-top-inner .cnt-account {
     clear: both;
     display: inline-block;
     float: none;
     margin: auto;
     text-align: center;
+     color: red;
+
   }
   .top-bar .header-top-inner .cnt-account li {
     margin-bottom: 8px;
+     color: red;
+    
+
   }
   .top-bar .header-top-inner .cnt-block .list-inline li {
     margin: 7px 0;
+    color: red;
   }
   .main-header .logo-holder {
     text-align: center;

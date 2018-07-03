@@ -37,6 +37,12 @@ Route::get('foodtype/{type}',[
 
 ]);
 
+Route::get('fooddetail/{detail}',[
+    'as' => 'fooddetail',
+    'uses' =>'PageController@getFoodDetail'
+
+]);
+
 Route::get('chi-tiet-san-pham/{id}',[
     'as'=>'detail',
     'uses'=>'PageController@getDetailFood'
@@ -71,11 +77,28 @@ Route::get('contact',[
     'uses'=>'PageController@getContact'
 ]);
 
+Route::get('bang-gia-ship-mon-an',[
+    'as' =>'priceship',
+    'uses'=>'PageController@getPriceShip'
+]);
+
+Route::get('khu-vuc-giao-hang',[
+    'as' =>'areaship',
+    'uses'=>'PageController@getAreaShip'
+]);
+
+Route::get('hinh-thuc-thanh-toan',[
+    'as' =>'payment',
+    'uses'=>'PageController@getPayMent'
+]);
+
+
+
 Route::post('dat-hang',[
     'as' => 'dathang',
     'uses'=>'PageController@postCheckout'
 ]);
-Route::get('news/{id}',[
+Route::get('news',[
     'as' => 'news',
     'uses' => 'PageController@getNews'
 ]);

@@ -436,55 +436,21 @@
 
         
             <div class='col-md-9'>
+
+                <div class="title-r"  >  
+                                       <span style="font-size: 50px; color: red;"> Khu vực giao hàng </span>
+
+                                     
+                                </div>
+                                <br>
+                                <br>
                 <!-- ========================================== SECTION – HERO ========================================= -->
                 <!-- ========================================= SECTION – HERO : END ========================================= -->
-                <div class="clearfix filters-container m-t-10">
-                    
-                       
-                            
-                                <div class="title-r"  >  
-                                       <span style="font-size: 50px; color: red;"> Giới thiệu về cửa hàng  </span>
-                                </div>
+                <p>Cửa hàng nhận giao các quận trong nội thành Tp.Hồ Chí Minh.<br><br>Bao gồm các quận sau: Q.1, 3, 4, 5, 6, 10, 11, Tân Bình, Phú Nhuận, Bình Thạnh, Tân Phú.<br><br>Bảng giá giao hàng như sau:<br><br><strong>• Q.3, Q10:</strong>&nbsp;Miễn phí<br><strong>• Q.1:</strong> 10.000 VNĐ <br><strong>• Q.4, 5, 11, T.Bình, P.Nhuận, B.Thạnh:</strong> 15.000 VNĐ <br><strong>• Q.6, T.Phú:</strong> 20.000 VNĐ</p>
 
-                                <br> 
+                <div><strong>• Q.8, G.Vấp:</strong><span> 25.000 VNĐ (nhận hóa đơn trên 200.000Đ)</span></div>
 
-                            <br>  <span style="font-size: 16px;">   Để mang đến cho quý khách hàng những giây phút thư giãn, thưởng thức những món ăn vặt  được thoải mái, thuận tiện và tuyệt vời nhất. </span> </br> 
-
-                           <br>  <span style="font-size: 16px;"> Chúng tôi thành lập cửa hàng này là mô hình bán đồ Ăn vặt Online và phục vụ ăn tại cửa hàng, (Phục vụ cả hai hình thức là vừa bán hàng theo kiểu truyền thống là ăn tại chỗ và giao đến tận nơi cho khách hàng có nhu cầu khi đặt hàng qua số điện thoại đường dây nóng của chúng tôi). </span> </br> 
-
-                           <br>  <span style="font-size: 16px;"> Quý khách cũng có hể chat, nhắn tin qua http://facebook.com/thonglam1176 , hoặc cũng có thể gọi trực tiếp vào cửa hàng website để đặt hàng. </span> </br> 
-
-                            <br>  <span style="font-size: 16px;"> Với những nhà cung cấp có kinh nghiệm nấu ăn trong các nhà hàng lâu năm, cùng với những con người trẻ trung và năng động, đã tạo nên một thực đơn phong phú chất lượng với nhiều món ăn vặt ngon và hấp dẫn tất cả những tín đồ ăn vặt, cũng như tất cả mọi người không kể lứa tuổi và giới tính. </span> </br> 
-                                
-                                     
-                            <br> <span style="font-size: 16px;"> Quà Vặt Việt với Slogan "Ăn Vặt Phong Cách Việt" đã thể hiện rõ nét những món ăn vặt truyền thống của người Việt Nam từ xa xưa kết hợp với hiện đại, theo kịp xu hướng mới để đáp ứng nhu cầu của các thực khách ngày nay! Đến với cửa hàng các bạn sẽ được phục vụ tận tình chu đáo từ khâu đóng gói, đến các vật dụng nhỏ nhất như cái tăm, giấy ăn...Các bạn sẽ cảm thấy thật sự hài lòng với dịch vụ của chúng tôi. </span> </br> 
-                                
-                            <br>  <span style="font-size: 16px;"> Quý khách đặt hàng vui lòng liên hệ theo địa chỉ sau:</span> </br> 
-                                     
-                                <br> ************************************************************************</br> 
-                                <br> <b> <span style="font-size: 14px;"> 80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh </span> </b></br> 
-                                     
-                               <br> <b> <span style="font-size: 14px;"> Email: thonglam1176@gmail.com.vn | info@thonglam.vn</span> </b></br>  
-                                     
-                               <br> <b> <span style="font-size: 14px;">  Website: {{-- http://www.quavatviet.com | www.quavatviet.vn</br>  --}}</span></b></br> 
-                                     
-                              <br> <b> <span style="font-size: 14px;">   Facebook: {{-- www.facebook.com/quavatviet</br>  --}}</span> </b></br> 
-                                     
-                               <br> <b> <span style="font-size: 14px;">   Điện thoại: 01254547437  /  083 83 83 011 </span> </b></br>                                      
-                               <br> <b> <span style="font-size: 14px;">  Rất hân hạnh được phục vụ quý khách!</span> </b></br> 
-
-                                </br>
-              
-
-
-                            
-                            <!-- /.filter-tabs -->
-                       
-                        <!-- /.col -->
-                       
-                    
-                    <!-- /.row -->
-                </div>
+                <p><br>Free Ship đối với đơn hàng trên 200.000đ (áp dụng cho tất cả các quận, trừ quận GV).</p>
                
                 <!-- /.search-result-container -->
 
@@ -499,4 +465,4 @@
 
 
 @endsection
-@section('title','Giới thiệu về cửa hàng ')
+@section('title','Bảng giá ship món ăn')

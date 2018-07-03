@@ -369,7 +369,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$news->image}}" alt="">
+                                                                <img src="upload/{{$news->image}}">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->

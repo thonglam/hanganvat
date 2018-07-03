@@ -8,6 +8,7 @@
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
                     <h3 class="section-title">Menu món ăn</h3>
+                  
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
                         <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
@@ -19,7 +20,7 @@
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
                                             <a href="#collapseOne" data-toggle="collapse" class="accordion-toggle collapsed">
-                                                Món ăn khô
+                                                Món ăn Chính
                                             </a>
                                         </div>
                                         <!-- /.accordion-heading -->
@@ -27,13 +28,13 @@
                                             <div class="accordion-inner">
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Gà</a>
+                                                        <a href="{{route('fooddetail',1)}}">Mì</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hải sản</a>
+                                                        <a href="{{route('fooddetail',2)}}">Cơm</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Thịt bò</a>
+                                                        <a href="{{route('fooddetail',3)}}">Nui</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -45,7 +46,7 @@
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
                                             <a href="#collapseFive" data-toggle="collapse" class="accordion-toggle collapsed">
-                                                Món ăn nước
+                                                Món ăn vặt
                                             </a>
                                         </div>
                                         <!-- /.accordion-heading -->
@@ -53,13 +54,13 @@
                                             <div class="accordion-inner">
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Mì</a>
+                                                        <a href="{{route('fooddetail',4)}}">Món rán</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Bánh canh</a>
+                                                        <a href="{{route('fooddetail',5)}}">Món nướng</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Súp</a>
+                                                        <a href="{{route('fooddetail',6)}}">Món cuốn</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -72,7 +73,7 @@
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
                                             <a href="#collapseSix" data-toggle="collapse" class="accordion-toggle collapsed">
-                                                Nước giải khát
+                                                Chè và thức uống
                                             </a>
                                         </div>
                                         <!-- /.accordion-heading -->
@@ -80,10 +81,16 @@
                                             <div class="accordion-inner">
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Nước ngọt</a>
+                                                        <a href="{{route('fooddetail',7)}}">Chè </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#">Nước khoáng</a>
+                                                        <a href="{{route('fooddetail',8)}}">Sinh tố</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('fooddetail',9)}}">Hoa quả tươi</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('fooddetail',10)}}">Nước ép</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -100,32 +107,28 @@
                         </div>
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Giá ============================================== -->
-                        <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                      {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                             <div class="widget-header">
-                                <h4 class="widget-title">Giá</h4>
+                                <h4 class="widget-title"> MENU MÓN ĂN</h4>
                             </div>
                             <div class="sidebar-widget-body m-t-10">
                                 <ul class="list">
+
+                                    @foreach($loai as $all)
                                     <li>
-                                        <a href="#">Nhỏ hơn 100k</a>
+                                        <a href="{{route('foodtype',$all->id)}}">{{$all->name}}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Từ 100k - đến 350k</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Từ 350k - đến 500k</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Lớn hơn 500k</a>
-                                    </li>
+
+                                    @endforeach
+                                    
                                 </ul>
-                                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
+                                <a href="#" class="lnk btn btn-primary">Show Now</a>
                             </div>
-                            <!-- /.sidebar-widget-body -->
-                        </div>
+                            /.sidebar-widget-body
+                        </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Kích thước món ăn ============================================== -->
-                        <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                       {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header">
                                 <h4 class="widget-title">Kích thước</h4>
                             </div>
@@ -143,7 +146,7 @@
                                 </ul>
                             </div>
                             <!-- /.sidebar-widget-body -->
-                        </div>
+                        </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== COLOR============================================== -->
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
@@ -167,7 +170,7 @@
                                 </div>
                                 <!-- /.item -->
 
-                                <div class="item" style="background-image: url('template/assets/images/advertisement/1.jpg');">
+                                <div class="item" style="background-image: url('../template/assets/images/advertisement/1.jpg');">
 
                                 </div>
                                 <!-- /.item -->
@@ -271,7 +274,7 @@
                                                     <div class="product-image">
                                                         <div class="image">
                                                             <a href="{{route('detail',$all->id)}}">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="" width="250px" height="200px"> 
+                                                                <img src="upload/{{$all->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
                                                         <!-- /.image -->
@@ -308,41 +311,24 @@
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
-                                                            <ul class="list-unstyled=">
-                                                                {{-- <li class="add-cart-button btn-group"> --}}
-                                                                    {{-- <button class="btn btn-primary icon"  data-toggle="dropdown" type="button"> --}}
+                                                            <li class="add-cart-button btn-group">
+                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
+                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
+
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+
+                                                                            {{-- </button> --}}
+                                                                            {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
+
+                                                                        </li>
                                                                        
                                                                     
-                                                                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
 
                                                                
 
                                                                     <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
                                                                      <i class="fa fa-chevron-right"></i></a>
-
-                                                                 
-
-                                                                     <div class="clearfix"></div>
-
-                                                                 
-
-                                                                  {{--   </button> --}}
-                                                                    {{-- <a href="{{route('themgiohang',$all->id)}}">Add to cart</a> --}}
-
-                                                                    {{-- <a class="add-cart-button btn-group" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
-                                                                {{-- </li> --}}
-                                                                {{-- <li class="lnk wishlist">
-                                                                    <a class="add-to-cart" href="detail.html" title="Wishlist">
-                                                                        <i class="icon fa fa-heart"></i>
-                                                                    </a>
-                                                                </li> --}}
-
-                                                                {{-- <li class="lnk">
-                                                                    <a class="add-to-cart" href="detail.html" title="Compare">
-                                                                        <i class="fa fa-retweet"></i>
-                                                                    </a>
-                                                                </li> --}}
-                                                            </ul>
                                                         </div>
                                                         <!-- /.action -->
                                                     </div>
@@ -373,7 +359,7 @@
                                                     <div class="col col-sm-4 col-lg-4">
                                                         <div class="product-image">
                                                             <div class="image">
-                                                                <img src="template/assets/images/hinh_mon_an/{{$all->image}}" alt="">
+                                                                <img src="upload/{{$all->image}}" alt="">
                                                             </div>
                                                         </div>
                                                         <!-- /.product-image -->
@@ -388,47 +374,64 @@
                                                             <div class="product-price">
                                                                     @if($all->promotion_price==0)
                                                                     <span class="price">
-                                                                            {{$all->price}} 
+                                                                            {{number_format($all->price)}} 
                                                                     </span>
                                                                 @else
                                                                     <span class="price">
-                                                                            {{$all->price}} 
+                                                                            {{number_format($all->price)}} 
                                                                     </span>
-                                                                    <span class="price-before-discount">{{$all->promotion_price}}</span>
+                                                                    
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->
                                                             <div class="description m-t-10">{{$all->detail}}</div>
                                                             <div class="cart clearfix animate-effect">
                                                                 <div class="action">
-                                                                    <ul class="list-unstyled">
+                                                                   {{--  <ul class="list-unstyled">
                                                                         <li class="add-cart-button btn-group">
                                                                             {{-- <button class="btn btn-primary icon" data-toggle="dropdown" type="button">
                                                                                 <i class="fa fa-shopping-cart"></i>
                                                                             </button>
                                                                             <a href="{{route('themgiohang',$all->id)}}"> Add to cart</a> --}}
 
-                                                                            <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a>
+                                                                            <li class="add-cart-button btn-group">
+                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
+                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
+
+                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+
+                                                                            {{-- </button> --}}
+                                                                            {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
+
+                                                                        </li>
+                                                                       
+                                                                    
+                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
 
                                                                
 
-                                                                             <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
-                                                                             <i class="fa fa-chevron-right"></i></a>
+                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                     <i class="fa fa-chevron-right"></i></a>
 
-                                                                        </li>
+                                                                 
 
-                                                                        <li class="lnk wishlist">
-                                                                            <a class="add-to-cart" href="detail.html" title="Wishlist">
-                                                                                <i class="icon fa fa-heart"></i>
-                                                                            </a>
-                                                                        </li>
+                                                                     <div class="clearfix"></div>
+                                                               
 
-                                                                        <li class="lnk">
-                                                                            <a class="add-to-cart" href="detail.html" title="Compare">
-                                                                                <i class="fa fa-retweet"></i>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
+                                                                             
+
+                                                                      
+
+                                                                        
+                                                                    {{-- </ul> --}}
+
+                                                                    
+                                                                    
+                                                                    
+
+                                                               
+
+                                                                    
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>
