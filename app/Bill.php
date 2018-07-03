@@ -9,11 +9,7 @@ class Bill extends Model
     protected $table = "bills";
     public $timestamps = false;
 
-     public function billdetail(){
+    public function billdetail(){
     	return $this->hasMany('App\BillDetail','id_bill','id');
-    }
-
-    public function bill(){
-    	return $this->belongsTo('App\Customer','id_customer','id');
     }
 }

@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\food;
 use Validator;
 use Hash;
 use Auth;

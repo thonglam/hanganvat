@@ -30,14 +30,20 @@ class UserController extends Controller
 		$user->update();
 		return redirect('/');
 	}
-	function getListbill(){
+	function getListbill($email){
         $stt =1;
-        $all = Bill::all();
+        $all = Bill::where('email','=',$email)->get();
+   
         return view('user.user.list-bill',compact('all','stt'));
     }
     function getdetailacount($id)
     {
     	$user = user::find($id);
     	return view('user.user.detail-acount',compact('user'));
+    }
+     function getdetailbill($id){
+        $stt =1;
+        $bills = Bill::find($id);
+        return view('user.user.bill-detail',compact('bills','stt'));
     }
 }

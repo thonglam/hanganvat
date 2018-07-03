@@ -44,92 +44,91 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
+                @if(Auth::check())
+                <li><a href="">Chào bạn: {{Auth::user()->name}}</a></li>
+                @endif
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
-                        <li><a href="{{route('logout')}}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
+                        <li><a class="dropdown-item" href="{{route('logout')}}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                           <i class="fa fa-sign-out fa-lg"></i> Đăng xuất
+                       </a>
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
-                <!-- /.dropdown -->
             </ul>
-            <!-- /.navbar-top-links -->
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+    <!-- /.navbar-top-links -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Hóa đơn<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{route('List-bill')}}">Hóa đơn đã đặt</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="">Thông tin người dùng</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                 
-                    <!-- Content -->
-                    @yield('content_user')
-                    <!-- End Content -->
-
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="{{ route('List-bill',Auth::user()->email) }}"><i class="fa fa-bar-chart-o fa-fw"></i> Hóa đơn đã đặt</a>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="{{ route('detailacount',Auth::user()->id) }}"><i class="fa fa-users fa-fw"></i> Thông tin người dùng</span></a>
+                    <!-- /.nav-second-level -->
+                </li>
+            </ul>
         </div>
-        <!-- /#page-wrapper -->
-
+        <!-- /.sidebar-collapse -->
     </div>
-    <!-- /#wrapper -->
+    <!-- /.navbar-static-side -->
+</nav>
 
-    <!-- jQuery -->
-    <script src="{{URL::asset('public/admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<!-- Page Content -->
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{URL::asset('public/admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <!-- Content -->
+            @yield('content_user')
+            <!-- End Content -->
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{{URL::asset('public/admincss/dist/js/sb-admin-2.js') }}"></script>
+</div>
+<!-- /#wrapper -->
 
-    <!-- DataTables JavaScript -->
-    <script src="{{URL::asset('public/admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+<!-- jQuery -->
+<script src="{{URL::asset('public/admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{{URL::asset('public/admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{URL::asset('public/admincss/dist/js/sb-admin-2.js') }}"></script>
+
+<!-- DataTables JavaScript -->
+<script src="{{URL::asset('public/admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-                responsive: true
+            responsive: true
         });
     });
-    </script>
+</script>
 </body>
 
 </html>
