@@ -9,7 +9,7 @@
 							<div class="logo">
 								<a href="home.html">
 
-									<img src="template/assets/images/logo.png" alt="">
+									<img src="{{URL::asset('upload/logo.png')}}" alt="">
 
 								</a>
 							</div>

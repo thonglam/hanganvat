@@ -64,7 +64,7 @@
                     <!-- ============================================================= LOGO ============================================================= -->
                     <div class="logo">
                         <a href="{{route('trang_chu')}}">
-                            <img src="{{URL::asset('template/assets/images/logo.png')}}" alt="">
+                            <img src="{{URL::asset('upload/logo.png')}}" alt="">
                         </a>
                     </div>
                     <!-- /.logo -->
@@ -147,7 +147,7 @@
                                                 <div class="col-xs-4">
                                                     <div class="image" >
                                                         <a href="{{route('detail',$food['item']['id'])}}">
-                                                            <img src="upload/{{$food['item']['image']}}" alt="">
+                                                            <img id="thong" src="{{URL::asset('upload')}}/{{$food['item']['image']}}" alt="">
                                                         </a>
                                                     </div>
                                                 </div>

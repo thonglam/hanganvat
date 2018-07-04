@@ -36,14 +36,7 @@
 
 						
 
-						{{-- <div class="form-group">
-							<label for="email" class="col-md-4 control-label">Email</label>
-
-							<div class="col-md-6">
-								<input id="email" type="text" name="email" value="" required placeholder="example@gmail.com">
-
-							</div>
-						</div> --}}
+						
 
 
 						
@@ -57,6 +50,8 @@
 
 							</div>
 						</div>
+
+
 
 						<div class="form-group">
 							<label for="phone" class="col-md-4 control-label"> Số điện thoại</label>
