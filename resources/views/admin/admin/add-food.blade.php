@@ -8,6 +8,15 @@
                 <div class="panel-heading">
                     <b>Thêm món ăn mới</b>
                 </div>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="panel-body">
                     <form method="post" class="form-horizontal" action="{{ route('addfood') }}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -44,22 +53,6 @@
                             <label class="control-label col-sm-2" for="email">Đơn vị tính:</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" placeholder="Nhập đơn vị tính" name="unit">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Sản phẩm khuyến mãi:</label>
-                            <div class="col-sm-10">
-                                <select name="promotion" class="form-control">
-                                    <option value="nước ngọt">Nước ngọt</option>
-                                    <option value="khăn lạnh">Khăn lạnh</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Mô tả tóm tắt:</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="summary" rows="5"></textarea>
                             </div>
                         </div>
                         <div class="form-group">

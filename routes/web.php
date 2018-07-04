@@ -34,13 +34,11 @@ Route::get('search',[
 Route::get('foodtype/{type}',[
     'as' => 'foodtype',
     'uses' =>'PageController@getFoodType'
-
 ]);
 
 Route::get('fooddetail/{detail}',[
     'as' => 'fooddetail',
     'uses' =>'PageController@getFoodDetail'
-
 ]);
 
 Route::get('chi-tiet-san-pham/{id}',[
@@ -91,9 +89,6 @@ Route::get('hinh-thuc-thanh-toan',[
     'as' =>'payment',
     'uses'=>'PageController@getPayMent'
 ]);
-
-
-
 Route::post('dat-hang',[
     'as' => 'dathang',
     'uses'=>'PageController@postCheckout'
@@ -108,15 +103,6 @@ Route::get('news',[
 
 
 // -------------------Admin------------------
-Route::get('/admin', function(){
-    return view('admin.masteradmin');
-});
-Route::get('/user', function(){
-    return view('user.masteruser');
-});
-Route::get('/shipper', function(){
-    return view('shipper.mastershipper');
-});
 Route::get('add-food',[
     'uses'=>'AdminController@getAddFood',
     'as' => 'add_food'
@@ -172,7 +158,7 @@ Route::post('change-pass/{id}',[
     'as' =>'change-pass',
     'uses'=>'UserController@postchangepass'
 ]);
-Route::get('detail-acount/{id}',[
+Route::get('detail-acountus/{id}',[
     'as' =>'detailacount',
     'uses'=>'UserController@getdetailacount'
 ]);
@@ -180,7 +166,7 @@ Route::get('List-bill/{email}',[
     'as' =>'List-bill',
     'uses'=>'UserController@getListbill'
 ]);
-Route::get('detail-bill/{id}',[
+Route::get('detail-Bill/{id}',[
     'as' =>'detailbill',
     'uses'=>'UserController@getdetailbill'
 ]);
@@ -190,7 +176,7 @@ Route::get('list-Bill',[
     'as' =>'list-Bill',
     'uses'=>'ShipperController@getListBill'
 ]);
-Route::get('list_Bill',[
+Route::get('list_Bill/{name}',[
     'as' =>'list_Bill',
     'uses'=>'ShipperController@getListBillreceived'
 ]);

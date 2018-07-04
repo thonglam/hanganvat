@@ -7,22 +7,22 @@
     <title>Người dùng</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{URL::asset('public/admincss/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/bower_components/metisMenu/dist/metisMenu.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{{URL::asset('public/admincss/dist/css/sb-admin-2.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/dist/css/sb-admin-2.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{URL::asset('public/admincss/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{URL::asset('admincss/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
     <!-- DataTables CSS -->
-    <link href="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css') }}" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="{{URL::asset('public/admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -76,7 +76,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="{{ route('detailacount',Auth::user()->id) }}"><i class="fa fa-users fa-fw"></i> Thông tin người dùng</span></a>
+                    <a href="{{route('detailacount',Auth::user()->id)}}"><i class="fa fa-users fa-fw"></i> Thông tin người dùng</span></a>
                     <!-- /.nav-second-level -->
                 </li>
             </ul>
@@ -106,29 +106,23 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
-<script src="{{URL::asset('public/admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{URL::asset('admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{{URL::asset('public/admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{URL::asset('admincss/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="{{URL::asset('public/admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
+<script src="{{URL::asset('admincss/bower_components/metisMenu/dist/metisMenu.min.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{URL::asset('public/admincss/dist/js/sb-admin-2.js') }}"></script>
+<script src="{{URL::asset('admincss/dist/js/sb-admin-2.js') }}"></script>
 
 <!-- DataTables JavaScript -->
-<script src="{{URL::asset('public/admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{URL::asset('public/admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{URL::asset('admincss/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{URL::asset('admincss/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
 
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-<script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
-        });
-    });
-</script>
+<!-- MyScript -->
+<script src="{{URL::asset('admincss/myscript.js') }}"></script>
 </body>
 
 </html>

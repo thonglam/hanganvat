@@ -6,6 +6,13 @@
     <small>Người dùng</small>
   </h1>
 </div>
+<div class="col-lg-12">
+  @if (Session::has('flash_massage'))
+  <div class="alert alert-success">
+    {!!  Session::get('flash_massage') !!}
+  </div>
+  @endif
+</div>
 <div class="content-wrapper">
  <table class="table table-striped table-bordered table-hover" id="dataTables-example">
   <thead>

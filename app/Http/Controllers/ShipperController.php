@@ -17,9 +17,9 @@ class ShipperController extends Controller
         $bills = Bill::where('status',0)->get();
         return view('shipper.shipper.list-bill',compact('bills','stt'));
     }
-    function getListBillreceived(){
+    function getListBillreceived($name){
         $stt =1;
-        $bills = Bill::where('status',1)->get();
+        $bills = Bill::where([['status',1],['shipper',$name],])->get();
         return view('shipper.shipper.list-billreceived',compact('bills','stt'));
     }
     function postListBill(Request $request,$id)
@@ -28,14 +28,14 @@ class ShipperController extends Controller
         $Bill ->shipper = $request ->name;
         $Bill ->status = 1;
         $Bill->update();
-        return redirect()->route('list-Bill');
+        return redirect()->route('list-Bill')->with(['flash_massage'=>'Nhận hóa đơn thành công']);
     }
     function postListBillRe($id)
     {
         $Bill = Bill::find($id);
         $Bill ->status = 2;
         $Bill->update();
-        return redirect()->route('list_Bill');
+        return redirect()->route('list_Bill')->with(['flash_massage'=>'Trả hóa đơn thành công']);
     }
     function getdetailacount($id)
     {

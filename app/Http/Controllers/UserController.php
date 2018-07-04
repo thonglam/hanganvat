@@ -33,7 +33,6 @@ class UserController extends Controller
 	function getListbill($email){
         $stt =1;
         $all = Bill::where('email','=',$email)->get();
-   
         return view('user.user.list-bill',compact('all','stt'));
     }
     function getdetailacount($id)
