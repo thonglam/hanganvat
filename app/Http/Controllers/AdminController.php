@@ -103,10 +103,10 @@ class AdminController extends Controller
             $food->image = $file_name;      
         }else
             $food->image = '';
-        $food->new = $req->new;
-        $food->today = $req->today;
+        $food->today = $req->today==1 ? 1 : 0;
+        $food->new = $req->new==1 ? 1 : 0;
         $food->save();
-        return redirect()->route('add_food')->with(['flash_massage'=>'Thêm món ăn mới thành công']);
+        return redirect()->route('list_food')->with(['flash_massage'=>'Thêm món ăn mới thành công']);
     }
 
     function getListFood(){

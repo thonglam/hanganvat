@@ -21,7 +21,7 @@
         <th scope="col">Tên món ăn</th>
         <th scope="col">Hình ảnh</th>
         <th scope="col">Giá</th>
-        <th scope="col">Giá KM</th>
+        <th scope="col">KM</th>
         <th scope="col">Sửa</th>
         <th scope="col">Xóa</th>
       </tr>
