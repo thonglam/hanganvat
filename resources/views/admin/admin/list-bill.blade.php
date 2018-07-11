@@ -41,7 +41,7 @@
 
       @endif
 
-      <td>Shipper</td>
+      <td>{{ $bill->shipper }}</td>
       <td class="center"><i class="fa fa-building-o fa-fw"></i>
         <a href="{{ route('detail-bill',$bill->id) }}">Chi tiết hóa đơn</a>
       </td>

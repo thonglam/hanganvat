@@ -15,7 +15,11 @@
                             <li>
                                 <a href="">Chào bạn {{Auth::user()->name}}</a>
                             </li>
-                            @if(Auth::user()->role == 2)
+                            @if(Auth::user()->role == 3)
+                            <li>
+                                <a href="{{route('list-bill')}}">Đến trang quản lý</a>
+                            </li>
+                            @elseif(Auth::user()->role == 2)
                             <li>
                                 <a href="{{route('list-bill')}}">Đến trang quản lý</a>
                             </li>

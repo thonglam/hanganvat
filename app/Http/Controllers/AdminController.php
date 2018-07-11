@@ -61,7 +61,7 @@ class AdminController extends Controller
         return redirect()->route('list_food')->with(['flash_massage'=>'Xóa món ăn thành công']);
         }else {
             echo "<script typye='text/javascrpit'>
-                alert('Bạn không thể xóa món ăn vì nó có trong hóa đơn');
+                alert('Bạn không thể xóa món ăn vì món ăn tồn tại trong hóa đơn');
                 window.location = '";
                     echo route('list_food');
             echo "'
@@ -126,7 +126,8 @@ class AdminController extends Controller
     }
     function getuser(){
         $stt = 1;
-        $users = User::all();
+        $id = Auth::user()->id;
+        $users = User::where('id','<>',$id)->get();
         return view('admin.admin.list-user', compact('users','stt'));
     }
     function getchangrole($id)

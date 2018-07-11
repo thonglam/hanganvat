@@ -127,6 +127,22 @@
 <!-- /#wrapper -->
 
 <!-- jQuery -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#file").change(function () {
+            $("#imgup").html("");
+
+            $("#imgup").show();
+            $("#imgup").append("<img />");
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#imgup img").attr("src", e.target.result);
+            }
+            reader.readAsDataURL($(this)[0].files[0]);     
+        });
+    });
+</script>
 <script src="{{URL::asset('admincss/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
