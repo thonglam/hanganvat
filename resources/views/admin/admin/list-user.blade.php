@@ -35,11 +35,13 @@
       <td>Quyền người dùng</td>
       @elseif($user->role == 1)
       <td>Quyền giao hàng</td>
+      @elseif($user->role == 2)
+      <td>Quyền Quản lý</td>
       @else
-      <td>Quyền quản lý</td>
+      <td>Supper Admin</td>
       @endif
       <!-- Hien thi ai duoc sua quyen -->
-      @if($user->role == 2)
+      @if($user->role == 3)
       <td></td>
       @else
       <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('change_role',$user->id)}}">Cấp quyền khác</a></td>

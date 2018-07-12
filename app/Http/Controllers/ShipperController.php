@@ -28,14 +28,14 @@ class ShipperController extends Controller
         $Bill ->shipper = $request ->name;
         $Bill ->status = 1;
         $Bill->update();
-        return redirect()->route('list-Bill')->with(['flash_massage'=>'Nhận hóa đơn thành công']);
+        return redirect()->back()->with(['flash_massage'=>'Nhận hóa đơn thành công']);
     }
     function postListBillRe($id)
     {
         $Bill = Bill::find($id);
         $Bill ->status = 2;
         $Bill->update();
-        return redirect()->route('list_Bill')->with(['flash_massage'=>'Trả hóa đơn thành công']);
+        return redirect()->back()->with(['flash_massage'=>'Trả hóa đơn thành công']);
     }
     function getdetailacount($id)
     {

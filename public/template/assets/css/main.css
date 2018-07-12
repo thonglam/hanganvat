@@ -1554,10 +1554,12 @@ a {
   padding: 10px 15px;
 }
 .sidebar .sidebar-module-container .sidebar-widget .widget-header .widget-title {
-  font-size: 14px;
+  font-size: 200px;
   font-family: 'FjallaOneRegular';
   margin: 0px;
 }
+
+
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle {
   clear: both;
   display: block;

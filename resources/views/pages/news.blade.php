@@ -10,7 +10,7 @@
                   
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
-                        <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+                    <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
                   
                     <div class="sidebar-filter">
                      <div class="sidebar-widget outer-bottom-xs wow fadeInUp">

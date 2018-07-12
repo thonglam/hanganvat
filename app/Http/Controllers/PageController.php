@@ -36,12 +36,19 @@ class PageController extends Controller
 
 
     public function getIndex(){
-        $new_food = Foods::where('today',1)->get();
+        
+         $new_food = Foods::where('new',1)->get();
+         
+
+
         //$allFood = Foods::all()->paginate(1);
         // dd($allFood);
         $allFood = DB::table('foods')->paginate(12);
 
         $loai = FoodType::all();
+
+        
+
         return view('pages.trangchu',compact('new_food','allFood','loai'));
 
 
@@ -190,15 +197,20 @@ class PageController extends Controller
     }
 
     function getPriceShip(){
-        return view('pages.priceship');
+        $loai = FoodType::all();
+
+        return view('pages.priceship',compact('loai'));
     }
 
     function getPayMent(){
-        return view('pages.payment');
+
+        $loai = FoodType::all();
+        return view('pages.payment',compact('loai'));
     }
 
      function getAreaShip(){
-        return view('pages.areaship');
+        $loai = FoodType::all();
+        return view('pages.areaship',compact('loai'));
     }
 
     public function postContact(Request $req){

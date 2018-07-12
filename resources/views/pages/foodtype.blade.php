@@ -175,9 +175,9 @@
                                                         </div>
                                                         <!-- /.image -->
 
-                                                        <div class="tag new">
+                                                       {{--  <div class="tag new">
                                                             <span>new</span>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
                                                     <!-- /.product-image -->
 

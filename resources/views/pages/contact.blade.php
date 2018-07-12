@@ -2,14 +2,19 @@
 @section('content')
 <div class="breadcrumb">
     <div class="container">
-        <div class="breadcrumb-inner">
+        {{-- <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{{route('trang_chu')}}">Trang chủ</a>
                 </li>
                 <li class='active'>Contact</li>
             </ul>
-        </div>
+        </div> --}}
+
+        <div class="pull-left">
+                <h3 class="inner-title"> <a href="{{route('trang_chu')}}"> TRANG CHỦ</a> 
+                <h1><span style="color: green">LIÊN HỆ: </span></h1> 
+            </div>
         <!-- /.breadcrumb-inner -->
     </div>
     <!-- /.container -->
@@ -25,38 +30,41 @@
                 </div>
                 <div class="col-md-9 contact-form">
                     <div class="col-md-12 contact-title">
-                        <h4>Thông tin liên hệ</h4>
+                       <b> <h2>Thông tin liên hệ</h2> </b> </br>
                     </div>
-                    <div class="col-md-4 ">
+                    
                         <form class="register-form" role="form" method="post" action="{{ route('lienhe') }}" onsubmit="submitForm()">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                         {{ csrf_field() }}
+
+                        <div class="col-md-4 ">
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputName">Họ tên
+                                <b><label class="info-title" for="exampleInputName" style="font-size: 20px">Họ tên</b>
                                     <span>*</span>
                                 </label>
-                                <input name="hoten" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="Name">
+                                <input name="hoten" class="form-control unicase-form-control text-input" id="exampleInputName" {{-- placeholder="Name" --}}>
+                            </div>
+                            
+                    </div>
+                    <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="info-title" for="exampleInputEmail1" style="font-size: 20px">Email của bạn
+                                    <span>*</span>
+                                </label>
+                                <input name="email" type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" {{-- placeholder="admin@unicase.com" --}}>
                             </div>
                     </div>
                     <div class="col-md-4">
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputEmail1">Email
+                                <label class="info-title" for="exampleInputTitle" style="font-size: 20px">Tiêu đề
                                     <span>*</span>
                                 </label>
-                                <input name="email" type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="admin@unicase.com">
-                            </div>
-                    </div>
-                    <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="info-title" for="exampleInputTitle">Tiêu đề
-                                    <span>*</span>
-                                </label>
-                                <input name="tieude" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="Title">
+                                <input name="tieude" class="form-control unicase-form-control text-input" id="exampleInputTitle" {{-- placeholder="Title" --}}>
                             </div>
                     </div>
                     <div class="col-md-12">
                             <div class="form-group">
-                                <label class="info-title" for="exampleInputComments">Phản hồi
+                                <label class="info-title" for="exampleInputComments" style="font-size: 20px">Phản hồi
                                     <span>*</span>
                                 </label>
                                 <textarea name="phanhoi" class="form-control unicase-form-control" id="exampleInputComments"></textarea>
@@ -70,27 +78,26 @@
                  </form>
                 <div class="col-md-3 contact-info">
                     <div class="contact-title">
-                        <h4>Thông tin liên lạc</h4>
+                        <b> <h2>Thông tin liên lạc</h2> </b> </br>
                     </div>
                     <div class="clearfix address">
                         <span class="contact-i">
                             <i class="fa fa-map-marker"></i>
                         </span>
-                        <span class="contact-span">80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh</span>
+                      <b>  <span class="contact-span" style="font-size: 20px">80 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh</span> </b>
                     </div>
                     <div class="clearfix phone-no">
                         <span class="contact-i">
                             <i class="fa fa-mobile"></i>
                         </span>
-                        <span class="contact-span">01254547437
-                            <br>(083) 83 83 011</span>
+                       <b> <span class="contact-span" style="font-size: 20px">01254547437
+                            <br> <span class="contact-span" style="font-size: 20px"> (083) 83 83 011</span></span></b>
                     </div>
                     <div class="clearfix email">
                         <span class="contact-i">
                             <i class="fa fa-envelope"></i>
                         </span>
-                        <span class="contact-span">thonglam1176@gmail.com
-                            <br>thonglam1176@gmail.com</span>
+                        <b>  <span class="contact-span" style="font-size: 20px">thonglam1@gmail.com</span> </b>
                     </div>
                 </div>
             </div>

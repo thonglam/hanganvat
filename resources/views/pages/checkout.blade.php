@@ -115,12 +115,12 @@
 													'image']}}" alt="" class="pull-left">
 
 													<div class="media-body">
-														<p class="font-large"><b style="font-size: 15px"> {{$cart['item']['name']}} </b></p>
+														<p class="font-large"><b style="color: red"><b style="font-size: 25px"> {{$cart['item']['name']}} </b></b></p>
 
 
-														<span class="color-gray your-order-info">Số lượng: <b>{{$cart['qty']}}</b></span>
+														<span class="color-gray your-order-info"><u style="color: blue"><b style="font-size:19px ">Số lượng: </b></u> <b>{{$cart['qty']}}</b><span>
 														<br>
-														<span class="color-gray your-order-info">Đơn giá: {{-- {{number_format($cart['price'])}} --}} <b> {{number_format($cart['item']['price'])}} </b>đồng</span>
+														<span class="color-gray your-order-info"><u style="color: blue"> <b style="font-size: 19px">Đơn giá:</u> </b> {{-- {{number_format($cart['price'])}} --}} <b> {{number_format($cart['item']['price'])}} </b>đồng</span>
 													</div>
 
 
@@ -135,8 +135,8 @@
 
 
 											<div class="clearfix"></div><br>
-											<div class="pull-left"><p class="your-order-f18"><b>Tổng tiền:</b></p></div>
-											<div class="pull-right"><h5 class="color-black" style="color: red;">{{-- @if(Session::has('cart')){{number_format($totalPrice)}}@endif --}} {{number_format($totalPrice)}}  đồng</h5></div>
+											<div class="pull-left"><p class="your-order-f18"><b style="font-size: 30px">Tổng tiền:</b></p></div>
+											<div class="pull-right"><h5 class="color-black" style="color: red;">{{-- @if(Session::has('cart')){{number_format($totalPrice)}}@endif --}} <b style="font-size: 30px">{{number_format($totalPrice)}}  đồng </b></h5></div>
 											<div class="clearfix"></div>
 										</div>
 									</div>

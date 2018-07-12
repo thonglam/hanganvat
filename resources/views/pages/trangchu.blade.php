@@ -6,7 +6,7 @@
             <div class='col-md-3 sidebar'>
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
-                    <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+                    <h2 class="section-title"  style="color: green" >DANH SÁCH MÓN ĂN </h2>
                   
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
@@ -152,8 +152,69 @@
                             </div>
                             <!-- /.sidebar-widget-body -->
                         </div> --}}
-                        <!-- /.sidebar-widget -->
-                        <!-- ============================================== COLOR============================================== -->
+                    
+                        
+
+
+
+
+
+        
+
+
+
+                     <div class="widget">
+                     <h2  class="section-title " style="color:  green"   >MÓN ĂN MỚI</h3>
+                    <div class="widget-body">
+
+                            @foreach($new_food as $new)
+                            {{-- div class="beta-sales beta-lists"> --}}
+
+                                <div class="media beta-sales-item">
+                                     <div class="product">
+                                                    <div class="product-image">
+                                                        <div class="image">
+                                                            <a href="{{route('detail',$new->id)}}">
+                                                                <img src="upload/{{$new->image}}" alt="" width="250px" height="200px"> 
+                                                            </a>
+                                                        </div>
+                                                    
+                                                        <!-- /.image -->
+
+                                                        <div class="tag new">
+                                                            <span>new</span>
+                                                        </div>
+                                                </div>
+
+                                        
+                                 </div>
+
+                                
+
+                                        
+                                    
+                                    
+
+                                    
+                                        <div class="media-body">
+                                         <b>  <mark style="color: red" > {{$new->name}} </mark> </b><br>
+                                         <div class="product-price">
+                                            <span class="price">
+                                             {{number_format($new->price)}} 
+                                            </span>
+                                        </div>
+
+                                            {{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
+                                        </div>
+                                    
+                                </div>
+                            {{-- </div> --}}
+                            @endforeach
+
+                        </div>
+                    </div> <!-- best sellers widget --> 
+
+
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
                             <div id="advertisement" class="advertisement">
                                 <div class="item bg-color">
@@ -216,9 +277,11 @@
                              <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
                             
                             <!-- /.owl-carousel -->
-
                         </div>
 
+
+
+                         
 
                         <!-- ============================================== COLOR: END ============================================== -->
 
@@ -299,12 +362,13 @@
                                                                 <img src="upload/{{$all->image}}" alt="" width="250px" height="200px"> 
                                                             </a>
                                                         </div>
+                                                    
                                                         <!-- /.image -->
 
-                                                        <div class="tag new">
+                                                       {{--  <div class="tag new">
                                                             <span>new</span>
-                                                        </div>
-                                                    </div>
+                                                        </div> --}}
+                                                </div>
                                                     <!-- /.product-image -->
 
 

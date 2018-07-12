@@ -44,14 +44,102 @@
             <div class='col-md-3 sidebar'>
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
-                    <h3 class="section-title">Menu món ăn</h3>
+                   
                     <div class="sidebar-filter">
 
 
-                        
-                         <div class="sidebar-filter">
+                         <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+                  
+                    <div class="sidebar-filter">
+                     <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                            {{-- <div class="widget-header">
+                                <h4 class="widget-title"> MENU MÓN ĂN</h4>
+                            </div> --}}
+                             @foreach($loai as $all)
+                            <div class="sidebar-widget-body m-t-10">
+                                <ul class="list">
+
+                                    <li >
+                                        <a href="{{route('foodtype',$all->id)}}"> {{$all->name}} </a>
+                                    </li>
+
+                                   
+                                    
+                                </ul>
+                                {{-- <a href="#" class="lnk btn btn-primary">Show Now</a> --}}
+                            </div>
+                             @endforeach
+                              </div>
+                           
+                        </div> 
+
+                        <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
+                            <div id="advertisement" class="advertisement">
+                                <div class="item bg-color">
+                                    
+                                       
+
+                                             <div class="item">
+                                    
+                                    <img src="upload/fast.jpg" width="430" height="460" >
+                                    
+
+                                </div>
+                                            {{-- <div class="big-text">
+                                                Save
+                                                <span class="big">50%</span>
+                                            </div>
+
+
+                                            <div class="excerpt">
+                                                on selected items
+                                            </div> --}}
+                                    
+                                    <!-- /.container-fluid -->
+                                </div>
+                                <!-- /.item -->
+
+                                <div class="item">
+                                    
+                                    <img src="upload/hehe.jpg" width="400" height="430" >
+                                    
+
+                                </div>
+                                <!-- /.item -->
+
+                                <div class="item bg-color">
+                                    <div class="container-fluid">
+                                        <div class="caption vertical-top text-left">
+                                            <div class="big-text">
+                                                Save
+                                      <span class="big">50%</span>
+                                </div>
+
+
+                                            <div class="excerpt fadeInDown-2">
+                                                on selected items
+                                            </div>
+                                 </div>
+
+                                        <!-- /.caption -->
+                                    </div>
+
+                                    <!-- /.container-fluid -->
+                                </div>
+                                <!-- /.item -->
+                            </div>
+
+                             </br>
+
+                            
+                             <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
+                            
+                            <!-- /.owl-carousel -->
+
+                        </div>
+                       
                         <!-- ============================================== Danh sách món ăn ============================================== -->
-                        <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+                       {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header m-t-20">
                                 <h4 class="widget-title">Danh sách món ăn</h4>
                             </div>
@@ -144,7 +232,7 @@
                                 <!-- /.accordion -->
                             </div>
                             <!-- /.sidebar-widget-body -->
-                        </div>
+                        </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Giá ============================================== -->
                       {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
@@ -189,58 +277,11 @@
                         </div> --}}
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== COLOR============================================== -->
-                        <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
-                            <div id="advertisement" class="advertisement">
-                                <div class="item bg-color">
-                                    <div class="container-fluid">
-                                        <div class="caption vertical-top text-left">
-                                            <div class="big-text">
-                                                Save
-                                                <span class="big">50%</span>
-                                            </div>
-
-
-                                            <div class="excerpt">
-                                                on selected items
-                                            </div>
-                                        </div>
-                                        <!-- /.caption -->
-                                    </div>
-                                    <!-- /.container-fluid -->
-                                </div>
-                                <!-- /.item -->
-
-                                <div class="item" style="background-image: url('../template/assets/images/advertisement/1.jpg');">
-
-                                </div>
-                                <!-- /.item -->
-
-                                <div class="item bg-color">
-                                    <div class="container-fluid">
-                                        <div class="caption vertical-top text-left">
-                                            <div class="big-text">
-                                                Save
-                                                <span class="big">50%</span>
-                                            </div>
-
-
-                                            <div class="excerpt fadeInDown-2">
-                                                on selected items
-                                            </div>
-                                        </div>
-                                        <!-- /.caption -->
-                                    </div>
-                                    <!-- /.container-fluid -->
-                                </div>
-                                <!-- /.item -->
-
-                            </div>
-                            <!-- /.owl-carousel -->
-                        </div>
+                        
 
                         <!-- ============================================== COLOR: END ============================================== -->
 
-                    </div>
+                  
                         <!-- ============================================== Danh sách món ăn ============================================== -->
                         {{-- <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header m-t-20">
