@@ -6,15 +6,15 @@
             <div class='col-md-3 sidebar'>
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
-                    <h3 class="section-title">Menu món ăn</h3>
+                    <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
                   
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
                         <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
-                            <div class="widget-header m-t-20">
-                                <h4 class="widget-title">Danh sách món ăn</h4>
-                            </div>
-                            <div class="sidebar-widget-body m-t-10">
+                           {{--  <div class="widget-header m-t-20">
+                                <h1  class="widget-title">Danh sách món ăn</h1>
+                            </div> --}}
+                           {{--  <div class="sidebar-widget-body m-t-10">
                                 <div class="accordion">
                                     <div class="accordion-group">
                                         <div class="accordion-heading">
@@ -34,6 +34,10 @@
                                                     </li>
                                                     <li>
                                                         <a href="{{route('fooddetail',3)}}">Nui</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="{{route('fooddetail',1)}}">Miếng</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -101,32 +105,34 @@
 
                                 </div>
                                 <!-- /.accordion -->
-                            </div>
+                            </div> --}}
                             <!-- /.sidebar-widget-body -->
-                        </div>
+                       
                         <!-- /.sidebar-widget -->
                         <!-- ============================================== Giá ============================================== -->
-                      {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
-                            <div class="widget-header">
+                        <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                            {{-- <div class="widget-header">
                                 <h4 class="widget-title"> MENU MÓN ĂN</h4>
-                            </div>
+                            </div> --}}
+                             @foreach($loai as $all)
                             <div class="sidebar-widget-body m-t-10">
                                 <ul class="list">
 
-                                    @foreach($loai as $all)
-                                    <li>
-                                        <a href="{{route('foodtype',$all->id)}}">{{$all->name}}</a>
+                                    <li >
+                                        <a href="{{route('foodtype',$all->id)}}"> {{$all->name}} </a>
                                     </li>
 
-                                    @endforeach
+                                   
                                     
                                 </ul>
-                                <a href="#" class="lnk btn btn-primary">Show Now</a>
+                                {{-- <a href="#" class="lnk btn btn-primary">Show Now</a> --}}
                             </div>
-                            /.sidebar-widget-body
-                        </div> --}}
+                             @endforeach
+                              </div>
+                           
+                        </div> 
                         <!-- /.sidebar-widget -->
-                        <!-- ============================================== Kích thước món ăn ============================================== -->
+                    
                        {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
                             <div class="widget-header">
                                 <h4 class="widget-title">Kích thước</h4>
@@ -151,9 +157,16 @@
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
                             <div id="advertisement" class="advertisement">
                                 <div class="item bg-color">
-                                    <div class="container-fluid">
-                                        <div class="caption vertical-top text-left">
-                                            <div class="big-text">
+                                    
+                                       
+
+                                             <div class="item">
+                                    
+                                    <img src="upload/fast.jpg" width="430" height="460" >
+                                    
+
+                                </div>
+                                            {{-- <div class="big-text">
                                                 Save
                                                 <span class="big">50%</span>
                                             </div>
@@ -161,15 +174,16 @@
 
                                             <div class="excerpt">
                                                 on selected items
-                                            </div>
-                                        </div>
-                                        <!-- /.caption -->
-                                    </div>
+                                            </div> --}}
+                                    
                                     <!-- /.container-fluid -->
                                 </div>
                                 <!-- /.item -->
 
-                                <div class="item" style="background-image: url('../template/assets/images/advertisement/1.jpg');">
+                                <div class="item">
+                                    
+                                    <img src="upload/hehe.jpg" width="400" height="430" >
+                                    
 
                                 </div>
                                 <!-- /.item -->
@@ -179,23 +193,32 @@
                                         <div class="caption vertical-top text-left">
                                             <div class="big-text">
                                                 Save
-                                                <span class="big">50%</span>
-                                            </div>
+                                      <span class="big">50%</span>
+                                </div>
 
 
                                             <div class="excerpt fadeInDown-2">
                                                 on selected items
                                             </div>
-                                        </div>
+                                 </div>
+
                                         <!-- /.caption -->
                                     </div>
+
                                     <!-- /.container-fluid -->
                                 </div>
                                 <!-- /.item -->
-
                             </div>
+
+                             </br>
+
+                            
+                             <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
+                            
                             <!-- /.owl-carousel -->
+
                         </div>
+
 
                         <!-- ============================================== COLOR: END ============================================== -->
 

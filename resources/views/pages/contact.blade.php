@@ -28,49 +28,46 @@
                         <h4>Thông tin liên hệ</h4>
                     </div>
                     <div class="col-md-4 ">
-                        <form class="register-form" role="form">
+                        <form class="register-form" role="form" method="post" action="{{ route('lienhe') }}" onsubmit="submitForm()">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        {{ csrf_field() }}
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputName">Họ tên
                                     <span>*</span>
                                 </label>
-                                <input type="email" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="Name">
+                                <input name="hoten" class="form-control unicase-form-control text-input" id="exampleInputName" placeholder="Name">
                             </div>
-                        </form>
                     </div>
                     <div class="col-md-4">
-                        <form class="register-form" role="form">
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputEmail1">Email
                                     <span>*</span>
                                 </label>
-                                <input type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="admin@unicase.com">
+                                <input name="email" type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" placeholder="admin@unicase.com">
                             </div>
-                        </form>
                     </div>
                     <div class="col-md-4">
-                        <form class="register-form" role="form">
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputTitle">Tiêu đề
                                     <span>*</span>
                                 </label>
-                                <input type="email" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="Title">
+                                <input name="tieude" class="form-control unicase-form-control text-input" id="exampleInputTitle" placeholder="Title">
                             </div>
-                        </form>
                     </div>
                     <div class="col-md-12">
-                        <form class="register-form" role="form">
                             <div class="form-group">
                                 <label class="info-title" for="exampleInputComments">Phản hồi
                                     <span>*</span>
                                 </label>
-                                <textarea class="form-control unicase-form-control" id="exampleInputComments"></textarea>
+                                <textarea name="phanhoi" class="form-control unicase-form-control" id="exampleInputComments"></textarea>
                             </div>
-                        </form>
+                       
                     </div>
                     <div class="col-md-12 outer-bottom-small m-t-20">
                         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Gửi</button>
                     </div>
                 </div>
+                 </form>
                 <div class="col-md-3 contact-info">
                     <div class="contact-title">
                         <h4>Thông tin liên lạc</h4>
@@ -188,3 +185,29 @@
 </div>
 @endsection
 @section('title','Liên Hệ')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    
+//  $(document).ready(function () {
+// //       $('#imageaddform').submit(function(e) {
+// //       e.preventDefault(); // don't submit multiple times
+// //       this.submit(); // use the native submit method of the form element
+// //       alert('aaa');
+// // });
+//      if ($('input.checkbox_check').is(':checked')) { 
+//      alert("aaa");
+//  }
+
+//  });
+
+//  if ($('input.checkbox_check').is(':checked')) { 
+//      alert("aaa");
+//  }
+
+    function submitForm()
+    {
+        var a = "Cám ơn quý khách đã phản hồi. Chúng tôi sẽ trả lời trong thời gian sớm nhất.";
+        alert(a);
+    }
+</script>

@@ -182,7 +182,7 @@
                                         </div>
                                         <div class="clearfix"></div>    
 
-                                    <a href="{{route('dathang')}}" class="btn btn-upper btn-primary btn-block m-t-20">Đặt Hàng</a>
+                                    <a href="{{route('dathang')}}" class="btn btn-upper btn-primary btn-block m-t-20">Chi tiết giỏ hàng</a>
                                     </div>
                                     <!-- /.cart-total-->
                                 @endif
@@ -225,7 +225,7 @@
                                     <a href="{{route('trang_chu')}}"> Trang chủ </a>
                                 </li>
                                 <li class="dropdown yamm">
-                                    <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Danh Sách Sản Phẩm</a>
+                                    <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Danh Sách Món Ăn</a>
                                     <ul class="dropdown-menu">
                                         @foreach($dang_monan as $dang)
                                         <li>
@@ -238,6 +238,10 @@
 
                                 <li class="dropdown">
                                     <a href="{{route('priceship')}}"> Bảng giá ship </a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="{{route('news')}}"> Tin tức </a>
                                 </li>
 
                                 <li class="dropdown">

@@ -33,18 +33,11 @@
 								<p class="single-item-title"><h2 style="color: black"> {{$food->name}} </h2></p>
 							</div>
 
-							<div class="clearfix"></div>
-							<div class="space20">&nbsp;</div>
-
-							<div class="single-item-desc">
-								<p> </p>
-							</div>
-
 							<p class="single-item-price">
 								
 												@if($food->promotion_price==0)
 
-                                                   <span class="flash-sale "><h2 style="color: red"> {{number_format($food->price)}}đ </h2></span> 
+                                                   <span class="flash-sale "><h2 style="color: red">Giá: {{number_format($food->price)}}đ </h2></span> 
                                                 @else
                                                     <span class="flash-del">{{number_format($food->price)}}đ </span>
                                                    
@@ -148,14 +141,17 @@
 				</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
-						<h3 class="widget-title">Món ăn tương tự</h3>
+						<h4 class="widget-title">Món ăn tương tự</h4>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
 								@foreach($sp_tuongtu as $matt)
 									<div class="media beta-sales-item">
-									<a class="pull-left" href="{{route('detail',$matt->id)}}"><img src="../upload/{{$matt->image}}" width="250px" height="150px ></a>
+									<a href="{{route('detail',$matt->id)}}"><img src="../upload/{{$matt->image}}" width="150" height="120" ></a>
 									<div class="media-body">
-										{{$matt->name}}
+										{{$matt->name}}<br>
+
+										<b> {{number_format($matt->price)}} </b>
+
 										{{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
 									</div>
 									</div>

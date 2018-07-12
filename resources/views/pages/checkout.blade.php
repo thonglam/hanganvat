@@ -15,11 +15,11 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Đặt hàng</div>
+				<div class="panel-heading">THÔNG TIN KHÁCH HÀNG</div>
 				{{-- <div class="row">@if(Session::has('thongbao')){{Session::has['thongbao']}}@endif</div> --}}
 				
 				<div class="panel-body">
-					<form class="form-horizontal" method="post" action="{{ route('dathang') }}">
+					<form id="myForm" class="form-horizontal" method="post" action="{{ route('dathang') }}" onsubmit="submitForm()">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						{{ csrf_field() }}
 
@@ -29,18 +29,10 @@
 							<label for="name" class="col-md-4 control-label">Name</label>
 
 							<div class="col-md-6">
-								<input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+								<input id="name" type="text" class="form-control" name="name" value="" required autofocus >
 
 							</div>
 						</div>
-
-						
-
-						
-
-
-						
-
 
 						<div class="form-group">
 							<label for="address" class="col-md-4 control-label">Địa chỉ</label>
@@ -51,8 +43,6 @@
 							</div>
 						</div>
 
-
-
 						<div class="form-group">
 							<label for="phone" class="col-md-4 control-label"> Số điện thoại</label>
 
@@ -62,7 +52,42 @@
 							</div>
 						</div>
 
+						 <div class="form-group">
+							<label class="col-md-4 control-label">Muốn người khác nhận hàng</label>
 
+							<div class="col-md-6">
+								<input class="checkbox_check" id="myCheck" type="checkbox" name="nguoinhan" value="yes" onclick="myFunction()">Có<br>
+							</div>
+						</div> 
+
+					 <div id="nguoinhan" class="nguoinhan" style="display: none;">
+						<div class="form-group">
+							<label for="name" class="col-md-4 control-label">Name Người nhận</label>
+
+							<div class="col-md-6">
+								<input id="name" type="text" class="form-control" name="namenguoinhan" value="" required autofocus>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="address" class="col-md-4 control-label">Địa chỉ Người nhận</label>
+
+							<div class="col-md-6">
+								<input id="address" type="text" class="form-control" name="addressnguoinhan" value="" required autofocus>
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="phone" class="col-md-4 control-label"> Số điện thoại người nhận</label>
+
+							<div class="col-md-6">
+								<input id="phone" type="text" class="form-control" name="phonenguoinhan" value="" required autofocus>
+
+							</div>
+						</div>
+					</div> 
 
 
 					</div>
@@ -78,7 +103,7 @@
 							<div class="your-order-body" style="padding: 0px 10px"> --}}
 
 								<div class="panel panel-default">
-									<div class="panel-heading">Đơn hàng của bản</div>
+									<div class="panel-heading">ĐƠN HÀNG CỦA BẠN</div>
 
 									<div class="panel-body">
 										<div>
@@ -118,7 +143,7 @@
 
 
 									<div class="panel panel-default">
-										<form>
+										
 										<div class="panel-heading">Hình thức thanh toán</div>
 										<div class="panel-body">
 											<div class="your-order-body">
@@ -138,15 +163,55 @@
 										</div>
 						
 
-										<div style="text-align: center;"><button type="submit" class="btn btn-success">Đặt hàng</button></div>
+										<div style="text-align: center;"><button id="thong" type="submit" class="btn btn-success">Đặt hàng</button></div>
 									{{-- </form> --}}
 									</div>
 
 									{{-- <div class="text-center"><a class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></a></div> --}}
-
+						</form>
 								</div>
 
 				</div> <!-- .your-order -->
 		</div>
 
 	@endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+// 	$(document).ready(function () {
+// // 		$('#imageaddform').submit(function(e) {
+// //     	e.preventDefault(); // don't submit multiple times
+// //     	this.submit(); // use the native submit method of the form element
+// //     	alert('aaa');
+// // });
+// 		if ($('input.checkbox_check').is(':checked')) {	
+// 		alert("aaa");
+// 	}
+
+// 	});
+
+// 	if ($('input.checkbox_check').is(':checked')) {	
+// 		alert("aaa");
+// 	}
+
+	function myFunction() {
+		var x = document.getElementById("myCheck").checked;
+		if (x == true){
+			document.getElementById("nguoinhan").style.display = "block";
+		}else{
+			document.getElementById("nguoinhan").style.display = "none";
+		}
+		// document.getElementById("demo").innerHTML = x;
+	}
+
+	
+
+
+	function submitForm()
+	{
+		var a = "Đặt hàng thành công";
+		alert(a);
+	}
+</script>
+

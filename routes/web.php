@@ -20,6 +20,11 @@ Route::get('',[
     'uses'=>'PageController@getIndex'
 ]);
 
+Route::get('trang_chu',[
+    'as' => 'trang_chu_2',
+    'uses'=>'PageController@getIndex'
+]);
+
 Route::get('search1',[
     'as'=>'search1',
     'uses'=>'PageController@getSearch1'
@@ -41,7 +46,7 @@ Route::get('fooddetail/{detail}',[
     'uses' =>'PageController@getFoodDetail'
 ]);
 
-Route::get('chi-tiet-san-pham/{id}',[
+Route::get('chi-tiet-san-pham/{id}/',[
     'as'=>'detail',
     'uses'=>'PageController@getDetailFood'
 ]);
@@ -93,9 +98,19 @@ Route::post('dat-hang',[
     'as' => 'dathang',
     'uses'=>'PageController@postCheckout'
 ]);
+Route::post('lien-he',[
+    'as' => 'lienhe',
+    'uses'=>'PageController@postContact'
+]);
+
 Route::get('news',[
     'as' => 'news',
     'uses' => 'PageController@getNews'
+]);
+
+Route::get('newdetail/{id}',[
+    'as' => 'newdetail',
+    'uses' => 'PageController@getNewDetail'
 ]);
 
 

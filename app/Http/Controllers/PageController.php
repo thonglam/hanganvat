@@ -10,6 +10,7 @@ use App\Cart;
 use App\Bill;
 use App\BillDetail;
 use App\News;
+use App\Contact;
 use Session;
 
 class PageController extends Controller
@@ -97,11 +98,8 @@ class PageController extends Controller
     function getDetailFood($id){
         $food = foods::where('id',$id)->first();
 
-        $sp_tuongtu = foods::where('id_type', $food->id_type)->paginate(3);
+        $sp_tuongtu = foods::where('id_type', $food->id_type)->where('id','!=',$id)->paginate(3);
 
-
-
-        
         // dd($food);
         // $sp_tuongtu =foodType::with('foods')->get();
         // foreach($sp_tuongtu as $type){
@@ -180,7 +178,10 @@ class PageController extends Controller
 
 
     function getInfo(){
-        return view('pages.info');
+
+        $loai = FoodType::all();
+
+        return view('pages.info',compact('loai'));
     }
 
 
@@ -200,6 +201,21 @@ class PageController extends Controller
         return view('pages.areaship');
     }
 
+    public function postContact(Request $req){
+        $contact = new Contact;
+
+        $contact->name = $req->hoten;
+ 
+        $contact->email = $req->email;
+
+        $contact->title = $req->tieude;
+
+        $contact->content = $req->phanhoi;
+
+        $contact->save();
+
+        return redirect()->route('contact');
+    }
 
 
     public function postCheckout(Request $req){
@@ -216,7 +232,11 @@ class PageController extends Controller
 
         $customer_bill->phone = $req->phone;
 
-       
+        $customer_bill->namenguoinhan = $req->namenguoinhan;
+
+        $customer_bill->addressnguoinhan = $req->addressnguoinhan;
+
+        $customer_bill->phonenguoinhan = $req->phonenguoinhan;
 
         $customer_bill->date_order = date('Y-m-d');
 
@@ -225,6 +245,8 @@ class PageController extends Controller
         $customer_bill->payment_method = $req->payment_method;
 
         $customer_bill->save();
+
+        
 
 
         foreach($cart->items as $key => $value ){
@@ -245,16 +267,31 @@ class PageController extends Controller
         }   
 
         Session::forget('cart');
-        return redirect()->back()->with('thongbao', 'Qúy khách đã đặt món ăn thành công');
+
+        return redirect()->route('trang_chu');
+
 
          
     }
 
     public function getNews()
     {
-        $news = news::all();
+        $news = DB::table('news')->paginate(5);
+         $loai = FoodType::all();
 
-        return view('pages.news',compact('news'));
+        return view('pages.news',compact('news','loai'));
     }
+
+    public function getNewDetail($id)
+    {
+        $newdetail = news::where('id',$id)->first();
+        $loai = FoodType::all();
+
+        
+
+        return view('pages.newdetail',compact('newdetail','loai'));
+    }
+
+
 
 }
