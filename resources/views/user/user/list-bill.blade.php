@@ -11,7 +11,9 @@
     <thead>
       <tr>
         <th scope="col">Stt</th>
-        <th scope="col">Tên khách hàng</th>
+        <th scope="col">Tên người nhận</th>
+        <th scope="col">Số điện thoại</th>
+        <th scope="col">Địa chỉ nhận</th>
         <th scope="col">Ngày đặt</th>
         <th scope="col">Giá</th>
         <th scope="col">Hiện trạng</th>
@@ -23,7 +25,24 @@
      @foreach($all as $bill)
      <tr>
       <th scope="row">{{$stt++}}</th>
-      <td>{{$bill->name}}</td>
+      @if ($bill->namenguoinhan == '')
+      <td>{{ $bill->name }}</td>
+      @else
+      <td>{{ $bill->namenguoinhan }}</td>
+      @endif
+
+      @if ($bill->phonenguoinhan == '')
+      <td>{{ $bill->phone }}</td>
+      @else
+      <td>{{ $bill->phonenguoinhan }}</td>
+      @endif
+
+      @if ($bill->addressnguoinhan == '')
+      <td>{{ $bill->address }}</td>
+      @else
+      <td>{{ $bill->addressnguoinhan }}</td>
+      @endif
+      
       <td>{{$bill->date_order}}</td>
       <td>{{$bill->total}}</td>
 
@@ -41,7 +60,7 @@
 
       @endif
 
-      <td>Shipper</td>
+      <td>{{ $bill->shipper }}</td>
       <td>
         <a href="{{ route('detailbill',$bill->id) }}">Chi tiết hóa đơn</a>
       </td>

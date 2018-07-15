@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Người dùng</a>
+                <a class="navbar-brand" href="{{route('detailacount',Auth::user()->id)}}">Người dùng</a>
             </div>
             <!-- /.navbar-header -->
 

@@ -2,7 +2,6 @@
 @extends('index')
 @section('content')
 
-
 @if (session('alert'))
     <div class="alert alert-success">
         {{ session('alert') }}
@@ -19,23 +18,29 @@
 				{{-- <div class="row">@if(Session::has('thongbao')){{Session::has['thongbao']}}@endif</div> --}}
 				
 				<div class="panel-body">
-					<form id="myForm" class="form-horizontal" method="post" action="{{ route('dathang') }}" onsubmit="submitForm()">
+					<form id="myForm" novalidate class="form-horizontal" method="post" action="{{ route('dathang') }}" onsubmit="submitForm()">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						{{ csrf_field() }}
 
-
-
 						<div class="form-group">
-							<label for="name" class="col-md-4 control-label">Name</label>
+							<label for="name" class="col-md-4 control-label">Tên:</label>
 
 							<div class="col-md-6">
-								<input id="name" type="text" class="form-control" name="name" value="" required autofocus >
+								<input id="name" type="text" class="form-control" name="name" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{ (Auth::check()) ?  Auth::user()->name : ''}}" required autofocus >
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="address" class="col-md-4 control-label">Email:</label>
+
+							<div class="col-md-6">
+								<input id="address" type="text" class="form-control" name="email" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{(Auth::check()) ?  Auth::user()->email : '' }}" required autofocus>
 
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="address" class="col-md-4 control-label">Địa chỉ</label>
+							<label for="address" class="col-md-4 control-label">Địa chỉ:</label>
 
 							<div class="col-md-6">
 								<input id="address" type="text" class="form-control" name="address" value="" required autofocus>
@@ -44,7 +49,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="phone" class="col-md-4 control-label"> Số điện thoại</label>
+							<label for="phone" class="col-md-4 control-label"> Số điện thoại:</label>
 
 							<div class="col-md-6">
 								<input id="phone" type="text" class="form-control" name="phone" value="" required autofocus>
@@ -62,7 +67,7 @@
 
 					 <div id="nguoinhan" class="nguoinhan" style="display: none;">
 						<div class="form-group">
-							<label for="name" class="col-md-4 control-label">Name Người nhận</label>
+							<label for="name" class="col-md-4 control-label">Tên người nhận</label>
 
 							<div class="col-md-6">
 								<input id="name" type="text" class="form-control" name="namenguoinhan" value="" required autofocus>
@@ -71,7 +76,7 @@
 						</div>
 
 						<div class="form-group">
-							<label for="address" class="col-md-4 control-label">Địa chỉ Người nhận</label>
+							<label for="address" class="col-md-4 control-label">Địa chỉ người nhận</label>
 
 							<div class="col-md-6">
 								<input id="address" type="text" class="form-control" name="addressnguoinhan" value="" required autofocus>

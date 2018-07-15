@@ -6,18 +6,18 @@
             <div class='col-md-3 sidebar'>
                 <!-- ================================== Menu trái ================================== -->
                 <div class="sidebar-module-container">
-                    
-                  
+
+
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
-                    <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
-                  
-                    <div class="sidebar-filter">
-                     <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                        <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+
+                        <div class="sidebar-filter">
+                         <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                             {{-- <div class="widget-header">
                                 <h4 class="widget-title"> MENU MÓN ĂN</h4>
                             </div> --}}
-                             @foreach($loai as $all)
+                            @foreach($loai as $all)
                             <div class="sidebar-widget-body m-t-10">
                                 <ul class="list">
 
@@ -25,17 +25,17 @@
                                         <a href="{{route('foodtype',$all->id)}}"> {{$all->name}} </a>
                                     </li>
 
-                                   
+
                                     
                                 </ul>
                                 {{-- <a href="#" class="lnk btn btn-primary">Show Now</a> --}}
                             </div>
-                             @endforeach
-                              </div>
-                           
-                        </div> 
-                        <!-- /.sidebar-widget -->
-                        <!-- ============================================== Giá ============================================== -->
+                            @endforeach
+                        </div>
+
+                    </div> 
+                    <!-- /.sidebar-widget -->
+                    <!-- ============================================== Giá ============================================== -->
                       {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                             <div class="widget-header">
                                 <h4 class="widget-title"> MENU MÓN ĂN</h4>
@@ -81,11 +81,11 @@
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
                             <div id="advertisement" class="advertisement">
                                 <div class="item bg-color">
-                                    
-                                       
 
-                                             <div class="item">
-                                    
+
+
+                                 <div class="item">
+
                                     <img src="upload/fast.jpg" width="430" height="460" >
                                     
 
@@ -99,61 +99,61 @@
                                             <div class="excerpt">
                                                 on selected items
                                             </div> --}}
-                                    
-                                    <!-- /.container-fluid -->
-                                </div>
-                                <!-- /.item -->
 
-                                <div class="item">
-                                    
-                                    <img src="upload/hehe.jpg" width="400" height="430" >
-                                    
+                                            <!-- /.container-fluid -->
+                                        </div>
+                                        <!-- /.item -->
 
-                                </div>
-                                <!-- /.item -->
+                                        <div class="item">
 
-                                <div class="item bg-color">
-                                    <div class="container-fluid">
-                                        <div class="caption vertical-top text-left">
-                                            <div class="big-text">
-                                                Save
-                                      <span class="big">50%</span>
-                                </div>
+                                            <img src="upload/hehe.jpg" width="400" height="430" >
 
 
-                                            <div class="excerpt fadeInDown-2">
-                                                on selected items
+                                        </div>
+                                        <!-- /.item -->
+
+                                        <div class="item bg-color">
+                                            <div class="container-fluid">
+                                                <div class="caption vertical-top text-left">
+                                                    <div class="big-text">
+                                                        Save
+                                                        <span class="big">50%</span>
+                                                    </div>
+
+
+                                                    <div class="excerpt fadeInDown-2">
+                                                        on selected items
+                                                    </div>
+                                                </div>
+
+                                                <!-- /.caption -->
                                             </div>
-                                 </div>
 
-                                        <!-- /.caption -->
+                                            <!-- /.container-fluid -->
+                                        </div>
+                                        <!-- /.item -->
                                     </div>
 
-                                    <!-- /.container-fluid -->
-                                </div>
-                                <!-- /.item -->
+                                </br>
+
+
+                                <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
+
+                                <!-- /.owl-carousel -->
+
                             </div>
 
-                             </br>
-
-                            
-                             <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
-                            
-                            <!-- /.owl-carousel -->
+                            <!-- ============================================== COLOR: END ============================================== -->
 
                         </div>
-
-                        <!-- ============================================== COLOR: END ============================================== -->
-
+                        <!-- /.sidebar-filter -->
+                    </div>
+                    <!-- /.sidebar-module-container -->
                 </div>
-                    <!-- /.sidebar-filter -->
-                </div>
-                <!-- /.sidebar-module-container -->
-            </div>
-            <!-- /.sidebar -->
-            <div class='col-md-9'>
-                <!-- ========================================== SECTION – HERO ========================================= -->
-                <!-- ========================================= SECTION – HERO : END ========================================= -->
+                <!-- /.sidebar -->
+                <div class='col-md-9'>
+                    <!-- ========================================== SECTION – HERO ========================================= -->
+                    <!-- ========================================= SECTION – HERO : END ========================================= -->
                 {{-- <div class="clearfix filters-container m-t-10">
                     <div class="row">
                         <div class="col col-sm-6 col-md-2">
@@ -207,8 +207,8 @@
                     <!-- /.row -->
                 </div> --}}
                 <div class="panel-heading" style="background-color:pink; color:white;">
-                        <h4><b>Tin tức mỗi ngày</b></h4>
-                    </div>
+                    <h4><b>Tin tức mỗi ngày</b></h4>
+                </div>
 
                     {{-- @foreach($news as $news)
 
@@ -235,60 +235,42 @@
 
                     <div class="tie-indent">
                         <div class="wrapper">
-                        <div class="fleft" style="width:70%">
-                        <h2><a class="name" href="http://quavatviet.vn/tin-tuc/buoi-sang-tran-nang-luong-voi-nhung-viec-lam-don-gian/" title="Buổi sáng tràn năng lượng với những việc làm đơn giản">
-                            <strong>{{$news->title}}</strong>
-                        </a></h2>
-                        {{-- <p class="date-post">01/03/2018</p> --}}
-                        
-                         
-
-
-                         <div class="fleft" style="width:29%">
-
-                        <span class="image">
-                            <a >
-                                <img src="upload/{{$news->image}}"  width="173" height="129">
-                            </a>
-
-
-                        </span>
-                        <br clear="all">
+                            <div class="fleft" style="width:70%">
+                                <h2><a href="{{route('newdetail',$news->id)}}"><strong>{{$news->title}}</strong></a></h2>
+                                {{-- <p class="date-post">01/03/2018</p> --}}
+                                <div class="fleft" style="width:29%">
+                                    <span class="image">
+                                        <a href="{{route('newdetail',$news->id)}}"><img src="upload/{{$news->image}}"  width="173" height="129"></a>
+                                    </span>
+                                    <br clear="all">
+                                </div>
+                                <div>
+                                    {{$news->description}}
+                                    <a href="{{route('newdetail',$news->id)}}">..Xem thêm</a>
+                                </div>
+                                <br clear="all">
+                            </div>
                         </div>
-
-                            <div>
-                                {{$news->description}}
-                                <a href="{{route('newdetail',$news->id)}}"> ...Xem thêm
-                                 </a>
-                             </div>
-                        <br clear="all">
                     </div>
-                   
-                   
-                </div>
-
-        </div>
-        @endforeach 
-
-         
+                    @endforeach 
             {{--  <div class="row">
                       {{$news->links()}}
-            </div> --}}
+                  </div> --}}
 
 
-                <!-- /.search-result-container -->
+                  <!-- /.search-result-container -->
 
-            </div>
-            <!-- /.col -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
+              </div>
+              <!-- /.col -->
+          </div>
+          <!-- /.row -->
+      </div>
+      <!-- /.container -->
 
-</div>
-<!-- /.body-content -->
-@endsection
-@section('title','Tin tức')
+  </div>
+  <!-- /.body-content -->
+  @endsection
+  @section('title','Tin tức')
 
 
 

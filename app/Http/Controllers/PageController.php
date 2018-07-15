@@ -37,7 +37,7 @@ class PageController extends Controller
 
     public function getIndex(){
         
-         $new_food = Foods::where('new',1)->get();
+         $new_food = Foods::where('new',1)->limit(3)->get();
          
 
 
@@ -231,14 +231,14 @@ class PageController extends Controller
 
 
     public function postCheckout(Request $req){
-        $cart = Session::get('cart');
 
+        $cart = Session::get('cart');
 
         $customer_bill = new Bill;
 
         $customer_bill->name = $req->name;
 
-        
+        $customer_bill->email= $req->email;
 
         $customer_bill->address= $req->address;
 
@@ -258,8 +258,6 @@ class PageController extends Controller
 
         $customer_bill->save();
 
-        
-
 
         foreach($cart->items as $key => $value ){
 
@@ -270,7 +268,6 @@ class PageController extends Controller
             $bill_detail->id_food  = $key;
 
             $bill_detail->quantity = $value['qty'];
-
 
             $bill_detail->price = ($value['price']/$value['qty']);
 
@@ -288,8 +285,8 @@ class PageController extends Controller
 
     public function getNews()
     {
-        $news = DB::table('news')->paginate(5);
-         $loai = FoodType::all();
+        $news = DB::table('news')->limit(4)->get();
+        $loai = FoodType::all();
 
         return view('pages.news',compact('news','loai'));
     }
