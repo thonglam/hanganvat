@@ -89,7 +89,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="file" name="image" id="file">
-                                        <div id="imgup" style="margin: 50px 0 0 -50px;"></div>
+                                        <div id="imgup"><img src="{{URL::asset('upload/'.$food->image)}}"></div>
                                     </label>
                                 </div>
                             </div>

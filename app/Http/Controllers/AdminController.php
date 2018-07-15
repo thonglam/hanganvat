@@ -10,6 +10,7 @@ use App\FoodType;
 use App\Functions;
 use App\Bill;
 use App\BillDetail;
+use App\News;
 class AdminController extends Controller
 {
     function getEditFood($id){ 
@@ -144,5 +145,56 @@ class AdminController extends Controller
         $user->role = $req->role;
         $user->update();
         return redirect()->route('list-user')->with(['flash_massage'=>'Thay đổi quyền thành công']);
+    }
+    function getListNew(){
+        $stt =1;
+        $news = News::all();
+        return view('admin.admin.list-new',compact('news','stt'));
+    }
+    function getAddNews()
+    {
+        return view('admin.admin.add-new');
+    }
+    function postAddNews(Request $req)
+    {
+        $new = new News();
+        $new->title = $req->title;
+        $new->description = $req->description;
+        if($req->hasFile('image')){
+            $file_name = $req->file('image')->getClientOriginalName();
+            $req->file('image')->move('upload',$file_name);
+
+            $new->image = $file_name;      
+        }else
+            $new->image = '';
+        $new->content = $req->content;
+        $new->save();
+        return redirect()->back()->with(['flash_massage'=>'Thêm tin tức thành công']);
+    }
+    function getDeleteNew($id)
+    {
+        $new = News::find($id);
+        $new->delete();
+        return redirect()->back()->with(['flash_massage'=>'Xóa bài viết thành công']);
+    }
+    function getEditNew($id)
+    { 
+        $new = News::where(['id'=>$id])->first();
+        return view('admin.admin.edit-new', compact('new'));
+    }
+    function postEditNew(Request $req){
+        $id = $req->id;
+        $new = News::find($id);
+        $new->title = $req->title;
+        $new->description = $req->description;
+        $new->content = $req->content;
+        if($req->hasFile('image')){
+            $file_name = $req->file('image')->getClientOriginalName();
+            $req->file('image')->move('upload',$file_name);
+
+            $new->image = $file_name;
+        }
+        $new->save();
+        return redirect()->route('list-new')->with(['flash_massage'=>'Cập nhật bài viết thành công']);
     }
 }

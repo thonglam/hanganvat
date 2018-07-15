@@ -162,7 +162,30 @@ Route::post('change-role/{id}',[
     'as' =>'changerole',
     'uses'=>'AdminController@postchangrole'
 ]);
-
+Route::get('list-new',[
+    'as' =>'list-new',
+    'uses'=>'AdminController@getListNew'
+]);
+Route::get('news/add',[
+    'as' =>'addnew',
+    'uses'=>'AdminController@getAddNews'
+]);
+Route::post('news/add',[
+    'as' =>'addnews',
+    'uses'=>'AdminController@postAddNews'
+]);
+Route::get('edit-new/{id}',[
+    'as' =>'edit_new',
+    'uses'=>'AdminController@getEditNew'
+]);
+Route::post('edit-new/{id}',[
+    'as' =>'editnew',
+    'uses'=>'AdminController@postEditNew'
+]);
+Route::get('list-new/{id}',[
+    'as' =>'listnew',
+    'uses'=>'AdminController@getDeleteNew'
+]);
 
 //----------------User------------------
 Route::get('change-pass/{id}',[

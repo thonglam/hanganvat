@@ -1,9 +1,9 @@
-@section('title', 'Danh sách sản phẩm')
+@section('title', 'Danh sách bài viết')
 @extends('admin.masteradmin')
 @section('content_admin')
 <div class="col-lg-12">
   <h1 class="page-header">Danh sách
-    <small>Món ăn</small>
+    <small>Bài viết</small>
   </h1>
 </div>
 <div class="col-lg-12">
@@ -18,24 +18,24 @@
     <thead>
       <tr>
         <th scope="col">Stt</th>
-        <th scope="col">Tên món ăn</th>
+        <th scope="col">Tiêu đề</th>
         <th scope="col">Hình ảnh</th>
-        <th scope="col">Giá</th>
-        <th scope="col">KM</th>
+        <th scope="col">Mô tả</th>
+        <th scope="col">Nội dung</th>
         <th scope="col">Sửa</th>
         <th scope="col">Xóa</th>
       </tr>
     </thead>
     <tbody>
-      @foreach($foods as $food)
+      @foreach($news as $new)
       <tr>
         <th scope="row">{{$stt++}}</th>
-        <td>{{$food->name}}</td>
-        <td><img src="upload/{{$food->image}}" alt="" style="width: 150px; height: 80px;"></td>
-        <td>{{$food->price}}</td>
-        <td>{{$food->promotion_price}}</td>
-        <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('edit_food',$food->id)}}">Sửa</a></td>
-        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc là xóa không')" href="{{route('listfood',$food->id)}}">Xóa</a></td>
+        <td>{{$new->title}}</td>
+        <td><img src="upload/{{$new->image}}" alt="" style="width: 150px; height: 80px;"></td>
+        <td>{{$new->description}}</td>
+        <td>{{$new->content}}</td>
+        <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{ route('edit_new',$new->id) }}">Sửa</a></td>
+        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc là xóa không')" href="{{route('listnew',$new->id)}}">Xóa</a></td>
       </td>
     </tr>
     @endforeach

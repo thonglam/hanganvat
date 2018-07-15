@@ -23,6 +23,7 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="{{URL::asset('admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
+    <link href="{{URL::asset('admincss/myscss.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -54,10 +55,10 @@
                     <ul class="dropdown-menu dropdown-user">
                         <li class="divider"></li>
                         <li><a class="dropdown-item" href="{{route('logout')}}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                           <i class="fa fa-sign-out fa-lg"></i> Đăng xuất
-                       </a>
-                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                         <i class="fa fa-sign-out fa-lg"></i> Đăng xuất
+                     </a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 </li>
@@ -88,6 +89,18 @@
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="{{route('list-bill')}}">Danh sách hóa đơn</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-cube fa-fw"></i> Bài viết<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ route('list-new') }}">Danh sách bài viết</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('addnew') }}">Thêm bài viết mới</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
