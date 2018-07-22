@@ -131,6 +131,32 @@
                               </div>
                            
                         </div> 
+
+                         <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
+                            <h2 class="section-title"  style="color: green" > Tìm theo giá</h2>
+                            <div class="sidebar-widget-body m-t-10">
+                                <form method="get" action="{{route('search')}}">
+                                <ul class="list">
+                                    <li>
+                                        {{-- <a href="">Nhỏ hơn 20k</a> --}}
+                                         <input class="search-field"  placeholder="Giá tối thiểu"  value="giá thấp nhất" name="pricemin"/> 
+                                
+                                    </li>
+                                    <li>
+                                         <input class="search-field"  placeholder="Giá tối đa" value="giá tối đa" name="pricemax"/> 
+                                    </li>
+                                 
+                                          <button class="fa fa-search" type="submit" id="searchsubmit"></button>  
+                                         {{-- <button type="submit"><i class="fa fa-search"></i></button> --}}
+                                     
+                                    
+                                 
+                                </ul>
+                            </form>
+                                <!--<a href="#" class="lnk btn btn-primary">Show Now</a>-->
+                            </div>
+                            <!-- /.sidebar-widget-body -->
+                        </div>
                         <!-- /.sidebar-widget -->
                     
                        {{--  <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
@@ -163,10 +189,10 @@
 
 
 
-                     <div class="widget">
-                     <h2  class="section-title " style="color:  green"   >MÓN ĂN MỚI</h3>
-                    <div class="widget-body">
-
+                     
+                     {{-- <h2 class="section-title"  style="color: green" > Món ăn mới</h2>  --}}
+                  <div class="widget-body">
+                <h2 class="section-title"  style="color: green" > Món ăn mới</h2>
                             @foreach($new_food as $new)
                             {{-- div class="beta-sales beta-lists"> --}}
 
@@ -184,18 +210,9 @@
                                                         <div class="tag new">
                                                             <span>new</span>
                                                         </div>
-                                                </div>
+                                         </div>
 
-                                        
                                  </div>
-
-                                
-
-                                        
-                                    
-                                    
-
-                                    
                                         <div class="media-body">
                                          <b>  <mark style="color: red" > {{$new->name}} </mark> </b><br>
                                          <div class="product-price">
@@ -203,16 +220,14 @@
                                              {{number_format($new->price)}} 
                                             </span>
                                         </div>
-
                                             {{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
                                         </div>
-                                    
                                 </div>
                             {{-- </div> --}}
                             @endforeach
-
+                            {{-- {{ $new_food->links() }} --}}
                         </div>
-                    </div> <!-- best sellers widget --> 
+                     <!-- best sellers widget --> 
 
 
                         <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
@@ -373,8 +388,8 @@
 
 
                                                     <div class="product-info text-left">
-                                                        <h3 class="name">
-                                                        <a href="{{route('detail',$all->id)}}">{{$all->name}}</a>
+                                                        <h3 class="name" style="color: red">
+                                                        <a href="{{route('detail',$all->id)}}">{{$all->name}} </a>
                                                         </h3>
                                                         <div class="rating rateit-small"></div>
                                                         <div class="description"></div>
@@ -399,6 +414,21 @@
                                                     <!-- /.product-info -->
                                                     <div class="cart clearfix animate-effect">
                                                         <div class="action">
+
+                                                            
+                                                            
+                                 {{--  <form action="{{route('themgiohang',$all->id)}}" method="GET">  --}}
+                                   {{--  <u style="color: blue"><b style="font-size: 25px" > Số lượng: </b> </u> <div class="space10">&nbsp;</div>  <p> <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5">  --}}
+
+                                {{-- </select> --}}
+                               {{--  <button type="submit">
+                                <a class="add-to-cart" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                Thêm vào giỏ hàng
+                                </button> </p> --}}
+
+                                
+                            
+                                {{-- </form> --}}
                                                             
 
                                                             {{-- <button type="button" class="btn btn-default btn-sm" >
@@ -406,28 +436,28 @@
 
         </button> --}}
 
-                                                                        <li class="add-cart-button btn-group">
+                                                                         <li class="add-cart-button btn-group">
                                                                            {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
                                                                                 {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+      <a  class="add-to-cart pull-left btn btn-success "   href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" > Thêm vào giỏ hàng</i></a>  
 
                                                                             {{-- </button> --}}
                                                                             {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
 
-                                                                        </li>
+                                                                        {{-- </li> --}} 
                                                                        
                                                                     
                                                                         {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
+                                                                    {{-- <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
                                                                      <i class="fa fa-chevron-right"></i></a>
 
                                                                  
 
-                                                                     <div class="clearfix"></div>
+                                                                     <div class="clearfix"></div> --}}
 
                                                                  
 

@@ -30,13 +30,13 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Mô tả:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập mô tả" name="price">
+                                    <input type="text" class="form-control" placeholder="Nhập mô tả" name="description">
                                 </div>
                             </div>
                              <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Nội dung:</label>
                                 <div class="col-sm-9">
-                                    <textarea id="detail" class="form-control" name="detail" rows="5"></textarea>
+                                    <textarea id="detail" class="form-control" name="content" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>

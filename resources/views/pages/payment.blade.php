@@ -47,7 +47,7 @@
                     {{-- <h3 class="section-title">Menu món ăn</h3> --}}
                     <div class="sidebar-filter">
 
-                        <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+                         <h2 class="section-title"  style="color: green" >DANH SÁCH MÓN ĂN </h2>
                   
                     <div class="sidebar-filter">
                      <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
@@ -71,6 +71,43 @@
                               </div>
                            
                         </div> 
+
+                        <div class="widget-body">
+                <h2 class="section-title"  style="color: green" > Món ăn mới</h2>
+                            @foreach($new_food as $new)
+                            {{-- div class="beta-sales beta-lists"> --}}
+
+                                <div class="media beta-sales-item">
+                                     <div class="product">
+                                                    <div class="product-image">
+                                                        <div class="image">
+                                                            <a href="{{route('detail',$new->id)}}">
+                                                                <img src="upload/{{$new->image}}" alt="" width="250px" height="200px"> 
+                                                            </a>
+                                                        </div>
+                                                    
+                                                        <!-- /.image -->
+
+                                                        <div class="tag new">
+                                                            <span>new</span>
+                                                        </div>
+                                         </div>
+
+                                 </div>
+                                        <div class="media-body">
+                                         <b>  <mark style="color: red" > {{$new->name}} </mark> </b><br>
+                                         <div class="product-price">
+                                            <span class="price">
+                                             {{number_format($new->price)}} 
+                                            </span>
+                                        </div>
+                                            {{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
+                                        </div>
+                                </div>
+                            {{-- </div> --}}
+                            @endforeach
+                            {{-- {{ $new_food->links() }} --}}
+                        </div>
 
                          <div class="sidebar-widget  wow fadeInUp outer-top-vs ">
                             <div id="advertisement" class="advertisement">

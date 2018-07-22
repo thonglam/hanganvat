@@ -37,7 +37,9 @@ class PageController extends Controller
 
     public function getIndex(){
         
-         $new_food = Foods::where('new',1)->limit(3)->get();
+         $new_food = Foods::where('new',1)->paginate(3);
+
+
          
 
 
@@ -45,23 +47,44 @@ class PageController extends Controller
         // dd($allFood);
         $allFood = DB::table('foods')->paginate(12);
 
+        
+
         $loai = FoodType::all();
 
         
 
-        return view('pages.trangchu',compact('new_food','allFood','loai'));
+        return view('pages.trangchu',compact('new_food','allFood','loai','food'));
 
 
     }
     
-    function getSearch1(Request $req){
-        $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
-        return view('pages.search1',compact('food'));
-    }
+    // function getSearch1(Request $req){
+    //     $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
+    //     return view('pages.search1',compact('food'));
+    // }
 
     function getSearch(Request $req){
-        $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
-        return view('pages.search',compact('food'));
+       $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->where('price','>',$req->pricemin)->where('price','<',$req->pricemax)->get();
+
+       
+
+         $loai = FoodType::all();
+
+         $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.search',compact('food','loai','new_food','food1'));
+    }
+
+    function getSearch1(Request $req){
+      $food1 = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
+
+       
+
+         $loai = FoodType::all();
+
+         $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.search1',compact('food1','loai','new_food'));
     }
 
 
@@ -73,7 +96,9 @@ class PageController extends Controller
 
         $loai = FoodType::all();
 
-        return view('pages.foodtype',compact('sp_theoloai','loai'));
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.foodtype',compact('sp_theoloai','loai','new_food'));
     }
 
     public function getFoodDetail($detail){
@@ -188,7 +213,9 @@ class PageController extends Controller
 
         $loai = FoodType::all();
 
-        return view('pages.info',compact('loai'));
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.info',compact('loai','new_food'));
     }
 
 
@@ -199,18 +226,27 @@ class PageController extends Controller
     function getPriceShip(){
         $loai = FoodType::all();
 
-        return view('pages.priceship',compact('loai'));
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.priceship',compact('loai','new_food'));
     }
 
     function getPayMent(){
 
         $loai = FoodType::all();
-        return view('pages.payment',compact('loai'));
+
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.payment',compact('loai','new_food'));
     }
 
      function getAreaShip(){
         $loai = FoodType::all();
-        return view('pages.areaship',compact('loai'));
+
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+
+        return view('pages.areaship',compact('loai','new_food'));
     }
 
     public function postContact(Request $req){
@@ -285,20 +321,27 @@ class PageController extends Controller
 
     public function getNews()
     {
-        $news = DB::table('news')->limit(4)->get();
+        $news = DB::table('news')->paginate(3);
+
         $loai = FoodType::all();
 
-        return view('pages.news',compact('news','loai'));
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+        return view('pages.news',compact('news','loai','new_food'));
     }
 
     public function getNewDetail($id)
     {
         $newdetail = news::where('id',$id)->first();
+
+        $new_food = Foods::where('new',1)->limit(3)->get();
+
+
         $loai = FoodType::all();
 
         
 
-        return view('pages.newdetail',compact('newdetail','loai'));
+        return view('pages.newdetail',compact('newdetail','loai','new_food'));
     }
 
 

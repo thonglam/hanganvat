@@ -88,38 +88,54 @@
                     <!-- /.contact-row -->
                     <!-- ============================================================= SEARCH AREA ============================================================= -->
                     <div class="search-area">
-                        <form method="get" action="{{route('search')}}">
+                        <form method="get" action="{{route('search1')}}">
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"  href="category.html">Tìm kiếm:
+                                        <a class="dropdown-toggle" data-toggle="dropdown"  href="category.html">Tìm kiếm
                                             <b class="caret"></b>
                                         </a>
-                                        
+                                        {{-- <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1">Theo tên món ăn</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a role="menuitem" tabindex="-1">Theo giá</a>
+                                            </li>
+                                        </ul> --}}
                                     </li>
                                 </ul>
 
-                                <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
+                                
+                                
+                                 <input class="search-field"  name="key" placeholder="Tìm ở đây..."  />
+                                {{-- <input class="search-field" placeholder="Giá min" value="Gía thấp nhất" name="pricemin"/>
+                                <input class="search-field" placeholder="Giá max" value="Gía cao nhất" name="pricemax"/>  --}}  
+                                 <button class="search-button" type="submit" id="searchsubmit"></button>
+
 
 
                                 {{-- <a class="search-button"  href="{{route('search')}} " id="searchsubmit" > </a> --}}
 
                         {{--         <button class="fa fa-search" type="submit" id="searchsubmit"></button> --}}
                                 
-                               <button class="search-button" type="submit" id="searchsubmit"></button>
+                              
 
                                 {{-- <a class="search-button"  action="{{route('search')}}"> </a> --}}
 
                                 
 
 
-                            
+                             
                             </div>
                         </form>
                     </div>
+                     
+
                     <!-- /.search-area -->
                     <!-- ============================================================= SEARCH AREA : END ============================================================= -->
-                </div>
+        </div>
+
                 <!-- /.top-search-holder -->
 
                 <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">

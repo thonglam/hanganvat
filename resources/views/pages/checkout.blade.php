@@ -43,7 +43,7 @@
 							<label for="address" class="col-md-4 control-label">Địa chỉ:</label>
 
 							<div class="col-md-6">
-								<input id="address" type="text" class="form-control" name="address" value="" required autofocus>
+								<input id="address" type="text" class="form-control" name="address"  required autofocus>
 
 							</div>
 						</div>

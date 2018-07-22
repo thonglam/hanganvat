@@ -38,11 +38,16 @@
                         {{ csrf_field() }}
 
                         <div class="col-md-4 ">
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <b><label class="info-title" for="exampleInputName" style="font-size: 20px">Họ tên</b>
                                     <span>*</span>
                                 </label>
-                                <input name="hoten" class="form-control unicase-form-control text-input" id="exampleInputName" {{-- placeholder="Name" --}}>
+                                <input name="hoten" class="form-control unicase-form-control text-input" id="exampleInputName"  value="{{ old('name') }}"{{-- placeholder="Name" --}} required autofocus >
+                                 @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             
                     </div>
@@ -51,7 +56,7 @@
                                 <label class="info-title" for="exampleInputEmail1" style="font-size: 20px">Email của bạn
                                     <span>*</span>
                                 </label>
-                                <input name="email" type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" {{-- placeholder="admin@unicase.com" --}}>
+                                <input name="email" type="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1" {{-- placeholder="admin@unicase.com" --}} required autofocus >
                             </div>
                     </div>
                     <div class="col-md-4">
@@ -59,7 +64,7 @@
                                 <label class="info-title" for="exampleInputTitle" style="font-size: 20px">Tiêu đề
                                     <span>*</span>
                                 </label>
-                                <input name="tieude" class="form-control unicase-form-control text-input" id="exampleInputTitle" {{-- placeholder="Title" --}}>
+                                <input name="tieude" class="form-control unicase-form-control text-input" id="exampleInputTitle" required autofocus {{-- placeholder="Title" --}}>
                             </div>
                     </div>
                     <div class="col-md-12">
@@ -67,7 +72,7 @@
                                 <label class="info-title" for="exampleInputComments" style="font-size: 20px">Phản hồi
                                     <span>*</span>
                                 </label>
-                                <textarea name="phanhoi" class="form-control unicase-form-control" id="exampleInputComments"></textarea>
+                                <textarea name="phanhoi" class="form-control unicase-form-control" id="exampleInputComments" required autofocus></textarea>
                             </div>
                        
                     </div>

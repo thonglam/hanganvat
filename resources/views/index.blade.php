@@ -35,6 +35,8 @@
 		<link href="{{URL::asset('template/assets/css/red.css')}}" rel="alternate stylesheet" title="Red color">
 		<link href="{{URL::asset('template/assets/css/orange.css')}}" rel="alternate stylesheet" title="Orange color">
 		<link href="{{URL::asset('template/assets/css/dark-green.css')}}" rel="alternate stylesheet" title="Darkgreen color">
+
+		<link rel="stylesheet" href="{{URL::asset('template/assets/css/custom.css')}}">
 		<!-- Demo Purpose Only. Should be removed in production : END -->
 
 		
@@ -46,6 +48,10 @@
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="{{URL::asset('template/assets/images/favicon.ico')}}">
+	
+		 {{-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>  --}}
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>

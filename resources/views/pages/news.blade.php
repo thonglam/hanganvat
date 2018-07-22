@@ -10,7 +10,7 @@
 
                     <div class="sidebar-filter">
                         <!-- ============================================== Danh sách món ăn ============================================== -->
-                        <h2 class="section-title" style="color: red">DANH SÁCH MÓN ĂN</h2>
+                        <h2 class="section-title"  style="color: green" >DANH SÁCH MÓN ĂN </h2>
 
                         <div class="sidebar-filter">
                          <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
@@ -34,6 +34,43 @@
                         </div>
 
                     </div> 
+
+                    <div class="widget-body">
+                <h2 class="section-title"  style="color: green" > Món ăn mới</h2>
+                            @foreach($new_food as $new)
+                            {{-- div class="beta-sales beta-lists"> --}}
+
+                                <div class="media beta-sales-item">
+                                     <div class="product">
+                                                    <div class="product-image">
+                                                        <div class="image">
+                                                            <a href="{{route('detail',$new->id)}}">
+                                                                <img src="upload/{{$new->image}}" alt="" width="250px" height="200px"> 
+                                                            </a>
+                                                        </div>
+                                                    
+                                                        <!-- /.image -->
+
+                                                        <div class="tag new">
+                                                            <span>new</span>
+                                                        </div>
+                                         </div>
+
+                                 </div>
+                                        <div class="media-body">
+                                         <b>  <mark style="color: red" > {{$new->name}} </mark> </b><br>
+                                         <div class="product-price">
+                                            <span class="price">
+                                             {{number_format($new->price)}} 
+                                            </span>
+                                        </div>
+                                            {{-- <span class="beta-sales-price">{{$matt->price}}</span> --}}
+                                        </div>
+                                </div>
+                            {{-- </div> --}}
+                            @endforeach
+                            {{-- {{ $new_food->links() }} --}}
+                        </div>
                     <!-- /.sidebar-widget -->
                     <!-- ============================================== Giá ============================================== -->
                       {{--  <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
@@ -208,63 +245,42 @@
                 </div> --}}
                 <div class="panel-heading" style="background-color:pink; color:white;">
                     <h4><b>Tin tức mỗi ngày</b></h4>
-                </div>
+               </div> 
 
-                    {{-- @foreach($news as $news)
-
-                     <div class="row-item row">
-                        <div class="col-md-3">
-
-                            <a href="detail.html">
-                                <br>
-                                <img width="200px" height="200px" class="img-responsive" src="upload/{{ $news->image}}" alt="">
-                            </a>
-                        </div>
-
-                        <div class="col-md-9">
-                            <h3>{{ $news->title}}</h3>
-                            <p> {{ $news->description}}</p>
-                            <a class="btn btn-primary" href="{{route('newdetail',$news->id)}}">Xem them <span class="glyphicon glyphicon-chevron-right"></span></a>
-                        </div>
-                        <div class="break"></div>
-                    </div>
-
-                    @endforeach --}}
-
-                    @foreach($news as $news)
+        
+                   
+                     @foreach($news as $new)
 
                     <div class="tie-indent">
                         <div class="wrapper">
                             <div class="fleft" style="width:70%">
-                                <h2><a href="{{route('newdetail',$news->id)}}"><strong>{{$news->title}}</strong></a></h2>
-                                {{-- <p class="date-post">01/03/2018</p> --}}
+                                <h2><a href="{{route('newdetail',$new->id)}}"><strong>{{$new->title}}</strong></a></h2>
+                                
                                 <div class="fleft" style="width:29%">
                                     <span class="image">
-                                        <a href="{{route('newdetail',$news->id)}}"><img src="upload/{{$news->image}}"  width="173" height="129"></a>
+                                        <a href="{{route('newdetail',$new->id)}}"><img src="upload/{{$new->image}}"  width="173" height="129"></a>
                                     </span>
                                     <br clear="all">
                                 </div>
                                 <div>
-                                    {{$news->description}}
-                                    <a href="{{route('newdetail',$news->id)}}">..Xem thêm</a>
+                                    {{$new->description}}
+                                    <a href="{{route('newdetail',$new->id)}}">..Xem thêm</a>
                                 </div>
                                 <br clear="all">
                             </div>
                         </div>
                     </div>
-                    @endforeach 
-            {{--  <div class="row">
-                      {{$news->links()}}
-                  </div> --}}
-
-
+                    @endforeach  
+                    
+                {{ $news->links() }}
+              {{-- <div class="row">{{$news->links()}} </div>  --}}
                   <!-- /.search-result-container -->
 
               </div>
               <!-- /.col -->
           </div>
           <!-- /.row -->
-      </div>
+     
       <!-- /.container -->
 
   </div>

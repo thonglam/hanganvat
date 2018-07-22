@@ -339,7 +339,12 @@
 
                 <!-- Post Content -->
                  </br>
-                <p class="lead">{{$newdetail->content}} </p>
+                <p class="lead">{{$newdetail->content}}  </p> 
+
+                 </br>
+                  <h3 class="the-article-summary cms-desc">Tác giả: {{$newdetail->author}} </h3>
+
+                    <h3 class="the-article-summary cms-desc"> Nguồn trang: <a href="{{$newdetail->sourepage}}"> https://news.zing.vn/bo-sung-nuoc-dung-cach-khi-troi-nang-nong-post860640.html</a> </h3>
                
 
                 
@@ -400,4 +405,4 @@
 </div>
 <!-- /.body-content -->
 @endsection
-@section('title','Trang Chủ')
+@section('title','Chi tiết tin')

@@ -168,6 +168,7 @@ class AdminController extends Controller
         }else
             $new->image = '';
         $new->content = $req->content;
+
         $new->save();
         return redirect()->back()->with(['flash_massage'=>'Thêm tin tức thành công']);
     }
