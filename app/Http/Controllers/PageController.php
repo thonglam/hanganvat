@@ -41,11 +41,11 @@ class PageController extends Controller
 
 
          
-
+          $allFood= Foods::where('today',1)->paginate(12);
 
         //$allFood = Foods::all()->paginate(1);
         // dd($allFood);
-        $allFood = DB::table('foods')->paginate(12);
+        // $allFood = DB::table('foods')->paginate(12);
 
         
 
