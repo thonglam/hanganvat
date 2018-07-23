@@ -40,7 +40,7 @@
                           </div>
                       </div>
                       <div style="text-align: center;">
-                        <a href="{{ route('changepass',$user->id) }}">Bạn có muốn đổi mới mật khẩu ?</a>
+                        <a href="{{ route('changepass',$user->id) }}">Bạn có muốn đổi mới tên và mật khẩu ?</a>
                     </div>
                 </form>
             </div>

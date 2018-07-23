@@ -39,6 +39,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ route('list-Bill') }}">Giao hàng</a>
+                <a class="navbar-brand" href="{{route('trang_chu')}}">Về trang chủ</a>
             </div>
             <!-- /.navbar-header -->
 
