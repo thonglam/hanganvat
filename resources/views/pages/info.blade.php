@@ -191,7 +191,7 @@
                                         <div class="caption vertical-top text-left">
                                             <div class="big-text">
                                                 Save
-                                      <span class="big">50%</span>
+                                      <span class="big">20%</span>
                                 </div>
 
 
@@ -211,7 +211,7 @@
                              </br>
 
                             
-                             <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a>
+                             {{-- <a href="#"><img class="right-banner" src="upload/k.png" width="400" height="400"></a> --}}
                             
                             <!-- /.owl-carousel -->
 

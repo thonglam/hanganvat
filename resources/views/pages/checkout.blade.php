@@ -18,7 +18,7 @@
 				{{-- <div class="row">@if(Session::has('thongbao')){{Session::has['thongbao']}}@endif</div> --}}
 				
 				<div class="panel-body">
-					<form id="myForm" novalidate class="form-horizontal" method="post" action="{{ route('dathang') }}" onsubmit="submitForm()">
+					<form id="myForm" novalidate class="form-horizontal" method="post" action="{{ route('dathang') }}">
 						<input type="hidden" name="_token" value="{{csrf_token()}}">
 						{{ csrf_field() }}
 
@@ -31,10 +31,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="address" class="col-md-4 control-label">Email:</label>
+							<label for="address" class="col-md-4 control-label" >Email:</label>
 
 							<div class="col-md-6">
-								<input id="address" type="text" class="form-control" name="email" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{(Auth::check()) ?  Auth::user()->email : '' }}" required autofocus>
+								<input id="email" type="email" class="form-control" name="email" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{(Auth::check()) ?  Auth::user()->email : '' }}" required autofocus>
 
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 							<label for="name" class="col-md-4 control-label">Tên người nhận</label>
 
 							<div class="col-md-6">
-								<input id="name" type="text" class="form-control" name="namenguoinhan" value="" required autofocus>
+								<input id="namegn" type="text" class="form-control" name="namenguoinhan" value="" required autofocus>
 
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 							<label for="address" class="col-md-4 control-label">Địa chỉ người nhận</label>
 
 							<div class="col-md-6">
-								<input id="address" type="text" class="form-control" name="addressnguoinhan" value="" required autofocus>
+								<input id="addressgn" type="text" class="form-control" name="addressnguoinhan" value="" required autofocus>
 
 							</div>
 						</div>
@@ -88,7 +88,7 @@
 							<label for="phone" class="col-md-4 control-label"> Số điện thoại người nhận</label>
 
 							<div class="col-md-6">
-								<input id="phone" type="text" class="form-control" name="phonenguoinhan" value="" required autofocus>
+								<input id="phonegn" type="text" class="form-control" name="phonenguoinhan" value="" required autofocus>
 
 							</div>
 						</div>
@@ -168,7 +168,7 @@
 										</div>
 						
 
-										<div style="text-align: center;"><button id="thong" type="submit" class="btn btn-success">Đặt hàng</button></div>
+										<div style="text-align: center;"><a id="thong" onclick="validateForm()" class="btn btn-success">Đặt hàng</a></div>
 									{{-- </form> --}}
 									</div>
 
@@ -218,5 +218,28 @@
 		var a = "Đặt hàng thành công";
 		alert(a);
 	}
+
+    function validateForm()
+    {
+        var a=document.getElementById('name').value;
+        var b=document.getElementById('email').value;
+        var c=document.getElementById('address').value;
+        var d=document.getElementById('phone').value;
+        var e=document.getElementById('namegn').value;
+        var f=document.getElementById('addressgn').value;
+        var g=document.getElementById('phonegn').value;
+   
+
+        if (a==null || a=="" || b == null || b== "" || c==null || c=="" || d==null || d=="" || e == null || e== "" || f == null || f== "" || g == null || g== "")
+        {
+            alert(" Không được để trống");
+            return false;
+        }else{
+        	document.getElementById("myForm").submit();
+        	alert('Đặt hàng thành công');
+        }
+    }
+    
+
 </script>
 

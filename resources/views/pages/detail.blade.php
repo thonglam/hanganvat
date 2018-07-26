@@ -68,14 +68,17 @@
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option> --}}
-								<form action="{{route('themgiohang',$food->id)}}" method="GET"> 
-									<u style="color: blue"><b style="font-size: 25px" > Số lượng: </b> </u> <div class="space10">&nbsp;</div>  <p> <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5"> 
+								<form action="{{route('themgiohang',$food->id)}}" method="GET" >
+									{{--  <u style="color: blue"><b style="font-size: 25px" > Số lượng: </b> </u> <div class="space10">&nbsp;</div>  <p> <input type="text" class="qty" name="quantity " value="1" maxlength="3" size="5">  --}}
 
 								{{-- </select> --}}
-								<button type="submit">
+								{{-- <button type="submit">
 								<a class="add-to-cart" href="{{route('themgiohang',$food->id)}}"><i class="fa fa-shopping-cart"></i></a>
 								Thêm vào giỏ hàng
-								</button> </p>
+								</button> </p> - --}}
+								<u style="color: blue"><b style="font-size: 25px" > Số lượng: </b> </u> <div class="space10">&nbsp;</div>  <p>
+								 <input type="number" name="quantity" value="1" id="quantity" size="5" maxlength="3"  onblur="checkQuan()" > 
+								<button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i> Đặt hàng </button> 
 
 								
         					
@@ -211,3 +214,14 @@
 		</div> <!-- #content -->
 	</div> <!-- .container -->
 @endsection
+
+<script type="text/javascript">
+	function checkQuan()
+	{	
+		var a = document.getElementById('quantity').value;
+		if( a < 0 ){
+			alert('Không được nhập số âm');
+			document.getElementById('quantity').value = 1;
+		}
+	}
+</script>

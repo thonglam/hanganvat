@@ -41,7 +41,11 @@ class PageController extends Controller
 
 
          
-          $allFood= Foods::where('today',1)->paginate(12);
+          $allFood= Foods::where('today',1)->paginate(8);
+
+          // $allFood= Foods::where('price','<>',0)->paginate(12);
+
+          $sp_khuyenmai = foods::where('promotion_price','<>',0)->paginate(5);
 
         //$allFood = Foods::all()->paginate(1);
         // dd($allFood);
@@ -53,7 +57,7 @@ class PageController extends Controller
 
         
 
-        return view('pages.trangchu',compact('new_food','allFood','loai','food'));
+        return view('pages.trangchu',compact('new_food','allFood','loai','food','sp_khuyenmai'));
 
 
     }
@@ -152,12 +156,10 @@ class PageController extends Controller
     function getShoppingCart(Request $req,$id){
         $product = foods::find($id);
 
-
-
         $oldCart = Session('cart') ? Session::get('cart') :null;
         $cart = new Cart($oldCart);
         $quantity = $req->quantity;
-        //dd($req->quantity);
+        // dd($req->quantity);
         $cart->add($product, $id , $quantity);
         $req->session()->put('cart',$cart);
         return redirect()->back();

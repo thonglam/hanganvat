@@ -110,7 +110,7 @@
                                         <div class="caption vertical-top text-left">
                                             <div class="big-text">
                                                 Save
-                                      <span class="big">50%</span>
+                                      <span class="big">20%</span>
                                 </div>
 
 
@@ -130,7 +130,7 @@
                              </br>
 
                             
-                             <a href="#"><img class="right-banner" src="../upload/k.png" width="400" height="400"></a>
+                             {{-- <a href="#"><img class="right-banner" src="../upload/k.png" width="400" height="400"></a> --}}
                             
                             <!-- /.owl-carousel -->
 
@@ -163,7 +163,7 @@
                             <!-- /.filter-tabs -->
                         </div>
                         <!-- /.col -->
-                        <div class="col col-sm-12 col-md-6">
+                        {{-- <div class="col col-sm-12 col-md-6">
                             <div class="col col-sm-3 col-md-6 no-padding">
                                 <div class="lbl-cnt">
                                     <span class="lbl">Sort by</span>
@@ -192,7 +192,7 @@
                                 <!-- /.lbl-cnt -->
                             </div>
                             <!-- /.col -->
-                        </div>
+                        </div> --}}
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
@@ -256,7 +256,7 @@
                                                                            {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
                                                                                 {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+                                                                                  <a  class="add-to-cart pull-left btn btn-success "   href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" > Thêm vào giỏ hàng</i></a> 
 
                                                                             {{-- </button> --}}
                                                                             {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
@@ -268,8 +268,8 @@
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
-                                                                     <i class="fa fa-chevron-right"></i></a>
+                                                                  {{--   <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
+                                                                     <i class="fa fa-chevron-right"></i></a> --}}
 
                                                                  
 
@@ -356,7 +356,7 @@
                                                                            {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
                                                                                 {{-- <i class="fa fa-shopping-cart"></i> --}}
 
-                                                                                <a class="add-to-cart pull-left" href="{{route('themgiohangone',$sp->id)}}"><i class="fa fa-shopping-cart" ></i></a> 
+                                                                                  <a  class="add-to-cart pull-left btn btn-success "   href="{{route('themgiohangone',$all->id)}}"><i class="fa fa-shopping-cart" > Thêm vào giỏ hàng</i></a>
 
                                                                             {{-- </button> --}}
                                                                             {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
@@ -368,8 +368,8 @@
 
                                                                
 
-                                                                    <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
-                                                                     <i class="fa fa-chevron-right"></i></a>
+                                                                    {{-- <a class="beta-btn primary" href="{{route('detail',$sp->id)}}"> Chi tiết 
+                                                                     <i class="fa fa-chevron-right"></i></a> --}}
                                                                 </div>
                                                                 <!-- /.action -->
                                                             </div>
@@ -381,9 +381,9 @@
                                                     <!-- /.col -->
                                                 </div>
                                                 <!-- /.product-list-row -->
-                                                <div class="tag new">
+                                               {{--  <div class="tag new">
                                                     <span>new</span>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <!-- /.product-list -->
                                         </div>

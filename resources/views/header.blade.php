@@ -178,7 +178,7 @@
                                                     </h3>
                                                     {{-- <div class="price">{{$food['qty']}}<div>{{$food['item']['price']}}</div></div> --}}
 
-                                                    <span class="cart-item-amount">{{$food['qty']}}*<span >{{$food['item']['price']}}</span></span>
+                                                    <span class="cart-item-amount">{{number_format($food['qty'])}}*<span >{{number_format($food['item']['price'])}}</span></span>
 
                                                 </div>
                                                 <div class="col-xs-1 action">
