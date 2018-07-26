@@ -31,7 +31,7 @@
                             <select name="role" class="form-control">
                                 <option value="0">Người dùng</option>
                                 <option value="1">Người giao hàng</option>
-                                <option value="1">Người quản lý</option>
+                                <option value="2">Người quản lý</option>
                             </select>
                         </div>
                     </div>

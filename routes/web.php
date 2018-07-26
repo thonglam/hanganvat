@@ -146,6 +146,14 @@ Route::get('list-bill',[
     'as' =>'list-bill',
     'uses'=>'AdminController@getListbill'
 ]);
+Route::get('list-billre',[
+    'as' =>'list-billre',
+    'uses'=>'AdminController@getListbillre'
+]);
+Route::get('list-billen',[
+    'as' =>'list-billen',
+    'uses'=>'AdminController@getListbillen'
+]);
 Route::get('detail-bill/{id}',[
     'as' =>'detail-bill',
     'uses'=>'AdminController@getdetailbill'
@@ -185,6 +193,10 @@ Route::post('edit-new/{id}',[
 Route::get('list-new/{id}',[
     'as' =>'listnew',
     'uses'=>'AdminController@getDeleteNew'
+]);
+Route::get('thong_ke',[
+    'as' =>'statistic',
+    'uses'=>'AdminController@statistic'
 ]);
 
 //----------------User------------------

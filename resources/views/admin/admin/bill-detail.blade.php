@@ -4,9 +4,9 @@
 <div class="col-lg-12">
   <h1 class="page-header">Tên khách hàng: {{$bills->name}}
   </h1>
-  <h1><small>Ngày đặt: {{$bills->date_order}}</small></h1>
-  <h1><small>Địa chỉ: {{$bills->address}}</small></h1>
-  <h1><small>Số điện thoại: {{$bills->phone}}</small></h1>
+  <h4>Ngày đặt: {{$bills->date_order}}</h4>
+  <h4>Địa chỉ: {{$bills->address}}</h4>
+  <h4>Số điện thoại: {{$bills->phone}}</h4>
 </div>
 <div class="content-wrapper">
   <table class="table table-striped">
@@ -33,7 +33,7 @@
         <th>Tổng cộng:</th>
         <th></th>
         <th></th>
-        <th></th>
+        <th>Đã bao gồm thuế VAT</th>
         <th>{{$bills->total}}</th>
       </tr>
   </tbody>

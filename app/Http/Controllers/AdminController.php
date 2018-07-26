@@ -30,9 +30,9 @@ class AdminController extends Controller
         $validator = Validator::make($req->all(),$check,$mess);
         if($validator->fails()) {
             return redirect()
-                        ->route('edit_food',$req->id)
-                        ->withErrors($validator)
-                        ->withInput();
+            ->route('edit_food',$req->id)
+            ->withErrors($validator)
+            ->withInput();
         }
         $id = $req->id;
         $food = Foods::find($id);
@@ -58,13 +58,13 @@ class AdminController extends Controller
         $merg = BillDetail::where('id_food',$id)->count();
         if ($merg == 0) {
             $food = Foods::find($id);
-        $food->delete();
-        return redirect()->route('list_food')->with(['flash_massage'=>'Xóa món ăn thành công']);
+            $food->delete();
+            return redirect()->route('list_food')->with(['flash_massage'=>'Xóa món ăn thành công']);
         }else {
             echo "<script typye='text/javascrpit'>
-                alert('Bạn không thể xóa món ăn vì món ăn tồn tại trong hóa đơn');
-                window.location = '";
-                    echo route('list_food');
+            alert('Bạn không thể xóa món ăn vì món ăn tồn tại trong hóa đơn');
+            window.location = '";
+            echo route('list_food');
             echo "'
             </script>";
         }
@@ -86,9 +86,9 @@ class AdminController extends Controller
         $validator = Validator::make($req->all(),$check,$mess);
         if($validator->fails()) {
             return redirect()
-                        ->route('add_food')
-                        ->withErrors($validator)
-                        ->withInput();
+            ->route('add_food')
+            ->withErrors($validator)
+            ->withInput();
         }
         $food = new Foods();
         $food->name = $req->name;
@@ -103,7 +103,7 @@ class AdminController extends Controller
 
             $food->image = $file_name;      
         }else
-            $food->image = '';
+        $food->image = '';
         $food->today = $req->today==1 ? 1 : 0;
         $food->new = $req->new==1 ? 1 : 0;
         $food->save();
@@ -119,6 +119,16 @@ class AdminController extends Controller
         $stt =1;
         $all = Bill::all();
         return view('admin.admin.list-bill',compact('all','stt'));
+    }
+    function getListbillre(){
+        $stt =1;
+        $all = Bill::where('status',0)->get();
+        return view('admin.admin.list-billre',compact('all','stt'));
+    }
+    function getListbillen(){
+        $stt =1;
+        $all = Bill::where('status',2)->get();
+        return view('admin.admin.list-billen',compact('all','stt'));
     }
     function getdetailbill($id){
         $stt =1;
@@ -166,7 +176,7 @@ class AdminController extends Controller
 
             $new->image = $file_name;      
         }else
-            $new->image = '';
+        $new->image = '';
         $new->content = $req->content;
 
         $new->save();
@@ -197,5 +207,19 @@ class AdminController extends Controller
         }
         $new->save();
         return redirect()->route('list-new')->with(['flash_massage'=>'Cập nhật bài viết thành công']);
+    }
+
+    function statistic(Request $request){
+        $stt =1;
+        $all =  Bill::select('*');
+        if($request->time1){
+            $all = $all->where('date_order','>=',$request->time1);
+        }
+        if($request->time2){
+            $all  =  $all->where('date_order','<=',$request->time2);
+        }
+        $sum = $all->sum('total');
+        $all = $all->get();
+        return view('admin.admin.statistical',compact('all','stt','sum'));
     }
 }

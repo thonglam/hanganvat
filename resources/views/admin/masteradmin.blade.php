@@ -40,6 +40,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{route('list-bill')}}">Quản Lý</a>
+                <a class="navbar-brand" href="{{route('trang_chu')}}">Về trang chủ</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -85,10 +86,16 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-calculator fa-fw"></i> Hóa đơn<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Hóa đơn<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{route('list-bill')}}">Danh sách hóa đơn</a>
+                            <a href="{{ route('list-bill') }}">Danh sách hóa đơn</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('list-billre') }}">Hóa đơn đã nhận</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('list-billen') }}">Hóa đơn đã giao</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
@@ -106,10 +113,19 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-bars fa-fw"></i> Thống kê<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="list-user">Danh sách người dùng</a>
+                            <a href="{{ route('statistic') }}">Bảng thống kê</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="list-user">Cấp quyền người dùng</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
