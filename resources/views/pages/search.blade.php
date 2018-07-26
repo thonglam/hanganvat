@@ -1,6 +1,8 @@
 @extends('index')
 @section('content')
 
+
+
 <div class="body-content outer-top-xs">
     <div class='container'>
         <div class='row outer-bottom-sm'>
@@ -421,3 +423,4 @@
 </div>
 
 @endsection
+

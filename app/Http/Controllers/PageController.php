@@ -41,11 +41,11 @@ class PageController extends Controller
 
 
          
-          $allFood= Foods::where('today',1)->paginate(8);
+          $allFood= Foods::where('today',1)->paginate(12);
 
           // $allFood= Foods::where('price','<>',0)->paginate(12);
 
-          $sp_khuyenmai = foods::where('promotion_price','<>',0)->paginate(5);
+          // $sp_khuyenmai = foods::where('promotion_price','<>',0)->paginate(5);
 
         //$allFood = Foods::all()->paginate(1);
         // dd($allFood);

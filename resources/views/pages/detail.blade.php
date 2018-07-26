@@ -41,7 +41,7 @@
 
                                                    <span class="flash-sale "><h3 style="color: black"> {{number_format($food->price)}}đ </h3></span> 
                                                 @else
-                                                    <span class="flash-del">{{number_format($food->price)}}đ </span>
+                                                    <span class="flash-del">{{number_format($food->promotion_price)}}đ </span>
                                                    
                                                 @endif
 

@@ -239,7 +239,12 @@
         	alert('Đặt hàng thành công');
         }
     }
+
+
+
+
     
 
 </script>
+
 

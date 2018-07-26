@@ -1,5 +1,6 @@
 @extends('index')
 @section('content')
+
 <div class="body-content outer-top-xs">
     <div class='container'>
         <div class='row outer-bottom-sm'>
@@ -135,15 +136,15 @@
                          <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
                             <h2 class="section-title"  style="color: green" > Tìm theo giá</h2>
                             <div class="sidebar-widget-body m-t-10">
-                                <form method="get" action="{{route('search')}}">
+                                <form method="get" action="{{route('search')}}" id="myForm">
                                 <ul class="list">
                                     <li>
                                         {{-- <a href="">Nhỏ hơn 20k</a> --}}
-                                         <input class="search-field"  placeholder="Giá tối thiểu"  value="giá thấp nhất" name="pricemin"/> 
+                                         <input class="search-field" id="quantity"  placeholder="Giá tối thiểu"   value="giá thấp nhất" name="pricemin"/> 
                                 
                                     </li>
                                     <li>
-                                         <input class="search-field"  placeholder="Giá tối đa" value="giá tối đa" name="pricemax"/> 
+                                         <input class="search-field"   id="quantity1" placeholder="Giá tối đa" value="giá tối đa" name="pricemax"/> 
                                     </li>
                                  
                                           <button class="fa fa-search" type="submit" id="searchsubmit"></button>  
@@ -571,300 +572,7 @@
 
 
 
-            <div class='col-md-9'>
-                <!-- ========================================== SECTION – HERO ========================================= -->
-                <!-- ========================================= SECTION – HERO : END ========================================= -->
-                <div class="clearfix filters-container m-t-10">
-                    <div class="row">
-                       {{--  <div class="col col-sm-6 col-md-2">
-                            <div class="filter-tabs">
-                                <ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#grid-container">
-                                            <i class="icon fa fa-th-list"></i>Grid</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#list-container">
-                                            <i class="icon fa fa-th"></i>List</a>
-                                    </li>
-                                    <li>
-                                        <span>mon1 an khuyen mai</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- /.filter-tabs -->
-                        </div> --}}
-                        <!-- /.col -->
-                        
-                         <h2 class="section-title"  style="color: green" >MÓN ĂN GIẢM GIÁ </h2>
-
-                        <div class="col col-sm-12 col-md-6">
-                            {{-- <div class="col col-sm-3 col-md-6 no-padding">
-                                <div class="lbl-cnt">
-                                    <span class="lbl">Sort by</span>
-                                    <div class="fld inline">
-                                        <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
-                                            <button data-toggle="dropdown" type="button" class="btn dropdown-toggle">
-                                                Mới nhất
-                                                <span class="caret"></span>
-                                            </button>
-
-                                            <ul role="menu" class="dropdown-menu">
-                                                <li role="presentation">
-                                                    <a href="#">Thêm bảng chữ cái</a>
-                                                </li>
-                                                <li role="presentation">
-                                                    <a href="#">Giá cao nhất</a>
-                                                </li>
-                                                <li role="presentation">
-                                                    <a href="#">Giá thấp nhất</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- /.fld -->
-                                </div>
-                                <!-- /.lbl-cnt -->
-                            </div> --}}
-                            <!-- /.col -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <div class="search-result-container">
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane active " id="grid-container">
-                            <div class="category-product  inner-top-vs">
-                                <div class="row">
-                                    @foreach($sp_khuyenmai as $spkm)
-                                        <div class="col-sm-6 col-md-4 wow fadeInUp">
-                                            <div class="products">
-
-                                                <div class="product">
-                                                    <div class="product-image">
-                                                        <div class="image">
-                                                            <a href="{{route('detail',$spkm->id)}}">
-                                                                <img src="upload/{{$spkm->image}}" alt="" width="250px" height="200px"> 
-                                                            </a>
-                                                        </div>
-                                                    
-                                                        <!-- /.image -->
-
-                                                         <div class="tag new">
-                                                            <span>{{$spkm->sale}}</span>
-                                                        </div> 
-                                                </div>
-                                                    <!-- /.product-image -->
-
-
-                                                    <div class="product-info text-left">
-                                                        <h3 class="name" >
-                                                        <a href="{{route('detail',$spkm->id)}}">{{$spkm->name}} </a>
-                                                        </h3>
-                                                        <div class="rating rateit-small"></div>
-                                                        <div class="description"></div>
-
-                                                       {{--  <p class="single-item-price">
-                                                            <span class="flash-del">123123</span>
-                                                            <span class="flash-sale">23213</span>
-                                                        </p> --}}
-
-                                                         <div class="product-price">
-                                                            @if($spkm->promotion_price==0)
-                                                                <span class="price">
-                                                                        {{number_format($spkm->price)}} 
-                                                                </span>
-                                                            @else
-                                                                <span class="price">
-                                                                        {{number_format($spkm->promotion_price)}} 
-                                                                </span>
-                                                                <span class="price-before-discount" style="color: red" >{{$spkm->price}}</span>
-                                                            @endif
-                                                        </div>  
-
-                                                        {{-- <div class="product-price">
-
-                                                            @if ($)
-                                                             <span class="price">
-                                                                        {{number_format($spkm->price)}}
-                                                                        {{number_format($spkm->promotion_price)}}  
-                                                            </span>
-
-                                                        </div> --}}
-
-                                                        
-                                                                 
-                                                    
-
-                                                      
-                                                        <!-- /.product-price -->
-
-                                                        
-
-                                                    </div>
-                                                    <!-- /.product-info -->
-                                                    <div class="cart clearfix animate-effect">
-                                                        <div class="action">
-
-                                                            
-                                                            
-                                 {{--  <form action="{{route('themgiohang',$all->id)}}" method="GET">  --}}
-                                   {{--  <u style="color: blue"><b style="font-size: 25px" > Số lượng: </b> </u> <div class="space10">&nbsp;</div>  <p> <input type="text" class="qty" name="quantity" value="1" maxlength="3" size="5">  --}}
-
-                                {{-- </select> --}}
-                               {{--  <button type="submit">
-                                <a class="add-to-cart" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                Thêm vào giỏ hàng
-                                </button> </p> --}}
-
-                                
-                            
-                                {{-- </form> --}}
-                                                            
-
-                                                            {{-- <button type="button" class="btn btn-default btn-sm" >
-          <span class="glyphicon glyphicon-shopping-cart" style="color: #3498db;"></span> Thêm vào giỏ hàng
-
-        </button> --}}
-
-                                                                         <li class="add-cart-button btn-group">
-                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
-                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
-
-       <a  class="add-to-cart pull-left btn btn-success "   href="{{route('themgiohangone',$spkm->id)}}"><i class="fa fa-shopping-cart" > Thêm vào giỏ hàng</i></a>  
-
-                                                                            {{-- </button> --}}
-                                                                            {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
-
-                                                                        {{-- </li> --}} 
-                                                                       
-                                                                    
-                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
-
-                                                               
-
-                                                                    {{-- <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
-                                                                     <i class="fa fa-chevron-right"></i></a>
-
-                                                                 
-
-                                                                     <div class="clearfix"></div> --}}
-
-                                                                 
-
-                                                                  {{--   </button> --}}
-                                                                    {{-- <a href="{{route('themgiohang',$all->id)}}">Add to cart</a> --}}
-
-                                                                    {{-- <a class="add-cart-button btn-group" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
-                                                                {{-- </li> --}}
-                                                                {{-- <li class="lnk wishlist">
-                                                                    <a class="add-to-cart" href="detail.html" title="Wishlist">
-                                                                        <i class="icon fa fa-heart"></i>
-                                                                    </a>
-                                                                </li> --}}
-
-                                                                {{-- <li class="lnk">
-                                                                    <a class="add-to-cart" href="detail.html" title="Compare">
-                                                                        <i class="fa fa-retweet"></i>
-                                                                    </a>
-                                                                </li> --}}
-                                                            </ul>
-                                                        </div>
-                                                        <!-- /.action -->
-                                                    </div>
-                                                    <!-- /.cart -->
-                                                </div>
-                                                <!-- /.product -->
-
-                                            </div>
-                                            <!-- /.products -->
-                                        </div>
-                                        <!-- /.item -->
-                                    @endforeach
-                                </div>
-                                <div class="row">
-                                    {{$sp_khuyenmai->links()}}
-                                </div>
-                                <!-- /.row -->
-                            </div>
-                            <!-- /.category-product -->
-                        </div>
-                        <!-- /.tab-pane -->
-
-                        <div class="tab-pane " id="list-container">
-                            <div class="category-product">
-                                @foreach($allFood as $all)
-                                    <div class="category-product-inner wow fadeInUp">
-                                        <div class="products">
-                                            <div class="product-list product">
-                                                <div class="row product-list-row">
-                                                    <div class="col col-sm-4 col-lg-4">
-                                                        <div class="product-image">
-                                                            <div class="image">
-                                                                <a  href="{{route('detail',$all->id)}}">
-                                                                <img src="upload/{{$all->image}}" alt="" width="250" height="200">
-                                                            </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.product-image -->
-                                                    </div>
-                                                    <!-- /.col -->
-                                                    <div class="col col-sm-8 col-lg-8">
-                                                        <div class="product-info " >
-                                                            <h3 class="name">
-                                                             <a {{-- style="color: red !important;" --}} href="{{route('detail',$all->id)}}">{{$all->name}}</a>
-                                                            </h3>
-                                                            <div class="rating rateit-small"></div>
-                                                            <div class="product-price">
-                                                                    @if($all->promotion_price==0)
-                                                                    <span class="price">
-                                                                            {{number_format($all->price)}} 
-                                                                    </span>
-                                                                @else
-                                                                    <span class="price">
-                                                                            {{number_format($all->price)}} 
-                                                                    </span>
-                                                                    
-                                                                @endif
-                                                            </div>
-                                                            <!-- /.product-price -->
-                                                            {{-- <div class="description m-t-10">{{$all->detail}}</div> --}}
-                                                            <div class="cart clearfix animate-effect">
-                                                                <div class="action">
-                                                                    <li class="add-cart-button btn-group">
-                                                                           {{--  <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> --}}
-                                                                                {{-- <i class="fa fa-shopping-cart"></i> --}}
-
-                                                                                
-      <a  class="add-to-cart pull-left btn btn-success "   href="{{route('themgiohangone',$spkm->id)}}"><i class="fa fa-shopping-cart" > Thêm vào giỏ hàng</i></a>
-
-                                                                            {{-- </button> --}}
-                                                                            {{-- <a href="{{route('themgiohang',$all->id)}}"></a> --}}
-
-                                                                        </li>
-                                                                       
-                                                                    
-                                                                        {{-- <a class="add-to-cart pull-left" href="{{route('themgiohang',$all->id)}}"><i class="fa fa-shopping-cart" ></i></a> --}}
-
-                                                               
-
-                                                                    {{-- <a class="beta-btn primary" href="{{route('detail',$all->id)}}"> Chi tiết 
-                                                                     <i class="fa fa-chevron-right"></i></a> --}}
-
-                                                                 
-
-                                                                     <div class="clearfix"></div>
-                                                                </div>
-                                                                <!-- /.action -->
-                                                            </div>
-                                                            <!-- /.cart -->
-
-                                                        </div>
-                                                        <!-- /.product-info -->
-                                                    </div>
-                                                    <!-- /.col -->
-                                                </div>
+           
                                                 <!-- /.product-list-row -->
                                                 {{-- <div class="tag new">
                                                     <span>new</span>
@@ -874,10 +582,7 @@
                                         </div>
                                         <!-- /.products -->
                                     </div>
-                                @endforeach
-                                <div class="row">
-                                    {{$sp_khuyenmai->links()}}
-                                </div>
+                               
                                 <!-- /.category-product-inner -->
                             </div>
                             <!-- /.category-product -->
@@ -901,3 +606,6 @@
 <!-- /.body-content -->
 @endsection
 @section('title','Trang Chủ')
+
+
+
