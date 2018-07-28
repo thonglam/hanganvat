@@ -8,14 +8,21 @@
     </div>
 @endif
 
-
+<style type="text/css">
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+</style>
 <div class="container" style="margin-top: 30px">
-	{{-- <input type="text" name="_token" value="{{csrf_token()}}"> --}}
+	
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">THÔNG TIN KHÁCH HÀNG</div>
-				{{-- <div class="row">@if(Session::has('thongbao')){{Session::has['thongbao']}}@endif</div> --}}
+				
 				
 				<div class="panel-body">
 					<form id="myForm" novalidate class="form-horizontal" method="post" action="{{ route('dathang') }}">
@@ -34,7 +41,7 @@
 							<label for="address" class="col-md-4 control-label" >Email:</label>
 
 							<div class="col-md-6">
-								<input id="email" type="email" class="form-control" name="email" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{(Auth::check()) ?  Auth::user()->email : '' }}" required autofocus>
+								<input id="email" type="email" class="form-control" name="email" {{ (Auth::check()) ? "readonly='true'" : "" }} value="{{(Auth::check()) ?  Auth::user()->email : '' }}">
 
 							</div>
 						</div>
@@ -52,7 +59,8 @@
 							<label for="phone" class="col-md-4 control-label"> Số điện thoại:</label>
 
 							<div class="col-md-6">
-								<input id="phone" type="text" class="form-control" name="phone" value="" required autofocus>
+								<input id="phone" type="number" class="form-control" name="phone" value="" required autofocus
+								onkeydown="javascript: return event.keyCode == 69 ? false : true">
 
 							</div>
 						</div>
@@ -104,8 +112,7 @@
 
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
-							{{-- <div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
-							<div class="your-order-body" style="padding: 0px 10px"> --}}
+							
 
 								<div class="panel panel-default">
 									<div class="panel-heading">ĐƠN HÀNG CỦA BẠN</div>
@@ -125,7 +132,12 @@
 
 														<span class="color-gray your-order-info"><u style="color: blue"><b style="font-size:19px ">Số lượng: </b></u> <b>{{$cart['qty']}}</b><span>
 														<br>
-														<span class="color-gray your-order-info"><u style="color: blue"> <b style="font-size: 19px">Đơn giá:</u> </b> {{-- {{number_format($cart['price'])}} --}} <b> {{number_format($cart['item']['price'])}} </b>đồng</span>
+														<span class="color-gray your-order-info"><u style="color: blue"> <b style="font-size: 19px">Đơn giá:</u> </b> {{-- {{number_format($cart['price'])}} --}} <b> 
+															<?php if($cart['item']['promotion_price'] != 0){ echo number_format($cart['item']['promotion_price']); }else{ echo number_format($cart['item']['price']);}  ?>
+
+														{{-- {{number_format($cart['item']['price'])}}  --}}
+
+													</b>đồng</span>
 													</div>
 
 
@@ -169,10 +181,10 @@
 						
 
 										<div style="text-align: center;"><a id="thong" onclick="validateForm()" class="btn btn-success">Đặt hàng</a></div>
-									{{-- </form> --}}
+									
 									</div>
 
-									{{-- <div class="text-center"><a class="beta-btn primary" href="#">Đặt hàng <i class="fa fa-chevron-right"></i></a></div> --}}
+									
 						</form>
 								</div>
 
@@ -184,21 +196,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 	
-// 	$(document).ready(function () {
-// // 		$('#imageaddform').submit(function(e) {
-// //     	e.preventDefault(); // don't submit multiple times
-// //     	this.submit(); // use the native submit method of the form element
-// //     	alert('aaa');
-// // });
-// 		if ($('input.checkbox_check').is(':checked')) {	
-// 		alert("aaa");
-// 	}
 
-// 	});
 
-// 	if ($('input.checkbox_check').is(':checked')) {	
-// 		alert("aaa");
-// 	}
+
 
 	function myFunction() {
 		var x = document.getElementById("myCheck").checked;
@@ -207,7 +207,7 @@
 		}else{
 			document.getElementById("nguoinhan").style.display = "none";
 		}
-		// document.getElementById("demo").innerHTML = x;
+		
 	}
 
 	
@@ -219,32 +219,35 @@
 		alert(a);
 	}
 
+	function validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
+
     function validateForm()
     {
         var a=document.getElementById('name').value;
         var b=document.getElementById('email').value;
         var c=document.getElementById('address').value;
         var d=document.getElementById('phone').value;
-        var e=document.getElementById('namegn').value;
-        var f=document.getElementById('addressgn').value;
-        var g=document.getElementById('phonegn').value;
+        // var e=document.getElementById('namegn').value;
+        // var f=document.getElementById('addressgn').value;
+        // var g=document.getElementById('phonegn').value;
    
 
-        if (a==null || a=="" || b == null || b== "" || c==null || c=="" || d==null || d=="" || e == null || e== "" || f == null || f== "" || g == null || g== "")
+        if (a==null || a=="" || b == null || b== "" || c==null || c=="" || d==null || d=="" )
         {
             alert(" Không được để trống");
             return false;
         }else{
-        	document.getElementById("myForm").submit();
-        	alert('Đặt hàng thành công');
+        	if (!validateEmail(b)){
+        		alert(" Vui lòng nhập Email hợp lệ");
+        	}else{
+        		document.getElementById("myForm").submit();
+	        	alert('Đặt hàng thành công');
+        	}
         }
     }
-
-
-
-
-    
-
 </script>
 
 

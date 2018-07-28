@@ -1,10 +1,11 @@
-.config{
+h4, .h4, h5, .h5, h6, .h6.config{
 	position: fixed;
 	top: 50px;
 	left: -200px;
 	-webkit-transition: 0.3s ease;
   	transition: 0.3s ease;
   	z-index: 999;
+  	font-family: Times New Roman !important;
 }
 
 .config-options{

@@ -41,17 +41,9 @@ class PageController extends Controller
 
 
          
-          $allFood= Foods::where('today',1)->paginate(12);
+          $allFood= Foods::where('today',1)->paginate(15);
 
-          // $allFood= Foods::where('price','<>',0)->paginate(12);
-
-          // $sp_khuyenmai = foods::where('promotion_price','<>',0)->paginate(5);
-
-        //$allFood = Foods::all()->paginate(1);
-        // dd($allFood);
-        // $allFood = DB::table('foods')->paginate(12);
-
-        
+         
 
         $loai = FoodType::all();
 
@@ -62,13 +54,11 @@ class PageController extends Controller
 
     }
     
-    // function getSearch1(Request $req){
-    //     $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
-    //     return view('pages.search1',compact('food'));
-    // }
-
+ 
     function getSearch(Request $req){
        $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->where('price','>',$req->pricemin)->where('price','<',$req->pricemax)->get();
+
+       $count = count($food); 
 
        
 
@@ -76,19 +66,19 @@ class PageController extends Controller
 
          $new_food = Foods::where('new',1)->limit(3)->get();
 
-        return view('pages.search',compact('food','loai','new_food','food1'));
+        return view('pages.search',compact('food','loai','new_food','food1','count'));
     }
 
     function getSearch1(Request $req){
       $food1 = DB::table('foods')->where('name','like','%'.$req->key.'%')->orWhere('price',$req->key)->get();
 
-       
+        $count = count($food1); 
 
          $loai = FoodType::all();
 
          $new_food = Foods::where('new',1)->limit(3)->get();
 
-        return view('pages.search1',compact('food1','loai','new_food'));
+        return view('pages.search1',compact('food1','loai','new_food','count'));
     }
 
 
@@ -96,13 +86,16 @@ class PageController extends Controller
 
         $sp_theoloai = foods::where('id_type',$type)->get();
 
+          
+     
+
         // $sp_khac = foods::where('id_type','<>',$type)->paginate(3);
 
         $loai = FoodType::all();
 
         $new_food = Foods::where('new',1)->limit(3)->get();
 
-        return view('pages.foodtype',compact('sp_theoloai','loai','new_food'));
+        return view('pages.foodtype',compact('sp_theoloai','loai','new_food','food'));
     }
 
     public function getFoodDetail($detail){
@@ -349,3 +342,6 @@ class PageController extends Controller
 
 
 }
+
+
+

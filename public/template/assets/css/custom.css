@@ -22,3 +22,18 @@
   text-transform: uppercase;
 }
 
+.top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a{
+  font-family: Times New Roman !important;
+}
+
+.top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .total-price-basket{
+  font-family: Times New Roman !important;
+}
+
+h4, .h4, h5, .h5, h6, .h6{
+  font-family: Times New Roman !important;
+}
+
+
+
+

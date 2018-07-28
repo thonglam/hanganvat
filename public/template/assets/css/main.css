@@ -531,6 +531,7 @@ a {
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .total-price-basket .total-price {
   color: #12cca7;
+  font-family: Times New Roman !important;
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:hover,
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:focus {
@@ -1220,7 +1221,7 @@ a {
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-total .text {
   font-size: 13px;
-  font-family: 'FjallaOneRegular';
+  font-family: Times New Roman !important;
   color: #666666;
   margin-right: 10px;
 }

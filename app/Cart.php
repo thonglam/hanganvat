@@ -17,32 +17,60 @@ class Cart
 	}
 
 	public function add($item, $id, $quanity){
-		$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
-		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
+		if($item->promotion_price != 0){
+			$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->promotion_price];
+			if($this->items){
+				if(array_key_exists($id, $this->items)){
+					$giohang = $this->items[$id];
+				}
 			}
+			$giohang['qty'] = $giohang['qty'] + $quanity;
+			$giohang['price'] = $item->promotion_price * $giohang['qty'];
+			$this->items[$id] = $giohang;
+			$this->totalQty = $this->totalQty + $quanity;
+			$this->totalPrice += $item->promotion_price* $quanity ;
+		}else{
+			$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
+			if($this->items){
+				if(array_key_exists($id, $this->items)){
+					$giohang = $this->items[$id];
+				}
+			}
+			$giohang['qty'] = $giohang['qty'] + $quanity;
+			$giohang['price'] = $item->price * $giohang['qty'];
+			$this->items[$id] = $giohang;
+			$this->totalQty = $this->totalQty + $quanity;
+			$this->totalPrice += $item->price* $quanity ;
 		}
-		$giohang['qty'] = $giohang['qty'] + $quanity;
-		$giohang['price'] = $item->price * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty = $this->totalQty + $quanity;
-		$this->totalPrice += $item->price* $quanity ;
 		
 	}
 
 	public function addone($item, $id){
-		$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
-		if($this->items){
-			if(array_key_exists($id, $this->items)){
-				$giohang = $this->items[$id];
+		if($item->promotion_price != 0){
+			$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->promotion_price];
+			if($this->items){
+				if(array_key_exists($id, $this->items)){
+					$giohang = $this->items[$id];
+				}
 			}
+			$giohang['qty']++;
+			$giohang['price'] = $item->price * $giohang['qty'];
+			$this->items[$id] = $giohang;
+			$this->totalQty++;
+			$this->totalPrice += $item->promotion_price;
+		}else{
+			$giohang = ['qty'=>0, 'item' => $item, 'price' => $item->price];
+			if($this->items){
+				if(array_key_exists($id, $this->items)){
+					$giohang = $this->items[$id];
+				}
+			}
+			$giohang['qty']++;
+			$giohang['price'] = $item->price * $giohang['qty'];
+			$this->items[$id] = $giohang;
+			$this->totalQty++;
+			$this->totalPrice += $item->price;
 		}
-		$giohang['qty']++;
-		$giohang['price'] = $item->price * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty++;
-		$this->totalPrice += $item->price;
 	}
 
 	//xóa 1
