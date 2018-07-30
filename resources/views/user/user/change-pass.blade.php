@@ -10,8 +10,17 @@
                         <i>{{$user->name}}</i>
                     </b>
                 </div>
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="panel-body">
-                    <form method="post" class="form-horizontal" action="{{route('change-pass',$user->id)}}" enctype="multipart/form-data">
+                    <form method="post" class="form-horizontal" action="{{route('change_pass',$user->id)}}" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="email">Tên người dùng:</label>
@@ -40,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                     </div>
                 </form>

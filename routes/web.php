@@ -194,13 +194,13 @@ Route::get('list-new/{id}',[
     'as' =>'listnew',
     'uses'=>'AdminController@getDeleteNew'
 ]);
-Route::get('thong_ke',[
+Route::get('statistic',[
     'as' =>'statistic',
     'uses'=>'AdminController@statistic'
 ]);
 
 //----------------User------------------
-Route::get('change-pass/{id}',[
+Route::get('changepass/{id}',[
     'as' =>'changepass',
     'uses'=>'UserController@getchangepass'
 ]);
@@ -208,7 +208,7 @@ Route::post('change-pass/{id}',[
     'as' =>'change-pass',
     'uses'=>'UserController@postchangepass'
 ]);
-Route::get('detail-acountus/{id}',[
+Route::get('detail-account/{id}',[
     'as' =>'detailacount',
     'uses'=>'UserController@getdetailacount'
 ]);
@@ -241,4 +241,12 @@ Route::post('list-Billre/{id}',[
 Route::get('detail-acount/{id}',[
     'as' =>'detail-acount',
     'uses'=>'ShipperController@getdetailacount'
+]);
+Route::get('change-pass/{id}',[
+    'as' =>'changepass1',
+    'uses'=>'ShipperController@getchangepass'
+]);
+Route::post('change-pass/{id}',[
+    'as' =>'change_pass',
+    'uses'=>'ShipperController@postchangepass'
 ]);

@@ -24,19 +24,19 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="title">Tiêu đề:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập tiêu đề" name="title">
+                                    <input type="text" class="form-control" placeholder="Nhập tiêu đề" name="title" value="{{ old('title') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Mô tả:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập mô tả" name="description">
+                                    <input type="text" class="form-control" placeholder="Nhập mô tả" name="description" value="{{ old('description') }}">
                                 </div>
                             </div>
                              <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Nội dung:</label>
                                 <div class="col-sm-9">
-                                    <textarea id="detail" class="form-control" name="content" rows="5"></textarea>
+                                    <textarea id="detail" class="form-control" name="content" rows="5" value="{{ old('content') }}"></textarea>
                                 </div>
                             </div>
                         </div>

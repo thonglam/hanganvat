@@ -4,9 +4,9 @@
 <div class="col-lg-12">
   <h1 class="page-header">Tên khách hàng: {{$bills->name}}
   </h1>
-  <h1><small>Ngày đặt: {{$bills->date_order}}</small></h1>
-  <h1><small>Địa chỉ: {{$bills->address}}</small></h1>
-  <h1><small>Số điện thoại: {{$bills->phone}}</small></h1>
+  <div>Ngày đặt: {{$bills->date_order}}</div>
+  <div>Địa chỉ: {{$bills->address}}</div>
+  <div>Số điện thoại: {{$bills->phone}}</div>
 </div>
 <div class="content-wrapper">
   <table class="table table-striped">
@@ -26,7 +26,7 @@
         <td>{{ $bill->food->name }}</td>
         <td><img src="{{URL::asset('upload/'.$bill->food->image)}}" height="50px" width="80px"></td>
         <td>{{ $bill->quantity }}</td>
-        <td>{{ $bill->price }}</td>
+        <td>{{ number_format($bill->price).' đ' }}</td>
       </tr>
       @endforeach
       <tr>
@@ -34,7 +34,7 @@
         <th></th>
         <th></th>
         <th></th>
-        <th>{{$bills->total}}</th>
+        <th>{{number_format($bills->total).' đ'}}</th>
       </tr>
   </tbody>
 </table>

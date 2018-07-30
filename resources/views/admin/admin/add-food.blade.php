@@ -24,7 +24,7 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Tên sản phẩm:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập tên sp" name="name">
+                                    <input type="text" class="form-control" placeholder="Nhập tên sp" name="name" value="{{ old('name') }}">
                                 </div>
                             </div>
 
@@ -41,25 +41,25 @@
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Giá sản phẩm:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập giá sp" name="price">
+                                    <input type="text" class="form-control" placeholder="Nhập giá sp" name="price" value="{{ old('price') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Giá khuyến mãi :</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập giá khuyến mãi" name="promotion_price" >
+                                    <input type="text" class="form-control" placeholder="Nhập giá khuyến mãi" name="promotion_price" value="{{ old('promotion_price') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Đơn vị tính:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nhập đơn vị tính" name="unit">
+                                    <input type="text" class="form-control" placeholder="Nhập đơn vị tính" name="unit" value="{{ old('unit') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="email">Mô tả đầy đủ:</label>
                                 <div class="col-sm-9">
-                                    <textarea id="detail" class="form-control" name="detail" rows="5"></textarea>
+                                    <textarea id="detail" class="form-control" name="detail" rows="5" value="{{ old('detail') }}"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">

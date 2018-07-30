@@ -25,7 +25,13 @@
     </tr>
   </thead>
   <tbody>
+    @php
+      $total = 0;
+    @endphp
    @foreach($all as $bill)
+    @php
+      $total += $bill->total;
+    @endphp
    <tr>
     <th scope="row">{{$stt++}}</th>
     <td>{{$bill->name}}</td>
@@ -50,6 +56,10 @@
   </tr>
   @endforeach
 </tbody>
+<tfoot>
+  <th colspan="5"> Tổng cộng:</th>
+  <th >{{number_format($total).' đ'}}</th>
+</tfoot>
 </table>
 </div>
 @endsection

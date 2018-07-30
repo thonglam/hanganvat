@@ -34,7 +34,7 @@
         <td>{{ $bill->address }}</td> 
         <td>{{ $bill->phone }}</td>
         <td>{{ $bill->date_order }}</td>
-        <td>{{ $bill->total }}</td>
+        <td>{{ number_format($bill->total).' đ' }}</td>
         <td>
           <form action="{{ route('ListBillre',$bill->id) }}" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">

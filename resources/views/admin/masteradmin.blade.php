@@ -25,11 +25,8 @@
     <link href="{{URL::asset('admincss/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
     <link href="{{URL::asset('admincss/myscss.css') }}" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -121,6 +118,7 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
+                @if (Auth::user()->role >= 3 )
                 <li>
                     <a href="#"><i class="fa fa-users fa-fw"></i> Người dùng<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
@@ -130,6 +128,7 @@
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
+                @endif
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
