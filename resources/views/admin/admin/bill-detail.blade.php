@@ -26,7 +26,7 @@
         <td>{{ $bill->food->name }}</td>
         <td><img src="{{URL::asset('upload/'.$bill->food->image)}}" height="50px" width="80px"></td>
         <td>{{ $bill->quantity }}</td>
-        <td>{{ $bill->price }}</td>
+        <td>{{ number_format($bill->price).' đ' }}</td>
       </tr>
       @endforeach
       <tr>
@@ -34,7 +34,7 @@
         <th></th>
         <th></th>
         <th>Đã bao gồm thuế VAT</th>
-        <th>{{$bills->total}}</th>
+        <th>{{ number_format($bills->total).' đ'}}</th>
       </tr>
   </tbody>
 </table>

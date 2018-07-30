@@ -107,15 +107,3 @@
 </div>
 @endsection
 @section('title','Liên Hệ')
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-    
-
-
-    function submitForm()
-    {
-        var a = "Cám ơn quý khách đã phản hồi. Chúng tôi sẽ trả lời trong thời gian sớm nhất.";
-        alert(a);
-    }
-</script>

@@ -357,30 +357,3 @@
 </div>
 @endsection
 @section('title','Loại Sản Phẩm')
-
-<script type="text/javascript">
-    function kiemtra(){
-
-        var a = document.getElementById('giamin').value;
-        var b = document.getElementById('giamax').value;
-
-        if (a > b)
-        {
-            alert('Không nhập giá tối thiểu lớn hơn giá tối đa');
-        }else{
-            document.getElementById("testform").submit();
-        }
-    }
-
-    function checkQuan()
-    {   
-        var a = document.getElementById('giamin').value;
-        var b = document.getElementById('giamax').value;
-
-        if( a < 0  || b  <0){
-            alert('Không được nhập số âm');
-            document.getElementById('giamin').value = 1;
-            document.getElementById('giamax').value = 1;
-        }
-    }
-</script>

@@ -81,6 +81,7 @@
     <script src="{{URL::asset('template/assets/js/bootstrap-select.min.js')}}"></script>
     <script src="{{URL::asset('template/assets/js/wow.min.js')}}"></script>
 	<script src="{{URL::asset('template/assets/js/scripts.js')}}"></script>
+	<script src="{{URL::asset('template/assets/js/myscripts.js')}}"></script>
 
 	<!-- For demo purposes – can be removed on production -->
 	

@@ -38,29 +38,19 @@ class PageController extends Controller
     public function getIndex(){
         
          $new_food = Foods::where('new',1)->paginate(3);
-
-
          
           $allFood= Foods::where('today',1)->paginate(15);
 
-         
-
         $loai = FoodType::all();
-
-        
 
         return view('pages.trangchu',compact('new_food','allFood','loai','food','sp_khuyenmai'));
 
-
     }
-    
  
     function getSearch(Request $req){
-       $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->where('price','>',$req->pricemin)->where('price','<',$req->pricemax)->get();
+       $food = DB::table('foods')->where('name','like','%'.$req->key.'%')->where('price','>=',$req->pricemin)->where('price','<=',$req->pricemax)->get();
 
        $count = count($food); 
-
-       
 
          $loai = FoodType::all();
 
@@ -197,11 +187,6 @@ class PageController extends Controller
             return view('pages.checkout',['monan_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
         }
     }
-
-    //   function getCheckout(){
-
-    //     return view('pages.checkout');
-    // }
 
 
     function getInfo(){

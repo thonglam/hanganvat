@@ -6,10 +6,6 @@
 				
 				<h1><span style="color: green">Thông tin chi tiết món ăn: </span></h1> 
 			</div>
-
-
-			
-		
 		</div>
 </div>
 
@@ -113,14 +109,3 @@
 		</div> <!-- #content -->
 	</div> <!-- .container -->
 @endsection
-
-<script type="text/javascript">
-	function checkQuan()
-	{	
-		var a = document.getElementById('quantity').value;
-		if( a < 0 ){
-			alert('Không được nhập số âm');
-			document.getElementById('quantity').value = 1;
-		}
-	}
-</script>

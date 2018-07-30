@@ -25,7 +25,7 @@
       <th scope="row">{{$stt++}}</th>
       <td>{{$bill->name}}</td>
       <td>{{$bill->date_order}}</td>
-      <td>{{$bill->total}}</td>
+      <td>{{number_format($bill->total).' đ'}}</td>
 
       @if($bill->status == 0)
 

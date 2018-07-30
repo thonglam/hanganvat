@@ -183,7 +183,7 @@
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane active " id="grid-container">
                         <div class="category-product  inner-top-vs">
-                            <div class="row">
+                            <div class="row" style="display: flex; flex-flow: wrap;">
                                 @foreach($allFood as $all)
                                 <div class="col-sm-6 col-md-4 wow fadeInUp">
                                     <div class="products">
@@ -396,32 +396,3 @@
 <!-- /.body-content -->
 @endsection
 @section('title','Trang Chủ')
-
-<script type="text/javascript">
-    function kiemtra(){
-
-        var a = document.getElementById('giamin').value;
-        var b = document.getElementById('giamax').value;
-
-        if (a > b)
-        {
-            alert('Không nhập giá tối thiểu lớn hơn giá tối đa');
-        }else{
-            document.getElementById("testform").submit();
-        }
-    }
-
-    function checkQuan()
-    {   
-        var a = document.getElementById('giamin').value;
-        var b = document.getElementById('giamax').value;
-
-        if( a < 0  || b  <0){
-            alert('Không được nhập số âm');
-            document.getElementById('giamin').value = 1;
-            document.getElementById('giamax').value = 1;
-        }
-    }
-</script>
-
-

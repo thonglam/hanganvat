@@ -32,8 +32,8 @@
         <th scope="row">{{$stt++}}</th>
         <td>{{$food->name}}</td>
         <td><img src="upload/{{$food->image}}" alt="" style="width: 150px; height: 80px;"></td>
-        <td>{{$food->price}}</td>
-        <td>{{$food->promotion_price}}</td>
+        <td>{{number_format($food->price).' đ'}}</td>
+        <td>{{number_format($food->promotion_price).' đ'}}</td>
         <td class="center"><i class="fa fa-pencil fa-fw"></i><a href="{{route('edit_food',$food->id)}}">Sửa</a></td>
         <td class="center"><i class="fa fa-trash-o fa-fw"></i><a onclick="return xacnhanxoa('Bạn có chắc là xóa không')" href="{{route('listfood',$food->id)}}">Xóa</a></td>
       </td>

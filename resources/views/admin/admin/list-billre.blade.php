@@ -23,7 +23,7 @@
       <th scope="row">{{$stt++}}</th>
       <td>{{$bill->name}}</td>
       <td>{{$bill->date_order}}</td>
-      <td>{{$bill->total}}</td>
+      <td>{{number_format($bill->total).' đ'}}</td>
       <td class="center"><i class="fa fa-building-o fa-fw"></i>
         <a href="{{ route('detail-bill',$bill->id) }}">Chi tiết hóa đơn</a>
       </td>

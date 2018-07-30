@@ -19,13 +19,25 @@ class AdminController extends Controller
         return view('admin.admin.edit-food', compact('food','type'));
     }
     function postEditFood(Request $req){
-        $check = [
-            'price'=>'digits_between:0,999999',
-            'promotion_price'=>'digits_between:0,999999',
+         $check = [
+            'name'=>'required',
+            'detail'=>'required',
+            'price'=>'min:0|required|numeric|integer',
+            'promotion_price'=>'min:0|required|numeric|integer',
+            'unit'=>'required',
         ];
         $mess = [
-            'price.digits_between'=>'Giá không được phép âm và phải là số',
-            'promotion_price.digits_between'=>'Giá khuyến mãi không được phép âm và phải là số',
+            'name.required'=>'Không được để trống tên',
+            'price.required'=>'Không được để trống giá',
+            'price.numeric'=>'Giá không phải là số',
+            'price.min'=>'Giá không được phép âm',
+            'price.integer'=>'Giá phải là số nguyên',
+            'promotion_price.required'=>'Không được để trống giá khuyến mãi',
+            'promotion_price.numeric'=>'Giá khuyến mãi không phải là số',
+            'promotion_price.min'=>'Giá khuyến mãi không được phép âm',
+            'promotion_price.integer'=>'Giá khuyến mãi phải là số nguyên',
+            'unit.required'=>'Không được để trống đơn vị tính',
+            'detail.required'=>'Không được để trống mô tả',
         ];
         $validator = Validator::make($req->all(),$check,$mess);
         if($validator->fails()) {
@@ -76,12 +88,26 @@ class AdminController extends Controller
     }
     function postAddFood(Request $req){
         $check = [
-            'price'=>'digits_between:0,999999',
-            'promotion_price'=>'digits_between:0,999999',
+            'name'=>'required',
+            'detail'=>'required',
+            'price'=>'min:0|required|numeric|integer',
+            'promotion_price'=>'min:0|required|numeric|integer',
+            'unit'=>'required',
+            'image'=>'required'
         ];
         $mess = [
-            'price.digits_between'=>'Giá không được phép âm và phải là số',
-            'promotion_price.digits_between'=>'Giá khuyến mãi không được phép âm và phải là số',
+            'name.required'=>'Không được để trống tên',
+            'price.required'=>'Không được để trống giá',
+            'price.numeric'=>'Giá không phải là số',
+            'price.min'=>'Giá không được phép âm',
+            'price.integer'=>'Giá phải là số nguyên',
+            'promotion_price.required'=>'Không được để trống giá khuyến mãi',
+            'promotion_price.numeric'=>'Giá khuyến mãi không phải là số',
+            'promotion_price.min'=>'Giá khuyến mãi không được phép âm',
+            'promotion_price.integer'=>'Giá khuyến mãi phải là số nguyên',
+            'unit.required'=>'Không được để trống đơn vị tính',
+            'detail.required'=>'Không được để trống mô tả',
+            'image.required'=>'Chưa chọn hình ảnh',
         ];
         $validator = Validator::make($req->all(),$check,$mess);
         if($validator->fails()) {
@@ -167,6 +193,25 @@ class AdminController extends Controller
     }
     function postAddNews(Request $req)
     {
+        $check = [
+            'title'=>'required',
+            'description'=>'required',
+            'image'=>'required',
+            'content'=>'required',
+        ];
+        $mess = [
+            'title.required'=>'Không được để trống tiêu đề',
+            'description.required'=>'Không được để trống mô tả',
+            'image.required'=>'Chưa có hình ảnh',
+            'content.required'=>'Không được để trống nội dung',
+        ];
+        $validator = Validator::make($req->all(),$check,$mess);
+        if($validator->fails()) {
+            return redirect()
+            ->route('addnew')
+            ->withErrors($validator)
+            ->withInput();
+        }
         $new = new News();
         $new->title = $req->title;
         $new->description = $req->description;
@@ -194,6 +239,23 @@ class AdminController extends Controller
         return view('admin.admin.edit-new', compact('new'));
     }
     function postEditNew(Request $req){
+        $check = [
+            'title'=>'required',
+            'description'=>'required',
+            'content'=>'required',
+        ];
+        $mess = [
+            'title.required'=>'Không được để trống tiêu đề',
+            'description.required'=>'Không được để trống mô tả',
+            'content.required'=>'Không được để trống nội dung',
+        ];
+        $validator = Validator::make($req->all(),$check,$mess);
+        if($validator->fails()) {
+            return redirect()
+            ->route('edit_new',$req->id)
+            ->withErrors($validator)
+            ->withInput();
+        }
         $id = $req->id;
         $new = News::find($id);
         $new->title = $req->title;
